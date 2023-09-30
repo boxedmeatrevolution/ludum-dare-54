@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://nn3284tocbls"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/PlayerCar.tscn" id="1_ukjpy"]
+[ext_resource type="PackedScene" uid="uid://ctcn8lbqfw4oa" path="res://entities/Curb.tscn" id="4_na4dg"]
+
+[node name="CurbTest" type="Node2D"]
+
+[node name="PlayerCar" parent="." instance=ExtResource("1_ukjpy")]
+position = Vector2(384, 312)
+
+[node name="Curb3" parent="." instance=ExtResource("4_na4dg")]
+invert_polygon = true
+
+[node name="Line2D" type="Line2D" parent="Curb3"]
+points = PackedVector2Array(72, 40, 864, 24, 888, 88, 888, 360, 848, 448, 88, 448, 56, 400, 48, 72)
+
+[node name="Curb2" parent="." instance=ExtResource("4_na4dg")]
+
+[node name="Line2D" type="Line2D" parent="Curb2"]
+points = PackedVector2Array(568, 248, 648, 320, 720, 264, 640, 192)
+
+[node name="Curb" parent="." instance=ExtResource("4_na4dg")]
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb"]
+points = PackedVector2Array(272, 184, 376, 136, 456, 192, 328, 248)

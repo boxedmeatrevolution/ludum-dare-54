@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctcn8lbqfw4oa"]
+
+[ext_resource type="Script" path="res://scripts/Curb.gd" id="1_7f507"]
+[ext_resource type="Texture2D" uid="uid://c1h5l3pthf41t" path="res://sprites/Curb.png" id="2_dj3xm"]
+
+[node name="Curb" type="StaticBody2D"]
+script = ExtResource("1_7f507")
+texture = ExtResource("2_dj3xm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
