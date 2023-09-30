@@ -6,7 +6,7 @@
 [node name="TestLevel" type="Node2D"]
 
 [node name="Car" parent="." instance=ExtResource("1_wn22e")]
-position = Vector2(464, 281)
+position = Vector2(456, 104)
 
 [node name="Curb" parent="." instance=ExtResource("2_06ben")]
 invert_polygon = true
@@ -14,3 +14,8 @@ invert_texture = true
 
 [node name="Line2D" type="Line2D" parent="Curb"]
 points = PackedVector2Array(24, 24, 936, 24, 936, 576, 24, 576, 24, 24)
+
+[node name="Curb2" parent="." instance=ExtResource("2_06ben")]
+
+[node name="Line2D" type="Line2D" parent="Curb2"]
+points = PackedVector2Array(336, 272, 416, 232, 568, 232, 664, 320, 584, 416, 384, 400, 336, 352, 336, 272)
