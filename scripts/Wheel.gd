@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var max_steer_deg : float = 0.0
-@export var steer_time : float = 0.4
+@export var steer_time : float = 0.6
 @export var drive_time : float = 0.05
 @export var reset_time_factor : float = 4.0
 
@@ -71,4 +71,3 @@ func _physics_process(delta : float) -> void:
 	elif drive_power < 0.0:
 		var force_reverse := drive_power * curve_reverse.sample(-velocity_par / max_curve_velocity) * forward_dir
 		parent.apply_force(force_reverse, global_position - parent.global_position)
-	print(velocity_perp)
