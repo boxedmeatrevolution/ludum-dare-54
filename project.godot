@@ -11,8 +11,20 @@ config_version=5
 [application]
 
 config/name="LudumDare54"
+run/main_scene="res://levels/TestLevel.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=600
+
+[layer_names]
+
+2d_physics/layer_1="Block"
+2d_physics/layer_2="PlayerCar"
+2d_physics/layer_3="Car"
 
 [rendering]
 
