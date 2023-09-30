@@ -3,24 +3,24 @@
 [ext_resource type="Script" path="res://scripts/Wheel.gd" id="1_bask5"]
 
 [sub_resource type="Curve" id="Curve_shpkh"]
-max_value = 100.0
-_data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(0.203774, 100), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.83108, 0.0, 0, 0]
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.204, 200), 0.0, 0.0, 0, 0, Vector2(0.901887, 0), -4.83108, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_1arv8"]
-max_value = 100.0
-_data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(0.245283, 50), 0.0, 0.0, 0, 0, Vector2(0.6, 0), -3.32386, 0.0, 0, 0]
+max_value = 200.0
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(0.2, 100), 0.0, 0.0, 0, 0, Vector2(0.5, 0), -3.32386, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_mfqwb"]
 max_value = 100.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 20), 0.0, 0.0, 0, 0, Vector2(0.615094, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 300.0, 0, 0, Vector2(0.2, 40), 0.0, 0.0, 0, 0, Vector2(0.615094, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_h838m"]
-max_value = 500.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.245283, 500), 0.0, 0.0, 0, 0, Vector2(0.754717, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+max_value = 200.0
+_data = [Vector2(0, 0), 0.0, 500.0, 0, 0, Vector2(0.02, 200), 0.0, 0.0, 0, 0, Vector2(0.183, 100), -600.62, -600.62, 0, 0, Vector2(0.754717, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="Wheel" type="Node2D"]
 script = ExtResource("1_bask5")

@@ -1,6 +1,9 @@
 extends Node2D
 
 @export var max_steer_deg : float = 0.0
+@export var steer_time : float = 0.4
+@export var drive_time : float = 0.05
+@export var reset_time_factor : float = 4.0
 
 @export var coeff_forward : float = 0.0
 @export var coeff_reverse : float = 1.0
@@ -16,57 +19,56 @@ extends Node2D
 
 @onready var parent : RigidBody2D = get_parent()
 
-var force_list := PackedVector2Array()
+var steer_angle := 0.0
+var drive_power := 0.0
 
 func _ready() -> void:
 	assert(parent != null)
 	assert(parent.center_of_mass_mode == RigidBody2D.CENTER_OF_MASS_MODE_AUTO)
 
-func _physics_process(delta : float) -> void:
-	force_list.clear()
+func _process(delta : float) -> void:
+	var steer_left := 1.0 if Input.is_action_pressed("steer_left") else 0.0
+	var steer_right := 1.0 if Input.is_action_pressed("steer_right") else 0.0
+	steer_left = maxf(steer_left, Input.get_action_strength("steer_left_analog"))
+	steer_right = maxf(steer_right, Input.get_action_strength("steer_right_analog"))
+	var target_steer_angle := PI / 180 * max_steer_deg * (steer_right - steer_left)
+	var true_steer_time := steer_time
+	if abs(target_steer_angle) < abs(steer_angle):
+		true_steer_time /= reset_time_factor
+	steer_angle = (steer_angle - target_steer_angle) * exp(-delta / true_steer_time) + target_steer_angle
 	
+	var drive_forward := 1.0 if Input.is_action_pressed("drive_forward") else 0.0
+	var drive_reverse := 1.0 if Input.is_action_pressed("drive_reverse") else 0.0
+	drive_forward = maxf(drive_forward, Input.get_action_strength("drive_forward_analog"))
+	drive_reverse = maxf(drive_reverse, Input.get_action_strength("drive_reverse_analog"))
+	var target_drive_power = coeff_forward * drive_forward - coeff_reverse * drive_reverse
+	var true_drive_time := steer_time
+	if abs(target_drive_power) < abs(drive_power):
+		true_drive_time /= reset_time_factor
+	drive_power = (drive_power - target_drive_power) * exp(-delta / true_drive_time) + target_drive_power
+
+func _physics_process(delta : float) -> void:
 	# Velocity components relative to ground and orientation.
 	var position_rel := global_position - parent.global_position
 	var velocity_rel := -parent.angular_velocity * position_rel.orthogonal()
 	var velocity := parent.linear_velocity + velocity_rel
-	var steer_deg := max_steer_deg * (Input.get_action_strength("steer_right") - Input.get_action_strength("steer_left"))
-	var forward_dir := parent.global_transform.x.rotated(PI / 180 * steer_deg)
+	var forward_dir := parent.global_transform.x.rotated(steer_angle)
 	var velocity_par := velocity.dot(forward_dir)
 	var velocity_perp := velocity.cross(forward_dir)
 	
 	# Ground friction.
 	if velocity_par != 0.0:
-		var force_friction_par := -coeff_friction_parallel * curve_friction_parallel.sample(abs(velocity_par / max_curve_velocity)) * forward_dir
-		if velocity_par < 0.0:
-			force_friction_par *= -1.0
+		var force_friction_par := -coeff_friction_parallel * curve_friction_parallel.sample(absf(velocity_par / max_curve_velocity)) * signf(velocity_par) * forward_dir
 		parent.apply_force(force_friction_par, global_position - parent.global_position)
-		force_list.append(force_friction_par)
 	if velocity_perp != 0.0:
-		var force_friction_perp := -coeff_friction_perpendicular * curve_friction_perpendicular.sample(abs(velocity_perp / max_curve_velocity)) * forward_dir.orthogonal()
-		if velocity_perp < 0.0:
-			force_friction_perp *= -1.0
+		var force_friction_perp := -coeff_friction_perpendicular * curve_friction_perpendicular.sample(absf(velocity_perp / max_curve_velocity)) * signf(velocity_perp) * forward_dir.orthogonal()
 		parent.apply_force(force_friction_perp, global_position - parent.global_position)
-		force_list.append(force_friction_perp)
 	
 	# Acceleration and decceleration.
-	var power_drive := coeff_forward * Input.get_action_strength("drive_forward") - coeff_reverse * Input.get_action_strength("drive_reverse")
-	if power_drive > 0.0:
-		var force_forward := power_drive * curve_forward.sample(velocity_par / max_curve_velocity) * forward_dir
+	if drive_power > 0.0:
+		var force_forward := drive_power * curve_forward.sample(velocity_par / max_curve_velocity) * forward_dir
 		parent.apply_force(force_forward, global_position - parent.global_position)
-		force_list.append(force_forward)
-	elif power_drive < 0.0:
-		var force_reverse := power_drive * curve_reverse.sample(-velocity_par / max_curve_velocity) * forward_dir
+	elif drive_power < 0.0:
+		var force_reverse := drive_power * curve_reverse.sample(-velocity_par / max_curve_velocity) * forward_dir
 		parent.apply_force(force_reverse, global_position - parent.global_position)
-		force_list.append(force_reverse)
-	queue_redraw()
-
-func _draw() -> void:
-	#var xx := Vector2(parent.global_transform.x.x, parent.global_transform.y.x)
-	#var yy := Vector2(parent.global_transform.x.y, parent.global_transform.y.y)
-	#print(xx)
-	#print(yy)
-	draw_set_transform_matrix(get_global_transform().inverse())
-	draw_line(global_position, global_position + 100 * parent.global_transform.x, Color.RED)
-	draw_line(global_position, global_position + 100 * parent.global_transform.y, Color.BLUE)
-	for force in force_list:
-		draw_line(global_position, global_position + force, Color.ALICE_BLUE)
+	print(velocity_perp)
