@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cf4s8a5hjy23d"]
 
-[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/PlayerCar.tscn" id="1_wn22e"]
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_wn22e"]
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="PlayerCar" parent="." instance=ExtResource("1_wn22e")]
+[node name="Car" parent="." instance=ExtResource("1_wn22e")]
 position = Vector2(464, 281)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
