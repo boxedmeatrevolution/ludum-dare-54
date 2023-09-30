@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhnjpsdtol8td"]
+[gd_scene load_steps=6 format=3 uid="uid://bhnjpsdtol8td"]
 
 [ext_resource type="Script" path="res://scripts/Car.gd" id="1_1vwqo"]
 [ext_resource type="Texture2D" uid="uid://ctfvs1f7c1ard" path="res://sprites/PlayerCar.png" id="2_8ma3l"]
+[ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_6y72t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3ter"]
 friction = 0.8
 bounce = 0.3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qugl5"]
-radius = 32.0
-height = 128.0
+radius = 24.0
+height = 112.0
 
 [node name="Car" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_y3ter")
@@ -21,3 +22,21 @@ texture = ExtResource("2_8ma3l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qugl5")
+
+[node name="Wheel1" parent="." instance=ExtResource("3_6y72t")]
+position = Vector2(47, -25)
+coeff_steer = 1.0
+coeff_forward = 1.0
+coeff_reverse = 1.0
+
+[node name="Wheel2" parent="." instance=ExtResource("3_6y72t")]
+position = Vector2(47, 25)
+coeff_steer = 1.0
+coeff_forward = 1.0
+coeff_reverse = 1.0
+
+[node name="Wheel3" parent="." instance=ExtResource("3_6y72t")]
+position = Vector2(-31, -25)
+
+[node name="Wheel4" parent="." instance=ExtResource("3_6y72t")]
+position = Vector2(-31, 25)

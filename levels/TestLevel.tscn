@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf4s8a5hjy23d"]
+[gd_scene load_steps=4 format=3 uid="uid://cf4s8a5hjy23d"]
 
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_wn22e"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_06ben"]
 [ext_resource type="PackedScene" uid="uid://bcttnj5pe7cy2" path="res://entities/PlayerCar.tscn" id="2_h3dwi"]
 
@@ -19,3 +20,53 @@ points = PackedVector2Array(336, 272, 416, 232, 568, 232, 664, 320, 584, 416, 38
 
 [node name="PlayerCar" parent="." instance=ExtResource("2_h3dwi")]
 position = Vector2(496, 120)
+
+[node name="Car1" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(840, 224)
+rotation = 0.308218
+
+[node name="Car2" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(776, 304)
+rotation = 0.901839
+
+[node name="Car3" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(848, 72)
+
+[node name="Car4" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(848, 144)
+
+[node name="Car5" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(216, 440)
+rotation = -0.699228
+
+[node name="Car6" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(128, 352)
+rotation = -0.167441
+
+[node name="Car7" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(120, 232)
+rotation = 1.35559
+
+[node name="Car8" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(216, 232)
+rotation = 1.80352
+
+[node name="Car9" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(424, 536)
+rotation = -0.142996
+
+[node name="Car10" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(248, 504)
+rotation = -0.561012
+
+[node name="Car11" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(536, 496)
+rotation = 0.386633
+
+[node name="Car12" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(656, 512)
+rotation = -2.05785
+
+[node name="Car13" parent="." instance=ExtResource("1_wn22e")]
+position = Vector2(728, 448)
+rotation = -2.68292
