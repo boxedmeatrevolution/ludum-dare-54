@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcttnj5pe7cy2"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_k4usb"]
+[ext_resource type="Script" path="res://scripts/PlayerCar.gd" id="1_sly1x"]
+[ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_5qi58"]
+
+[node name="PlayerCar" instance=ExtResource("1_k4usb")]
+script = ExtResource("1_sly1x")
+max_steer_deg = 55.0
+
+[node name="Wheel1" parent="." index="2" instance=ExtResource("3_5qi58")]
+position = Vector2(47, -25)
+coeff_steer = 1.0
+coeff_forward = 1.0
+coeff_reverse = 1.0
+
+[node name="Wheel2" parent="." index="3" instance=ExtResource("3_5qi58")]
+position = Vector2(47, 25)
+coeff_steer = 1.0
+coeff_forward = 1.0
+coeff_reverse = 1.0
+
+[node name="Wheel3" parent="." index="4" instance=ExtResource("3_5qi58")]
+position = Vector2(-31, -25)
+
+[node name="Wheel4" parent="." index="5" instance=ExtResource("3_5qi58")]
+position = Vector2(-31, 25)

@@ -1,10 +1,4 @@
 extends RigidBody2D
 
-func _ready() -> void:
-	pass
-
-func _process(delta : float) -> void:
-	pass
-
-func _physics_process(delta : float) -> void:
-	pass
+var steer_angle := 0.0
+var drive_power := 0.0

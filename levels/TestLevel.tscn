@@ -1,12 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf4s8a5hjy23d"]
 
-[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_wn22e"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_06ben"]
+[ext_resource type="PackedScene" uid="uid://bcttnj5pe7cy2" path="res://entities/PlayerCar.tscn" id="2_h3dwi"]
 
 [node name="TestLevel" type="Node2D"]
-
-[node name="Car" parent="." instance=ExtResource("1_wn22e")]
-position = Vector2(456, 104)
 
 [node name="Curb" parent="." instance=ExtResource("2_06ben")]
 invert_polygon = true
@@ -19,3 +16,6 @@ points = PackedVector2Array(24, 24, 936, 24, 936, 576, 24, 576, 24, 24)
 
 [node name="Line2D" type="Line2D" parent="Curb2"]
 points = PackedVector2Array(336, 272, 416, 232, 568, 232, 664, 320, 584, 416, 384, 400, 336, 352, 336, 272)
+
+[node name="PlayerCar" parent="." instance=ExtResource("2_h3dwi")]
+position = Vector2(496, 120)

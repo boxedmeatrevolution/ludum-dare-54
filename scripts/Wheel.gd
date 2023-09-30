@@ -1,12 +1,14 @@
 extends Node2D
 
-@export var max_steer_deg : float = 0.0
+const Car := preload("res://scripts/Car.gd")
+
+@export var coeff_steer : float = 0.0
 @export var steer_time : float = 0.6
 @export var drive_time : float = 0.05
 @export var reset_time_factor : float = 4.0
 
 @export var coeff_forward : float = 0.0
-@export var coeff_reverse : float = 1.0
+@export var coeff_reverse : float = 0.0
 @export var curve_forward : Curve
 @export var curve_reverse : Curve
 
@@ -17,7 +19,7 @@ extends Node2D
 
 @export var max_curve_velocity := 1000.0
 
-@onready var parent : RigidBody2D = get_parent()
+@onready var parent : Car = get_parent()
 
 var steer_angle := 0.0
 var drive_power := 0.0
@@ -27,21 +29,13 @@ func _ready() -> void:
 	assert(parent.center_of_mass_mode == RigidBody2D.CENTER_OF_MASS_MODE_AUTO)
 
 func _process(delta : float) -> void:
-	var steer_left := 1.0 if Input.is_action_pressed("steer_left") else 0.0
-	var steer_right := 1.0 if Input.is_action_pressed("steer_right") else 0.0
-	steer_left = maxf(steer_left, Input.get_action_strength("steer_left_analog"))
-	steer_right = maxf(steer_right, Input.get_action_strength("steer_right_analog"))
-	var target_steer_angle := PI / 180 * max_steer_deg * (steer_right - steer_left)
 	var true_steer_time := steer_time
+	var target_steer_angle := coeff_steer * parent.steer_angle
 	if abs(target_steer_angle) < abs(steer_angle):
 		true_steer_time /= reset_time_factor
 	steer_angle = (steer_angle - target_steer_angle) * exp(-delta / true_steer_time) + target_steer_angle
 	
-	var drive_forward := 1.0 if Input.is_action_pressed("drive_forward") else 0.0
-	var drive_reverse := 1.0 if Input.is_action_pressed("drive_reverse") else 0.0
-	drive_forward = maxf(drive_forward, Input.get_action_strength("drive_forward_analog"))
-	drive_reverse = maxf(drive_reverse, Input.get_action_strength("drive_reverse_analog"))
-	var target_drive_power = coeff_forward * drive_forward - coeff_reverse * drive_reverse
+	var target_drive_power := coeff_forward * parent.drive_power if parent.drive_power > 0.0 else coeff_reverse * parent.drive_power
 	var true_drive_time := steer_time
 	if abs(target_drive_power) < abs(drive_power):
 		true_drive_time /= reset_time_factor
