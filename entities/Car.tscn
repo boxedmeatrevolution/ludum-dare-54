@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_xx74r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3ter"]
-friction = 0.0
+friction = 0.8
+bounce = 0.3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qugl5"]
 radius = 32.0
