@@ -4,3 +4,7 @@
 
 [node name="ParkingSpace" type="Node2D"]
 script = ExtResource("1_0u517")
+spaces_wide = 1
+spaces_tall = 1
+space_width = 85
+space_height = 140
