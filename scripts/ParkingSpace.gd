@@ -14,40 +14,49 @@ var car_types : Array = [
 @export var spaces_wide: int:
 	set(value):
 		spaces_wide = value
-		init()
+		if Engine.is_editor_hint():
+			init()
 @export var spaces_tall: int:
 	set(value):
 		spaces_tall = value
-		init()
+		if Engine.is_editor_hint():
+			init()
 @export var space_width: int:
 	set(value):
 		space_width = value
-		init()
+		if Engine.is_editor_hint():
+			init()
 @export var space_height: int:
 	set(value):
 		space_height = value
-		init()
+		if Engine.is_editor_hint():
+			init()
 @export var fill_with_cars: bool:
 	set(value):
 		fill_with_cars = value
-		init()
+		if Engine.is_editor_hint():
+			init()
 @export var instruction: Array[String]:
 	set(value):
 		instruction = value
-		init()
+		if Engine.is_editor_hint():
+			init()
 @export var rng_seed: String:
 	set(value):
 		rng_seed = value
-		init()
+		if Engine.is_editor_hint():
+			init()
 
 var lines: Array[Line2D] = []
 var cars: Array[RigidBody2D] = []
 
 var rng: RandomNumberGenerator
 
+var level_manager : LevelManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	level_manager = get_node("/root/LevelManager")
 	init()
 
 func init():
@@ -92,12 +101,17 @@ func init_cars():
 			car.rotation = PI / 2
 			if flipped:
 				car.rotation += PI
-			car.z_index = 1
 			cars.append(car)
 	
 	# add cars
 	for car in cars:
 		add_child(car)
+		
+	if (not Engine.is_editor_hint()) and level_manager != null and level_manager.level_node != null:
+		# reparent cars
+		for car in cars:
+			car.reparent(level_manager.level_node.car_parent_node)
+	
 
 func init_lines():
 	# destroy lines that already exist
