@@ -36,4 +36,3 @@ func _process(delta : float) -> void:
 func _input(event : InputEvent) -> void:
 	if event is InputEventMouse:
 		mouse_active_timer = MOUSE_ACTIVE_TIME
-		print("Mouse event")

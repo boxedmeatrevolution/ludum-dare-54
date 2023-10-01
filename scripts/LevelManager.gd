@@ -6,7 +6,10 @@ var current_level : int = 0
 func _ready() -> void:
 	var level_dir := DirAccess.open("res://levels")
 	for file in level_dir.get_files():
-		level_paths.append(level_dir.get_current_dir() + "/" + file)
+		if file.ends_with(".remap"):
+			file = file.replace(".remap", "")
+		if file.ends_with(".tscn"):
+			level_paths.append(level_dir.get_current_dir() + "/" + file)
 	change_level(0)
 
 func _process(_delta : float) -> void:
