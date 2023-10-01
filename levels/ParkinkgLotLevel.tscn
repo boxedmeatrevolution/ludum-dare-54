@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlbf1x53rnmat"]
+[gd_scene load_steps=8 format=3 uid="uid://dlbf1x53rnmat"]
 
 [ext_resource type="PackedScene" uid="uid://bfu5s8jl18as7" path="res://entities/Camera.tscn" id="1_8ivqk"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="1_61t0y"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="3_5ww63"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="5_80e4h"]
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="5_niyvf"]
+[ext_resource type="PackedScene" uid="uid://bmqfhjjncpc6i" path="res://entities/cars/Cop.tscn" id="7_5vp34"]
 
 [node name="ParkinkgLotLevel" type="Node2D"]
 
@@ -26,17 +27,11 @@ position = Vector2(729, 305)
 position = Vector2(61, 164)
 spaces_wide = 4
 spaces_tall = 2
-fill_with_cars = null
-instruction = null
-rng_seed = null
 
 [node name="ParkingSpace2" parent="." instance=ExtResource("3_5ww63")]
 position = Vector2(560, 166)
 spaces_wide = 4
 spaces_tall = 2
-fill_with_cars = null
-instruction = null
-rng_seed = null
 
 [node name="PlayerCar" parent="." instance=ExtResource("5_niyvf")]
 position = Vector2(103, 97)
@@ -106,3 +101,6 @@ rotation = 1.85365
 [node name="Car16" parent="." instance=ExtResource("5_niyvf")]
 position = Vector2(190, 227)
 rotation = -1.53835
+
+[node name="Cop" parent="." instance=ExtResource("7_5vp34")]
+position = Vector2(490, 509)
