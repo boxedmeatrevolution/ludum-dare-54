@@ -12,12 +12,10 @@ func _ready():
 	level_manager.set_level_node(self)
 	
 	# All cars belong to the car parent node
-	print("Ready!")
 	car_parent_node = Node2D.new()
 	var cars = []
 	for child in get_children():
 		if (child is Car):
-			print(child.name)
 			cars.append(child)
 	for car in cars:
 		remove_child(car)
