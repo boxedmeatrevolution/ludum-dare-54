@@ -1,10 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://b48r7at33cyp3"]
 
 [ext_resource type="Script" path="res://scripts/CarSpawner.gd" id="1_omjkw"]
-[ext_resource type="Texture2D" uid="uid://ctcfuu60bqne3" path="res://sprites/Car.png" id="2_yvpcy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gooix"]
 
 [node name="CarSpawner" type="Node2D"]
 script = ExtResource("1_omjkw")
+initial_delay = null
+interval = null
+jitter = null
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_yvpcy")
+texture = SubResource("CompressedTexture2D_gooix")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl56u6y6i550g"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_wefk2"]
+[ext_resource type="Texture2D" uid="uid://d1yqr4w8ujf4q" path="res://sprites/CarModelA.png" id="2_4g65e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnm50"]
+size = Vector2(50, 119)
+
+[node name="Car" instance=ExtResource("1_wefk2")]
+max_steer_deg = 50.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_4g65e")
+hframes = 3
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.499996, -3.71733e-06)
+shape = SubResource("RectangleShape2D_hnm50")
+
+[node name="Wheel1" parent="." index="2"]
+position = Vector2(38, -25)
+coeff_friction_perpendicular = 2.0
+
+[node name="Wheel2" parent="." index="3"]
+position = Vector2(38, 25)
+coeff_friction_perpendicular = 2.0
+
+[node name="Wheel3" parent="." index="4"]
+position = Vector2(-39, -25)
+
+[node name="Wheel4" parent="." index="5"]
+position = Vector2(-39, 25)
