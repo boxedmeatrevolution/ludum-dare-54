@@ -1,7 +1,11 @@
 @tool
 extends Node2D
 
-@export var bounds : Rect2 = Rect2(0.0, 0.0, 960.0, 600.0)
+@export var bounds : Rect2 = Rect2(0.0, 0.0, 960.0, 600.0):
+	set(value):
+		bounds = value
+		queue_redraw()
+	
 @export var target_path : NodePath
 
 @export var position_time : float = 0.5

@@ -92,6 +92,7 @@ func init_cars():
 			car.rotation = PI / 2
 			if flipped:
 				car.rotation += PI
+			car.z_index = 1
 			cars.append(car)
 	
 	# add cars
