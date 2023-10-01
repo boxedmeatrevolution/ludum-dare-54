@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnm50"]
 size = Vector2(50, 119)
 
-[node name="Car" instance=ExtResource("1_wefk2")]
+[node name="CarModelA" instance=ExtResource("1_wefk2")]
 max_steer_deg = 50.0
 
 [node name="Sprite2D" parent="." index="0"]

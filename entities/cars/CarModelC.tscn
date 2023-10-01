@@ -7,8 +7,9 @@
 radius = 28.0
 height = 96.0
 
-[node name="Car" instance=ExtResource("1_pnvoa")]
-mass = 0.9
+[node name="CarModelC" instance=ExtResource("1_pnvoa")]
+mass = 0.8
+max_steer_deg = 62.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_5dcwh")
@@ -20,13 +21,13 @@ shape = SubResource("CapsuleShape2D_tew5d")
 
 [node name="Wheel1" parent="." index="2"]
 position = Vector2(43, -25)
-coeff_forward = 0.8
+coeff_forward = 0.7
 coeff_reverse = 0.8
 coeff_friction_perpendicular = 2.0
 
 [node name="Wheel2" parent="." index="3"]
 position = Vector2(43, 25)
-coeff_forward = 0.8
+coeff_forward = 0.7
 coeff_reverse = 0.8
 coeff_friction_perpendicular = 2.0
 
