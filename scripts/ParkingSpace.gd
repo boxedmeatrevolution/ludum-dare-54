@@ -48,19 +48,15 @@ var car_types : Array = [
 			init()
 
 var lines: Array[Line2D] = []
-var cars: Array[RigidBody2D] = []
+var cars: Array[Node2D] = []
 
 var rng: RandomNumberGenerator
 
-var level_manager : LevelManager
-
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	if not Engine.is_editor_hint():
-		level_manager = get_node("/root/LevelManager")
+func _ready() -> void:
 	init()
 
-func init():
+func init() -> void:
 	rng = RandomNumberGenerator.new()
 	rng.seed = hash(rng_seed)
 	init_lines()
@@ -107,12 +103,6 @@ func init_cars():
 	# add cars
 	for car in cars:
 		add_child(car)
-		
-	if (not Engine.is_editor_hint()) and level_manager != null and level_manager.level_node != null:
-		# reparent cars
-		for car in cars:
-			car.reparent(level_manager.level_node.car_parent_node)
-	
 
 func init_lines():
 	# destroy lines that already exist

@@ -1,28 +1,65 @@
-extends Node
+@tool
+extends Node2D
 
-const Car = preload("res://scripts/Car.gd")
+const Camera := preload("res://scripts/Camera.gd")
+const CameraScene := preload("res://entities/Camera.tscn")
+const Car := preload("res://scripts/Car.gd")
+const PlayerAI := preload("res://scripts/PlayerAI.gd")
+const ParkingSpace := preload("res://scripts/ParkingSpace.gd")
+const Ramp := preload("res://scripts/Ramp.gd")
+const Curb := preload("res://scripts/Curb.gd")
+const CarSpawner := preload("res://scripts/CarSpawner.gd")
 
-var car_parent_node: Node2D;
-var level_manager : LevelManager
+const OUT_OF_BOUNDS_PADDING : float = 128.0
 
+@export var bounds : Rect2 = Rect2(0.0, 0.0, 960.0, 600.0):
+	set(value):
+		bounds = value
+		if Engine.is_editor_hint():
+			queue_redraw()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	level_manager = get_node("/root/LevelManager")
-	level_manager.set_level_node(self)
-	
-	# All cars belong to the car parent node
-	car_parent_node = Node2D.new()
-	var cars = []
+var camera : Camera
+
+@onready var ramp_parent := $RampParent
+@onready var marking_parent := $MarkingParent
+@onready var curb_parent := $CurbParent
+@onready var car_parent := $CarParent
+@onready var player_car_parent := $PlayerCarParent
+
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	global_transform = Transform2D.IDENTITY
 	for child in get_children():
-		if (child is Car):
-			cars.append(child)
-	for car in cars:
-		remove_child(car)
-		car_parent_node.add_child(car)
-	add_child(car_parent_node)
+		if child is Car:
+			var is_player := false
+			for grandchild in child.get_children():
+				if grandchild is PlayerAI:
+					is_player = true
+					break
+			if is_player:
+				child.reparent(player_car_parent)
+			else:
+				child.reparent(car_parent)
+			child.bounds = bounds.grow(OUT_OF_BOUNDS_PADDING)
+		elif child is ParkingSpace:
+			for car in child.cars:
+				car.reparent(car_parent)
+			child.reparent(marking_parent)
+		elif child is Ramp:
+			child.reparent(ramp_parent)
+		elif child is Curb:
+			child.reparent(curb_parent)
+		elif child is CarSpawner:
+			child.car_parent = car_parent
 	
+	camera = CameraScene.instantiate()
+	if player_car_parent.get_child_count() != 0:
+		camera.target_path = player_car_parent.get_child(0).get_path()
+	camera.bounds = bounds
+	add_child(camera)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _draw() -> void:
+	if Engine.is_editor_hint():
+		draw_rect(bounds, Color.BLUE, false, 10.0)
+		return

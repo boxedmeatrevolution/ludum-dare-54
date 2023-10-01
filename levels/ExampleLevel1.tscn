@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwogqoxt5yu1o"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_hmqa6"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_cx0kc"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_s8liv"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="4_2mon7"]
+
+[node name="Level" instance=ExtResource("1_hmqa6")]
+
+[node name="Curb" parent="." index="6" instance=ExtResource("2_cx0kc")]
+invert_polygon = true
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb" index="2"]
+points = PackedVector2Array(192, 78, 713, 78, 852, 290, 817, 539, 383, 563, 71, 473, 26, 210)
+
+[node name="CarMain" parent="." index="7" instance=ExtResource("3_s8liv")]
+position = Vector2(253, 252)
+
+[node name="PlayerAI" parent="CarMain" index="7" instance=ExtResource("4_2mon7")]

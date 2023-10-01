@@ -16,9 +16,7 @@ var previous_linear_velocity : Vector2 = Vector2.ZERO
 
 signal damage_received(total_damage : float)
 
-var bounds : Vector2
-
-const OUT_OF_BOUNDS_PADDING : float = 128.0
+var bounds : Rect2 = Rect2(-INF, -INF, INF, INF)
 
 func _ready() -> void:
 	sprite.frame = randi_range(0, sprite.hframes * sprite.vframes - 1)
@@ -35,6 +33,5 @@ func _integrate_forces(state : PhysicsDirectBodyState2D) -> void:
 	previous_linear_velocity = linear_velocity
 
 func _process(_delta : float) -> void:
-	pass
-	#if global_position.x < -OUT_OF_BOUNDS_PADDING || global_position.y < -OUT_OF_BOUNDS_PADDING || global_position.x > screen_size.x + OUT_OF_BOUNDS_PADDING || global_position.y > screen_size.y + OUT_OF_BOUNDS_PADDING:
-	#	queue_free()
+	if !bounds.has_point(global_position):
+		pass

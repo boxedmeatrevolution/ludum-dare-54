@@ -1,13 +1,7 @@
-@tool
 extends Node2D
 
-@export var bounds : Rect2 = Rect2(0.0, 0.0, 960.0, 600.0):
-	set(value):
-		bounds = value
-		queue_redraw()
-	
+@export var bounds : Rect2 = Rect2(0.0, 0.0, 960.0, 600.0)
 @export var target_path : NodePath
-
 @export var position_time : float = 0.5
 
 var target : Node2D
@@ -23,7 +17,8 @@ func clamp_position_in_bounds(p : Vector2) -> Vector2:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-	target = get_node(target_path)
+	if !target_path.is_empty():
+		target = get_node(target_path)
 	viewport = get_viewport()
 	global_position = clamp_position_in_bounds(global_position)
 
@@ -35,7 +30,3 @@ func _process(delta : float) -> void:
 		var current_pos := global_position
 		global_position = (current_pos - target_pos) * exp(-delta / position_time) + target_pos
 	viewport.canvas_transform = global_transform.inverse().translated(0.5 * viewport.get_visible_rect().size)
-
-func _draw() -> void:
-	if Engine.is_editor_hint():
-		draw_rect(bounds, Color.BLUE, false, 10.0)

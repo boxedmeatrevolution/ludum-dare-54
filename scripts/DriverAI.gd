@@ -3,10 +3,10 @@ extends Node
 const Car := preload("res://scripts/Car.gd")
 
 @export var target_speed : float = 500.0
+@export var target_dir := Vector2.ZERO
 
 @onready var parent : Car = get_parent()
 
-var target_dir := Vector2.ZERO
 
 const TARGET_ANGLE_TOLERANCE_DEG : float = 1.5
 
@@ -14,7 +14,8 @@ func _ready() -> void:
 	assert(parent != null)
 	parent.steer_angle = 0.0
 	parent.drive_power = 0.0
-	target_dir = parent.global_transform.x
+	if target_dir == Vector2.ZERO:
+		target_dir = parent.global_transform.x
 	parent.linear_velocity = target_speed * target_dir
 
 func _process(_delta : float) -> void:
