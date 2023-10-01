@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc4pd3vycv4sv"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_oeu7q"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="2_0vked"]
+[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="3_1m328"]
+[ext_resource type="PackedScene" uid="uid://dwt50036hqbhk" path="res://entities/Ramp.tscn" id="4_6vspr"]
+
+[node name="TestStreetLevel" type="Node2D"]
+
+[node name="Car" parent="." instance=ExtResource("1_oeu7q")]
+
+[node name="PlayerAI" parent="Car" instance=ExtResource("2_0vked")]
+
+[node name="CarSpawner1" parent="." instance=ExtResource("3_1m328")]
+position = Vector2(-128, 288)
+interval = 2.0
+jitter = 0.5
+speed = 200.0
+
+[node name="CarSpawner2" parent="." instance=ExtResource("3_1m328")]
+position = Vector2(-128, 352)
+initial_delay = 1.0
+interval = 2.5
+jitter = 0.5
+speed = 200.0
+
+[node name="CarSpawner3" parent="." instance=ExtResource("3_1m328")]
+position = Vector2(480, 704)
+rotation = -1.5708
+interval = 2.0
+jitter = 0.5
+speed = 200.0
+
+[node name="CarSpawner4" parent="." instance=ExtResource("3_1m328")]
+position = Vector2(544, 704)
+rotation = -1.5708
+initial_delay = 1.0
+interval = 2.5
+jitter = 0.5
+speed = 200.0
+
+[node name="Ramp" parent="." instance=ExtResource("4_6vspr")]
+position = Vector2(512, 472)
+scale = Vector2(4, 4)

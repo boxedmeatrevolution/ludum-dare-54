@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0hxeogqsuf4v"]
+
+[ext_resource type="PackedScene" uid="uid://dwt50036hqbhk" path="res://entities/Ramp.tscn" id="1_fm0vb"]
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="2_pk1l4"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="3_5n42j"]
+[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="4_3t1u3"]
+
+[node name="TestRampLevel" type="Node2D"]
+
+[node name="Ramp1" parent="." instance=ExtResource("1_fm0vb")]
+position = Vector2(346, 418)
+rotation = 0.631527
+scale = Vector2(7.28, 2.88)
+
+[node name="Ramp2" parent="." instance=ExtResource("1_fm0vb")]
+position = Vector2(737, 273)
+rotation = -1.25388
+scale = Vector2(11.2235, 4.73288)
+
+[node name="Ramp3" parent="." instance=ExtResource("1_fm0vb")]
+position = Vector2(265, 173)
+rotation = 1.34477
+scale = Vector2(2.93992, 13.7555)
+
+[node name="PlayerCar" parent="." instance=ExtResource("2_pk1l4")]
+position = Vector2(91, 431)
+rotation = 0.469535
+
+[node name="PlayerAI" parent="PlayerCar" instance=ExtResource("3_5n42j")]
+
+[node name="CarSpawner" parent="." instance=ExtResource("4_3t1u3")]
+position = Vector2(-92, 207)
+rotation = -0.0731793

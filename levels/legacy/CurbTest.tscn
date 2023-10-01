@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://nn3284tocbls"]
+
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="1_jq607"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="2_yac24"]
+[ext_resource type="PackedScene" uid="uid://cl56u6y6i550g" path="res://entities/cars/CarModelA.tscn" id="3_c0hqj"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="4_tu7kg"]
+
+[node name="CurbTest" type="Node2D"]
+
+[node name="Curb3" parent="." instance=ExtResource("1_jq607")]
+invert_polygon = true
+
+[node name="Line2D" type="Line2D" parent="Curb3"]
+points = PackedVector2Array(72, 40, 864, 24, 888, 88, 888, 360, 848, 448, 88, 448, 56, 400, 48, 72)
+
+[node name="Curb2" parent="." instance=ExtResource("1_jq607")]
+
+[node name="Line2D" type="Line2D" parent="Curb2"]
+points = PackedVector2Array(568, 248, 648, 320, 720, 264, 640, 192)
+
+[node name="Curb" parent="." instance=ExtResource("1_jq607")]
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb"]
+points = PackedVector2Array(272, 184, 376, 136, 456, 192, 328, 248)
+
+[node name="TargetSpace" parent="." instance=ExtResource("2_yac24")]
+position = Vector2(496, 288)
+
+[node name="Car" parent="." instance=ExtResource("3_c0hqj")]
+position = Vector2(176, 264)
+rotation = 0.698143
+
+[node name="PlayerAI" parent="Car" instance=ExtResource("4_tu7kg")]

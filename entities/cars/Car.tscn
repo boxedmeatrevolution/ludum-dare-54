@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Car.gd" id="1_356we"]
 [ext_resource type="Texture2D" uid="uid://ctfvs1f7c1ard" path="res://sprites/PlayerCar.png" id="2_7liqh"]
 [ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_qqr60"]
-[ext_resource type="PackedScene" uid="uid://b8v10748na3r5" path="res://entities/CarAudio.tscn" id="4_x815w"]
+[ext_resource type="PackedScene" path="res://entities/CarAudio.tscn" id="4_x815w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3ter"]
 friction = 0.8

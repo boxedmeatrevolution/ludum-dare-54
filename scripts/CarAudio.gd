@@ -114,11 +114,11 @@ func update_drift_state(drift_amount, drift_enter_finished, drift_exit_finished)
 			print("CarAudio: Error!!! Unknown drift state.")
 
 
-func _ready():
+func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
 	sound_loop_offset = rng.randf()
 
 
-func _process(delta):
+func _process(_delta : float) -> void:
 	update_engine_state(parent.drive_power, false, false)
 	update_drift_state(calculate_drift(), false, false)
