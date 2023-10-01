@@ -12,7 +12,7 @@
 [node name="TutorialLevel1" type="Node2D"]
 
 [node name="TargetSpace" parent="." instance=ExtResource("5_l2jlu")]
-position = Vector2(100, 19)
+position = Vector2(267, 237)
 height = 130.0
 
 [node name="ParkingSpace" parent="." instance=ExtResource("4_84bts")]

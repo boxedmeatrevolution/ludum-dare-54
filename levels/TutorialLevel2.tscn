@@ -12,7 +12,7 @@
 [node name="TutorialLevel2" type="Node2D"]
 
 [node name="TargetSpace" parent="." instance=ExtResource("1_mydgc")]
-position = Vector2(100, 19)
+position = Vector2(266, 240)
 height = 130.0
 
 [node name="ParkingSpace" parent="." instance=ExtResource("2_vw18v")]
@@ -81,7 +81,7 @@ position = Vector2(63, 295)
 rotation = -1.6935
 
 [node name="Car13" parent="." instance=ExtResource("7_6b7bs")]
-position = Vector2(314, 298)
+position = Vector2(141, 82)
 rotation = -1.51003
 
 [node name="Car14" parent="." instance=ExtResource("7_6b7bs")]
