@@ -41,7 +41,7 @@ func _process(delta : float) -> void:
 		true_drive_time /= reset_time_factor
 	drive_power = (drive_power - target_drive_power) * exp(-delta / true_drive_time) + target_drive_power
 
-func _physics_process(delta : float) -> void:
+func _physics_process(_delta : float) -> void:
 	# Velocity components relative to ground and orientation.
 	var position_rel := global_position - parent.global_position
 	var velocity_rel := -parent.angular_velocity * position_rel.orthogonal()

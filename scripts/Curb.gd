@@ -37,8 +37,3 @@ func _ready():
 	
 	# Make the curb look closed
 	line.add_point(line.points[1])
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

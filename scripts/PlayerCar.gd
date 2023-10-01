@@ -2,7 +2,7 @@ extends "res://scripts/Car.gd"
 
 @export var max_steer_deg : float = 55.0
 
-func _process(delta : float) -> void:
+func _process(_delta : float) -> void:
 	var steer_left := 1.0 if Input.is_action_pressed("steer_left") else 0.0
 	var steer_right := 1.0 if Input.is_action_pressed("steer_right") else 0.0
 	steer_left = maxf(steer_left, Input.get_action_strength("steer_left_analog"))
