@@ -2,8 +2,6 @@ extends Node
 
 const Car := preload("res://scripts/Car.gd")
 
-@export var max_steer_deg : float = 55.0
-
 @onready var parent : Car = get_parent()
 
 var level_manager : LevelManager
@@ -25,8 +23,6 @@ const ANGULAR_VELOCITY_AT_REST_THRESHOLD : float = 0.05
 var has_won : bool = false
 var has_won_active_timer : float = 0.0
 const HAS_WON_TIME : float = 2.0
-
-var sprite : Sprite2D
 
 func add_parking_detector(pos : Vector2) -> void:
 	var idx := parking_detectors.size()
@@ -70,11 +66,9 @@ func _process(delta : float) -> void:
 		add_parking_detector(transform * Vector2(x2, y2))
 	
 	if has_won:
-		if sprite == null:
-			sprite = parent.find_child("Sprite2D")
 		has_won_active_timer += delta
 		var scale = pow(1 + has_won_active_timer, 2)
-		sprite.scale = Vector2(scale, scale)
+		parent.sprite.scale = Vector2(scale, scale)
 		if has_won_active_timer > HAS_WON_TIME:
 			level_manager.change_level(level_manager.current_level + 1)
 		return
@@ -89,13 +83,13 @@ func _process(delta : float) -> void:
 			angle_to = -angle_to + PI
 		elif angle_to < -0.5 * PI:
 			angle_to = -angle_to - PI
-		mouse_steer = clampf(angle_to, -PI / 180 * max_steer_deg, PI / 180 * max_steer_deg)
+		mouse_steer = clampf(angle_to, -PI / 180 * parent.max_steer_deg, PI / 180 * parent.max_steer_deg)
 	if abs(mouse_steer) < MOUSE_STEER_TOLERANCE_DEG * PI / 180:
 		var steer_left := 1.0 if Input.is_action_pressed("steer_left") else 0.0
 		var steer_right := 1.0 if Input.is_action_pressed("steer_right") else 0.0
 		steer_left = maxf(steer_left, Input.get_action_strength("steer_left_analog"))
 		steer_right = maxf(steer_right, Input.get_action_strength("steer_right_analog"))
-		parent.steer_angle = PI / 180 * max_steer_deg * (steer_right - steer_left)
+		parent.steer_angle = PI / 180 * parent.max_steer_deg * (steer_right - steer_left)
 	else:
 		parent.steer_angle = mouse_steer
 	

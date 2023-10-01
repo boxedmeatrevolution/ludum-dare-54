@@ -8,7 +8,7 @@ const Car := preload("res://scripts/Car.gd")
 
 var target_dir := Vector2.ZERO
 
-const TARGET_ANGLE_TOLERANCE : float = 0.01
+const TARGET_ANGLE_TOLERANCE_DEG : float = 1.5
 
 func _ready() -> void:
 	assert(parent != null)
@@ -25,7 +25,5 @@ func _process(_delta : float) -> void:
 	
 	var facing_dir := parent.global_transform.x
 	var angle_to := facing_dir.angle_to(target_dir)
-	if angle_to < -TARGET_ANGLE_TOLERANCE:
-		parent.steer_angle = -1.0
-	elif angle_to > TARGET_ANGLE_TOLERANCE:
-		parent.steer_angle = 1.0
+	if absf(angle_to) > PI / 180 * TARGET_ANGLE_TOLERANCE_DEG:
+		parent.steer_angle = clampf(angle_to, -PI / 180 * parent.max_steer_deg, PI / 180 * parent.max_steer_deg)

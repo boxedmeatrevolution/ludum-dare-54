@@ -1,6 +1,6 @@
 extends Node2D
 
-const Car := preload("res://entities/Car.tscn")
+const Car := preload("res://entities/cars/Car.tscn")
 const DriverAI := preload("res://entities/DriverAI.tscn")
 
 @export var initial_delay : float = 0.0

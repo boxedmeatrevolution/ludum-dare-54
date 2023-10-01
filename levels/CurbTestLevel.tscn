@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://nn3284tocbls"]
 
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="1_4fc3y"]
-[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="2_1r7y2"]
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="2_1r7y2"]
 [ext_resource type="PackedScene" uid="uid://wx6nqqogo1pj" path="res://entities/DriverAI.tscn" id="3_n7ggj"]
 
 [node name="CurbTest" type="Node2D"]

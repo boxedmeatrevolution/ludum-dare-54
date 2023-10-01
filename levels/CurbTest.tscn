@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://nn3284tocbls"]
 
-[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_ukjpy"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="3_2we5j"]
+[ext_resource type="PackedScene" uid="uid://cl56u6y6i550g" path="res://entities/cars/CarModelA.tscn" id="3_gdmga"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="4_na4dg"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_32tbg"]
 
@@ -24,10 +24,11 @@ invert_texture = true
 [node name="Line2D" type="Line2D" parent="Curb"]
 points = PackedVector2Array(272, 184, 376, 136, 456, 192, 328, 248)
 
-[node name="Car" parent="." instance=ExtResource("1_ukjpy")]
-position = Vector2(200, 320)
-
-[node name="PlayerAI" parent="Car" instance=ExtResource("3_2we5j")]
-
 [node name="TargetSpace" parent="." instance=ExtResource("5_32tbg")]
 position = Vector2(496, 288)
+
+[node name="Car" parent="." instance=ExtResource("3_gdmga")]
+position = Vector2(176, 264)
+rotation = 0.698143
+
+[node name="PlayerAI" parent="Car" instance=ExtResource("3_2we5j")]
