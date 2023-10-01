@@ -23,18 +23,18 @@ shape = SubResource("CapsuleShape2D_tew5d")
 position = Vector2(43, -25)
 coeff_forward = 0.7
 coeff_reverse = 0.8
-coeff_friction_perpendicular = 2.0
+coeff_friction_perpendicular = 1.5
 
 [node name="Wheel2" parent="." index="3"]
 position = Vector2(43, 25)
 coeff_forward = 0.7
 coeff_reverse = 0.8
-coeff_friction_perpendicular = 2.0
+coeff_friction_perpendicular = 1.5
 
 [node name="Wheel3" parent="." index="4"]
 position = Vector2(-35, -25)
-coeff_friction_perpendicular = 2.0
+coeff_friction_perpendicular = 1.5
 
 [node name="Wheel4" parent="." index="5"]
 position = Vector2(-35, 25)
-coeff_friction_perpendicular = 2.0
+coeff_friction_perpendicular = 1.5

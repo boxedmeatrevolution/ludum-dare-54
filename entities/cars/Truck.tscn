@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3ceo5q3ktvei"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_5123a"]
+[ext_resource type="Texture2D" uid="uid://dslqmoovufjp" path="res://sprites/Truck.png" id="2_luqsk"]
+[ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_6nmts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hcje"]
+size = Vector2(62, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mp6a"]
+size = Vector2(105, 75)
+
+[node name="Truck" instance=ExtResource("1_5123a")]
+mass = 8.0
+max_steer_deg = 45.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_luqsk")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, -1.28647e-05)
+shape = SubResource("RectangleShape2D_3hcje")
+
+[node name="CollisionShape2DTrailer" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-30.5, 0)
+shape = SubResource("RectangleShape2D_3mp6a")
+
+[node name="Wheel1" parent="." index="3"]
+position = Vector2(67, -25)
+coeff_forward = 10.0
+coeff_reverse = 6.0
+coeff_friction_parallel = 12.0
+coeff_friction_perpendicular = 6.0
+
+[node name="Wheel2" parent="." index="4"]
+position = Vector2(67, 25)
+coeff_forward = 10.0
+coeff_reverse = 6.0
+coeff_friction_parallel = 12.0
+coeff_friction_perpendicular = 6.0
+
+[node name="Wheel3" parent="." index="5"]
+position = Vector2(-64, -25)
+coeff_friction_parallel = 12.0
+coeff_friction_perpendicular = 6.0
+
+[node name="Wheel4" parent="." index="6"]
+position = Vector2(-64, 25)
+coeff_friction_parallel = 12.0
+coeff_friction_perpendicular = 6.0
+
+[node name="Wheel5" parent="." index="7" instance=ExtResource("3_6nmts")]
+position = Vector2(5, -25)
+coeff_friction_parallel = 12.0
+coeff_friction_perpendicular = 6.0
+
+[node name="Wheel6" parent="." index="8" instance=ExtResource("3_6nmts")]
+position = Vector2(5, 25)
+coeff_friction_parallel = 12.0
+coeff_friction_perpendicular = 6.0
