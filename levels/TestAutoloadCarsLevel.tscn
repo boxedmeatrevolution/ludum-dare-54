@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnr1ahyur4e1i"]
+
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="1_bqkiv"]
+
+[node name="TestAutoloadCarsLevel" type="Node2D"]
+
+[node name="ParkingSpace" parent="." instance=ExtResource("1_bqkiv")]
+position = Vector2(152, 160)
+spaces_wide = 7
+spaces_tall = 3
+fill_with_cars = true
+instruction = Array[String](["1 1 8"])
