@@ -19,5 +19,6 @@ func _ready() -> void:
 	sprite.frame = randi_range(0, sprite.hframes * sprite.vframes - 1)
 
 func _process(_delta : float) -> void:
-	if global_position.x < -OUT_OF_BOUNDS_PADDING || global_position.y < -OUT_OF_BOUNDS_PADDING || global_position.x > screen_size.x + OUT_OF_BOUNDS_PADDING || global_position.y > screen_size.y + OUT_OF_BOUNDS_PADDING:
-		queue_free()
+	pass
+	#if global_position.x < -OUT_OF_BOUNDS_PADDING || global_position.y < -OUT_OF_BOUNDS_PADDING || global_position.x > screen_size.x + OUT_OF_BOUNDS_PADDING || global_position.y > screen_size.y + OUT_OF_BOUNDS_PADDING:
+	#	queue_free()

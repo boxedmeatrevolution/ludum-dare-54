@@ -155,6 +155,5 @@ rotation = -1.65852
 [node name="Car" parent="." instance=ExtResource("7_6nlkc")]
 position = Vector2(83, 535)
 rotation = -0.00959103
-scale = Vector2(1, 1)
 
 [node name="PlayerAI" parent="Car" instance=ExtResource("8_nxyv8")]
