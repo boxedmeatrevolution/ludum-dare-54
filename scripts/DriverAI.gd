@@ -27,4 +27,3 @@ func _process(_delta : float) -> void:
 	var angle_to := facing_dir.angle_to(target_dir)
 	if absf(angle_to) > PI / 180 * TARGET_ANGLE_TOLERANCE_DEG:
 		parent.steer_angle = clampf(angle_to, -PI / 180 * parent.max_steer_deg, PI / 180 * parent.max_steer_deg)
-		print("Steering ", parent.steer_angle)

@@ -19,14 +19,18 @@ shape = SubResource("RectangleShape2D_hnm50")
 
 [node name="Wheel1" parent="." index="2"]
 position = Vector2(38, -25)
+coeff_forward = 1.5
 coeff_friction_perpendicular = 2.0
 
 [node name="Wheel2" parent="." index="3"]
 position = Vector2(38, 25)
+coeff_forward = 1.5
 coeff_friction_perpendicular = 2.0
 
 [node name="Wheel3" parent="." index="4"]
-position = Vector2(-39, -25)
+position = Vector2(-48, -25)
+coeff_friction_perpendicular = 0.7
 
 [node name="Wheel4" parent="." index="5"]
-position = Vector2(-39, 25)
+position = Vector2(-48, 25)
+coeff_friction_perpendicular = 0.7
