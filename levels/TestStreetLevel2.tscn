@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc4pd3vycv4sv"]
+[gd_scene load_steps=5 format=3 uid="uid://cc4pd3vycv4sv"]
 
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_5k36q"]
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="1_ve86u"]
-[ext_resource type="PackedScene" uid="uid://bcttnj5pe7cy2" path="res://entities/PlayerCar.tscn" id="2_a30wu"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="2_jq8yu"]
 [ext_resource type="PackedScene" uid="uid://dwt50036hqbhk" path="res://entities/Ramp.tscn" id="3_x4al7"]
 
 [node name="TestStreetLevel" type="Node2D"]
 
-[node name="PlayerCar" parent="." instance=ExtResource("2_a30wu")]
-position = Vector2(832, 184)
-rotation = 2.07681
+[node name="Car" parent="." instance=ExtResource("1_5k36q")]
+
+[node name="PlayerAI" parent="Car" instance=ExtResource("2_jq8yu")]
 
 [node name="CarSpawner1" parent="." instance=ExtResource("1_ve86u")]
 position = Vector2(-128, 288)

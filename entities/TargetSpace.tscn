@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfybrqb6xyeeo"]
+
+[ext_resource type="Script" path="res://scripts/TargetSpace.gd" id="1_ydppf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um46i"]
+size = Vector2(85, 140)
+
+[node name="TargetSpace" type="Node2D"]
+script = ExtResource("1_ydppf")
+width = 85.0
+height = 140.0
+
+[node name="ParkingSpacePoly" type="Polygon2D" parent="."]
+color = Color(0.145098, 0.498039, 0.34902, 0.784314)
+polygon = PackedVector2Array(0, 0, 85, 0, 85, 140, 0, 140)
+
+[node name="ParkingArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="ParkingAreaCollision" type="CollisionShape2D" parent="ParkingArea"]
+position = Vector2(42.5, 70)
+shape = SubResource("RectangleShape2D_um46i")
+
+[connection signal="area_entered" from="ParkingArea" to="." method="check_parked"]

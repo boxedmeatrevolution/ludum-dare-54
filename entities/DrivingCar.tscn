@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cilm64nr6rnig"]
-
-[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_7b7v5"]
-[ext_resource type="Script" path="res://scripts/DrivingCar.gd" id="2_3jwrf"]
-
-[node name="DrivingCar" instance=ExtResource("1_7b7v5")]
-script = ExtResource("2_3jwrf")
-target_speed = 500.0
