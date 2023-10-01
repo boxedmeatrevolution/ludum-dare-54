@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_wn22e"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_06ben"]
+[ext_resource type="PackedScene" uid="uid://dh0dkyg2fqqpo" path="res://entities/cars/Bus.tscn" id="3_abyoa"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="3_trkxe"]
-[ext_resource type="PackedScene" uid="uid://b3ceo5q3ktvei" path="res://entities/cars/Truck.tscn" id="3_wtmsv"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -69,7 +69,7 @@ rotation = -2.05785
 position = Vector2(728, 448)
 rotation = -2.68292
 
-[node name="Truck" parent="." instance=ExtResource("3_wtmsv")]
-position = Vector2(417, 138)
+[node name="Bus" parent="." instance=ExtResource("3_abyoa")]
+position = Vector2(396, 128)
 
-[node name="PlayerAI" parent="Truck" instance=ExtResource("3_trkxe")]
+[node name="PlayerAI" parent="Bus" instance=ExtResource("3_trkxe")]
