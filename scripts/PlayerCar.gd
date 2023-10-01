@@ -72,7 +72,7 @@ func _input(event : InputEvent) -> void:
 	if event is InputEventMouse:
 		mouse_active_timer = MOUSE_ACTIVE_TIME
 		
-func _on_parking_detector_entered(area: Area2D) -> void:
+func _on_parking_detector_trigger(area: Area2D) -> void:
 	var o1 = parking_detector_1.overlaps_area(area)
 	var o2 = parking_detector_2.overlaps_area(area)
 	var o3 = parking_detector_3.overlaps_area(area)

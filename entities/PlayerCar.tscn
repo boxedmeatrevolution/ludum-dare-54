@@ -55,7 +55,11 @@ collision_mask = 8
 position = Vector2(51, -22)
 shape = SubResource("CircleShape2D_hjruh")
 
-[connection signal="area_entered" from="ParkingDetector1" to="." method="_on_parking_detector_entered"]
-[connection signal="area_entered" from="ParkingDetector2" to="." method="_on_parking_detector_entered"]
-[connection signal="area_entered" from="ParkingDetector3" to="." method="_on_parking_detector_entered"]
-[connection signal="area_entered" from="ParkingDetector4" to="." method="_on_parking_detector_entered"]
+[connection signal="area_entered" from="ParkingDetector1" to="." method="_on_parking_detector_trigger"]
+[connection signal="area_exited" from="ParkingDetector1" to="." method="_on_parking_detector_trigger"]
+[connection signal="area_entered" from="ParkingDetector2" to="." method="_on_parking_detector_trigger"]
+[connection signal="area_exited" from="ParkingDetector2" to="." method="_on_parking_detector_trigger"]
+[connection signal="area_entered" from="ParkingDetector3" to="." method="_on_parking_detector_trigger"]
+[connection signal="area_exited" from="ParkingDetector3" to="." method="_on_parking_detector_trigger"]
+[connection signal="area_entered" from="ParkingDetector4" to="." method="_on_parking_detector_trigger"]
+[connection signal="area_exited" from="ParkingDetector4" to="." method="_on_parking_detector_trigger"]
