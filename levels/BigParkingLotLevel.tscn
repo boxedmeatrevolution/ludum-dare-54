@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://do82nbdv7xogn"]
+[gd_scene load_steps=8 format=3 uid="uid://do82nbdv7xogn"]
 
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_0tdbp"]
 [ext_resource type="PackedScene" path="res://entities/Camera.tscn" id="1_4gf4n"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="2_46lwy"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_p2jki"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="5_wwppr"]
 
 [node name="BigParkingLotLevel" type="Node2D"]
+script = ExtResource("1_0tdbp")
 
 [node name="Camera" parent="." instance=ExtResource("1_4gf4n")]
 bounds = Rect2(0, 0, 1525, 1376)
@@ -21,6 +23,12 @@ invert_polygon = true
 
 [node name="Line2D" type="Line2D" parent="Curb"]
 points = PackedVector2Array(64, 72, 64, 1296, 1448, 1296, 1448, 72, 64, 72)
+
+[node name="CarMain" parent="." instance=ExtResource("4_lxmwu")]
+position = Vector2(768, 688)
+rotation = -1.5708
+
+[node name="PlayerAI" parent="CarMain" instance=ExtResource("5_wwppr")]
 
 [node name="ParkingSpace" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(496, 184)
@@ -70,9 +78,3 @@ position = Vector2(848, 544)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-
-[node name="CarMain" parent="." instance=ExtResource("4_lxmwu")]
-position = Vector2(768, 688)
-rotation = -1.5708
-
-[node name="PlayerAI" parent="CarMain" instance=ExtResource("5_wwppr")]
