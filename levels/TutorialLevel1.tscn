@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://4h5yroh6fcwh"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_if1lp"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="2_wlw8a"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_tw5nx"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="4_84bts"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_l2jlu"]
+[ext_resource type="PackedScene" uid="uid://cl56u6y6i550g" path="res://entities/cars/CarModelA.tscn" id="6_iu1lu"]
+[ext_resource type="PackedScene" uid="uid://ctnh28s2l2x35" path="res://entities/cars/CarModelB.tscn" id="7_md6yi"]
+[ext_resource type="PackedScene" uid="uid://chclyf3t26mgn" path="res://entities/cars/CarModelC.tscn" id="8_xulwg"]
+
+[node name="TutorialLevel1" type="Node2D"]
+
+[node name="TargetSpace" parent="." instance=ExtResource("5_l2jlu")]
+position = Vector2(267, 237)
+height = 130.0
+
+[node name="ParkingSpace" parent="." instance=ExtResource("4_84bts")]
+position = Vector2(765, 488)
+rotation = -3.14142
+spaces_wide = 9
+spaces_tall = 2
+space_width = 83
+space_height = 123
+
+[node name="ParkingSpace2" parent="." instance=ExtResource("4_84bts")]
+position = Vector2(932, 145)
+rotation = 3.14159
+spaces_wide = 11
+space_width = 83
+space_height = 123
+
+[node name="Curb" parent="." instance=ExtResource("3_tw5nx")]
+invert_polygon = true
+
+[node name="Line2D" type="Line2D" parent="Curb"]
+points = PackedVector2Array(9, 11, 10, 587, 942, 585, 942, 13, 24, 12)
+
+[node name="Car2" parent="." instance=ExtResource("6_iu1lu")]
+position = Vector2(224, 429)
+rotation = 1.47752
+
+[node name="Car3" parent="." instance=ExtResource("7_md6yi")]
+position = Vector2(892, 83)
+rotation = 4.55806
+
+[node name="Car4" parent="." instance=ExtResource("8_xulwg")]
+position = Vector2(558, 301)
+rotation = 1.81122
+
+[node name="Car" parent="." instance=ExtResource("1_if1lp")]
+position = Vector2(83, 535)
+rotation = -0.00959103
+scale = Vector2(1, 1)
+
+[node name="PlayerAI" parent="Car" instance=ExtResource("2_wlw8a")]
