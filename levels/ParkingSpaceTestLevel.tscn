@@ -13,8 +13,6 @@ position = Vector2(451, 221)
 position = Vector2(112, 80)
 spaces_wide = 5
 spaces_tall = 2
-space_width = 85
-space_height = 140
 
 [node name="PlayerCar" parent="." instance=ExtResource("2_d53fx")]
 position = Vector2(112, 128)
