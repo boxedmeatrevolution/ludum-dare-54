@@ -75,7 +75,9 @@ const DRIFT_LINEAR_THRESHOLD = 500
 func calculate_drift():
 	var angular_velocity = abs(parent.angular_velocity)
 	var linear_velocity = parent.linear_velocity
-	if angular_velocity > DRIFT_ANGULAR_THRESHOLD and linear_velocity.length() < DRIFT_LINEAR_THRESHOLD:
+	if parent.drive_power and \
+			angular_velocity > DRIFT_ANGULAR_THRESHOLD and \
+			linear_velocity.length() < DRIFT_LINEAR_THRESHOLD:
 		return 1
 	return 0
 
