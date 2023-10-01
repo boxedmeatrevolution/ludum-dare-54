@@ -11,6 +11,7 @@ position = Vector2(152, 160)
 spaces_wide = 7
 spaces_tall = 3
 fill_with_cars = true
+street_parking = null
 instruction = Array[String](["1 1 8"])
 
 [node name="CarMain" parent="." instance=ExtResource("2_uf5uc")]

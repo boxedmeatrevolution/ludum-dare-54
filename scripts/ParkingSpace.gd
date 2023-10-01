@@ -36,6 +36,11 @@ var car_types : Array = [
 		fill_with_cars = value
 		if Engine.is_editor_hint():
 			init()
+@export var street_parking: bool:
+	set(value):
+		street_parking = value
+		if Engine.is_editor_hint():
+			init()
 @export var instruction: Array[String]:
 	set(value):
 		instruction = value
@@ -99,7 +104,9 @@ func init_cars():
 			
 			var car = car_types[type_idx].instantiate()
 			car.position = Vector2(space_width * (x + 0.5), space_height * (y+0.5))
-			car.rotation = PI / 2
+			
+			if not street_parking:
+				car.rotation = PI / 2
 			if flipped:
 				car.rotation += PI
 			cars.append(car)
