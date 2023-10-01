@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://4h5yroh6fcwh"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_if1lp"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="2_wlw8a"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_tw5nx"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="4_84bts"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_l2jlu"]
+
+[node name="TutorialLevel1" type="Node2D"]
+
+[node name="TargetSpace" parent="." instance=ExtResource("5_l2jlu")]
+position = Vector2(100, 19)
+height = 130.0
+
+[node name="ParkingSpace" parent="." instance=ExtResource("4_84bts")]
+position = Vector2(765, 488)
+rotation = -3.14142
+spaces_wide = 9
+spaces_tall = 2
+space_width = 83
+space_height = 123
+
+[node name="ParkingSpace2" parent="." instance=ExtResource("4_84bts")]
+position = Vector2(932, 145)
+rotation = 3.14159
+spaces_wide = 11
+space_width = 83
+space_height = 123
+
+[node name="Curb" parent="." instance=ExtResource("3_tw5nx")]
+invert_polygon = true
+
+[node name="Line2D" type="Line2D" parent="Curb"]
+points = PackedVector2Array(9, 11, 10, 587, 942, 585, 942, 13, 24, 12)
+
+[node name="Car2" parent="." instance=ExtResource("1_if1lp")]
+position = Vector2(477, 302)
+rotation = -1.57603
+
+[node name="Car3" parent="." instance=ExtResource("1_if1lp")]
+position = Vector2(893, 91)
+rotation = 1.57529
+
+[node name="Car4" parent="." instance=ExtResource("1_if1lp")]
+position = Vector2(228, 429)
+rotation = -4.70531
+
+[node name="Car5" parent="." instance=ExtResource("1_if1lp")]
+position = Vector2(724, 425)
+rotation = 1.17497
+scale = Vector2(1, 1)
+
+[node name="Car" parent="." instance=ExtResource("1_if1lp")]
+position = Vector2(83, 535)
+rotation = -0.00959103
+scale = Vector2(1, 1)
+
+[node name="PlayerAI" parent="Car" instance=ExtResource("2_wlw8a")]
