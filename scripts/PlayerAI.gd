@@ -93,11 +93,21 @@ func _process(delta : float) -> void:
 	else:
 		parent.steer_angle = mouse_steer
 	
-	var drive_forward := 1.0 if Input.is_action_pressed("drive_forward") else 0.0
-	var drive_reverse := 1.0 if Input.is_action_pressed("drive_reverse") else 0.0
-	drive_forward = maxf(drive_forward, Input.get_action_strength("drive_forward_analog"))
-	drive_reverse = maxf(drive_reverse, Input.get_action_strength("drive_reverse_analog"))
-	parent.drive_power = drive_forward - drive_reverse
+	if Input.is_action_pressed("drive_mouse"):
+		var facing_dir := parent.global_transform.x
+		var target_dir := (parent.get_global_mouse_position() - parent.global_position).normalized()
+		parent.drive_power = facing_dir.dot(target_dir)
+	else:
+		var drive_forward := 1.0 if Input.is_action_pressed("drive_forward") else 0.0
+		var drive_reverse := 1.0 if Input.is_action_pressed("drive_reverse") else 0.0
+		drive_forward = maxf(drive_forward, Input.get_action_strength("drive_forward_analog"))
+		drive_reverse = maxf(drive_reverse, Input.get_action_strength("drive_reverse_analog"))
+		parent.drive_power = drive_forward - drive_reverse
+	
+	if Input.is_action_pressed("brake"):
+		parent.brake = true
+	else:
+		parent.brake = false
 	
 	if all_parking_detectors_triggered() and parent.linear_velocity.length() < LINEAR_VELOCITY_AT_REST_THRESHOLD and parent.angular_velocity < ANGULAR_VELOCITY_AT_REST_THRESHOLD:
 		parked_active_timer += delta
