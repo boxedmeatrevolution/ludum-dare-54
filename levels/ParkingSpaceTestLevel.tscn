@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://h4dds3wqu84o"]
+
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="1_cmcgw"]
+[ext_resource type="PackedScene" uid="uid://bctt04t5g3snq" path="res://entities/PlayerCar.tscn" id="2_d53fx"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="3_7xb5j"]
+
+[node name="ParkingSpaceTest" type="Node2D"]
+
+[node name="TargetSpace" parent="." instance=ExtResource("3_7xb5j")]
+position = Vector2(451, 221)
+
+[node name="ParkingSpace" parent="." instance=ExtResource("1_cmcgw")]
+position = Vector2(112, 80)
+spaces_wide = 5
+spaces_tall = 2
+space_width = 85
+space_height = 140
+
+[node name="PlayerCar" parent="." instance=ExtResource("2_d53fx")]
+position = Vector2(112, 128)

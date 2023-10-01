@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_wn22e"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_06ben"]
-[ext_resource type="PackedScene" uid="uid://bcttnj5pe7cy2" path="res://entities/PlayerCar.tscn" id="2_h3dwi"]
-[ext_resource type="PackedScene" uid="uid://cilm64nr6rnig" path="res://entities/DrivingCar.tscn" id="4_exqhh"]
+[ext_resource type="PackedScene" uid="uid://bctt04t5g3snq" path="res://entities/PlayerCar.tscn" id="2_h3dwi"]
+[ext_resource type="PackedScene" path="res://entities/DrivingCar.tscn" id="4_exqhh"]
 
 [node name="TestLevel" type="Node2D"]
 
