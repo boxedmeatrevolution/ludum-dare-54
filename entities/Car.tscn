@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhnjpsdtol8td"]
 
 [ext_resource type="Script" path="res://scripts/Car.gd" id="1_1vwqo"]
-[ext_resource type="Texture2D" uid="uid://ctfvs1f7c1ard" path="res://sprites/PlayerCar.png" id="2_8ma3l"]
+[ext_resource type="Texture2D" uid="uid://ctcfuu60bqne3" path="res://sprites/Car.png" id="2_ae8oy"]
 [ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_6y72t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3ter"]
@@ -17,7 +17,7 @@ physics_material_override = SubResource("PhysicsMaterial_y3ter")
 script = ExtResource("1_1vwqo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_8ma3l")
+texture = ExtResource("2_ae8oy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

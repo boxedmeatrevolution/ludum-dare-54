@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctcfuu60bqne3"
-path="res://.godot/imported/car2.png-060f29fc18044f7866fe458d5ad0dd47.ctex"
+path="res://.godot/imported/Car.png-1ffe9f631c34fcbe98e85b0a2b252192.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/car2.png"
-dest_files=["res://.godot/imported/car2.png-060f29fc18044f7866fe458d5ad0dd47.ctex"]
+source_file="res://sprites/Car.png"
+dest_files=["res://.godot/imported/Car.png-1ffe9f631c34fcbe98e85b0a2b252192.ctex"]
 
 [params]
 

@@ -74,4 +74,3 @@ rotation = -2.68292
 
 [node name="DrivingCar" parent="." instance=ExtResource("4_exqhh")]
 position = Vector2(128, 80)
-target_speed = 500.0
