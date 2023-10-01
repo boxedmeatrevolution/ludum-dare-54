@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsyr1sq480ded"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_v5yoo"]
+[ext_resource type="Texture2D" uid="uid://1ltn6p2316g5" path="res://sprites/CarMain.png" id="2_dwpmd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_am343"]
+radius = 28.0
+height = 126.0
+
+[node name="CarMain" instance=ExtResource("1_v5yoo")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dwpmd")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_am343")
+
+[node name="Wheel1" parent="." index="2"]
+position = Vector2(42, -25)
+coeff_reverse = 1.5
+
+[node name="Wheel2" parent="." index="3"]
+position = Vector2(42, 25)
+coeff_reverse = 1.5
+
+[node name="Wheel3" parent="." index="4"]
+position = Vector2(-33, -25)
+
+[node name="Wheel4" parent="." index="5"]
+position = Vector2(-33, 25)

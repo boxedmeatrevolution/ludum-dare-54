@@ -11,7 +11,7 @@ max_steer_deg = 50.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_4g65e")
-hframes = 3
+hframes = 4
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-0.499996, -3.71733e-06)

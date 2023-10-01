@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dh0dkyg2fqqpo"]
+
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_5pjvd"]
+[ext_resource type="Texture2D" uid="uid://36xgd368f2u4" path="res://sprites/Bus.png" id="2_who1n"]
+[ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_6wt6g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drcn0"]
+size = Vector2(68, 199)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sf03b"]
+radius = 27.0185
+
+[node name="Bus" instance=ExtResource("1_5pjvd")]
+mass = 4.0
+max_steer_deg = 45.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_who1n")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(3.5, 3.52265e-06)
+shape = SubResource("RectangleShape2D_drcn0")
+
+[node name="CollisionShape2DRear" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-81, 0)
+shape = SubResource("CircleShape2D_sf03b")
+
+[node name="Wheel1" parent="." index="3"]
+position = Vector2(64, -29)
+coeff_forward = 3.0
+coeff_reverse = 4.0
+coeff_friction_parallel = 4.0
+coeff_friction_perpendicular = 3.0
+
+[node name="Wheel2" parent="." index="4"]
+position = Vector2(64, 29)
+coeff_forward = 3.0
+coeff_reverse = 4.0
+coeff_friction_parallel = 4.0
+coeff_friction_perpendicular = 3.0
+
+[node name="Wheel3" parent="." index="5"]
+position = Vector2(-79, -29)
+coeff_friction_parallel = 4.0
+coeff_friction_perpendicular = 3.0
+
+[node name="Wheel4" parent="." index="6"]
+position = Vector2(-79, 29)
+coeff_friction_parallel = 4.0
+coeff_friction_perpendicular = 3.0
+
+[node name="Wheel5" parent="." index="7" instance=ExtResource("3_6wt6g")]
+position = Vector2(-4, -29)
+coeff_friction_parallel = 4.0
+coeff_friction_perpendicular = 3.0
+
+[node name="Wheel6" parent="." index="8" instance=ExtResource("3_6wt6g")]
+position = Vector2(-4, 29)
+coeff_friction_parallel = 4.0
+coeff_friction_perpendicular = 3.0

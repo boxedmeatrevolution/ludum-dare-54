@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf4s8a5hjy23d"]
+[gd_scene load_steps=6 format=3 uid="uid://cf4s8a5hjy23d"]
 
+[ext_resource type="PackedScene" uid="uid://bfu5s8jl18as7" path="res://entities/Camera.tscn" id="1_blewx"]
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_wn22e"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_06ben"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_dkixh"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="3_trkxe"]
-[ext_resource type="PackedScene" uid="uid://b3ceo5q3ktvei" path="res://entities/cars/Truck.tscn" id="3_wtmsv"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="Camera" parent="." instance=ExtResource("1_blewx")]
 
 [node name="Curb" parent="." instance=ExtResource("2_06ben")]
 invert_polygon = true
@@ -18,6 +21,12 @@ points = PackedVector2Array(24, 24, 936, 24, 936, 576, 24, 576, 24, 24)
 
 [node name="Line2D" type="Line2D" parent="Curb2"]
 points = PackedVector2Array(336, 272, 416, 232, 568, 232, 664, 320, 584, 416, 384, 400, 336, 352, 336, 272)
+
+[node name="CarMain" parent="." instance=ExtResource("3_dkixh")]
+position = Vector2(362, 90)
+rotation = 0.261799
+
+[node name="PlayerAI" parent="CarMain" instance=ExtResource("3_trkxe")]
 
 [node name="Car1" parent="." instance=ExtResource("1_wn22e")]
 position = Vector2(840, 224)
@@ -68,8 +77,3 @@ rotation = -2.05785
 [node name="Car13" parent="." instance=ExtResource("1_wn22e")]
 position = Vector2(728, 448)
 rotation = -2.68292
-
-[node name="Truck" parent="." instance=ExtResource("3_wtmsv")]
-position = Vector2(417, 138)
-
-[node name="PlayerAI" parent="Truck" instance=ExtResource("3_trkxe")]
