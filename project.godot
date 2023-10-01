@@ -100,6 +100,8 @@ previous_level={
 2d_physics/layer_1="Block"
 2d_physics/layer_2="PlayerCar"
 2d_physics/layer_3="Car"
+2d_physics/layer_5="Ramp"
+2d_physics/layer_6="Wheel"
 
 [physics]
 

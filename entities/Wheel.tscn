@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://di6sanvtqkb1v"]
+[gd_scene load_steps=7 format=3 uid="uid://di6sanvtqkb1v"]
 
 [ext_resource type="Script" path="res://scripts/Wheel.gd" id="1_bask5"]
 
@@ -22,9 +22,22 @@ max_value = 200.0
 _data = [Vector2(0, 0), 0.0, 500.0, 0, 0, Vector2(0.02, 240), 0.0, 0.0, 0, 0, Vector2(0.183, 100), -600.62, -600.62, 0, 0, Vector2(0.386792, 25), -155.273, -155.273, 0, 0, Vector2(0.754717, 0), 0.0, 0.0, 0, 0]
 point_count = 5
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_s25fu"]
+radius = 12.0
+
 [node name="Wheel" type="Node2D"]
 script = ExtResource("1_bask5")
 curve_forward = SubResource("Curve_shpkh")
 curve_reverse = SubResource("Curve_1arv8")
 curve_friction_parallel = SubResource("Curve_mfqwb")
 curve_friction_perpendicular = SubResource("Curve_h838m")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_s25fu")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_ramp_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_ramp_exited"]

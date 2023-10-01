@@ -1,6 +1,7 @@
 extends Node2D
 
 const Car := preload("res://scripts/Car.gd")
+const Ramp := preload("res://scripts/Ramp.gd")
 
 @export var coeff_steer : float = 0.0
 @export var steer_time : float = 0.6
@@ -17,16 +18,18 @@ const Car := preload("res://scripts/Car.gd")
 @export var curve_friction_parallel : Curve
 @export var curve_friction_perpendicular : Curve
 
-@export var max_curve_velocity := 1000.0
+@export var max_curve_velocity : float = 1000.0
 
 @onready var parent : Car = get_parent()
 
 var steer_angle := 0.0
 var drive_power := 0.0
+var current_ramp : Ramp = null
 
 func _ready() -> void:
 	assert(parent != null)
 	assert(parent.center_of_mass_mode == RigidBody2D.CENTER_OF_MASS_MODE_AUTO)
+	parent.wheel_count += 1
 
 func _process(delta : float) -> void:
 	var true_steer_time := steer_time
@@ -65,3 +68,14 @@ func _physics_process(_delta : float) -> void:
 	elif drive_power < 0.0:
 		var force_reverse := drive_power * curve_reverse.sample(-velocity_par / max_curve_velocity) * forward_dir
 		parent.apply_force(force_reverse, global_position - parent.global_position)
+	
+	# Rolling down ramps.
+	if current_ramp != null:
+		var force_gravity := parent.mass / parent.wheel_count * current_ramp.steepness * current_ramp.direction.dot(forward_dir) * forward_dir
+		parent.apply_force(force_gravity, global_position - parent.global_position)
+
+func _on_ramp_entered(area : Area2D) -> void:
+	current_ramp = area as Ramp
+
+func _on_ramp_exited(_area : Area2D) -> void:
+	current_ramp = null
