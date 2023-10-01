@@ -56,7 +56,8 @@ var level_manager : LevelManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	level_manager = get_node("/root/LevelManager")
+	if not Engine.is_editor_hint():
+		level_manager = get_node("/root/LevelManager")
 	init()
 
 func init():
