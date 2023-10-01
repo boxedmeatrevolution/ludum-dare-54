@@ -9,7 +9,7 @@ friction = 0.8
 bounce = 0.3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qugl5"]
-radius = 24.0
+radius = 25.0
 height = 112.0
 
 [node name="Car" type="RigidBody2D"]
