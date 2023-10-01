@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4h5yroh6fcwh"]
+[gd_scene load_steps=9 format=3 uid="uid://cy14gkwhwnnng"]
 
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_if1lp"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="2_wlw8a"]
@@ -51,6 +51,5 @@ rotation = 1.81122
 [node name="Car" parent="." instance=ExtResource("1_if1lp")]
 position = Vector2(83, 535)
 rotation = -0.00959103
-scale = Vector2(1, 1)
 
 [node name="PlayerAI" parent="Car" instance=ExtResource("2_wlw8a")]
