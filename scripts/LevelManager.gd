@@ -9,7 +9,7 @@ func _ready() -> void:
 		level_paths.append(level_dir.get_current_dir() + "/" + file)
 	change_level(0)
 
-func _process(delta : float) -> void:
+func _process(_delta : float) -> void:
 	if Input.is_action_just_pressed("next_level"):
 		change_level(current_level + 1)
 	elif Input.is_action_just_pressed("previous_level"):

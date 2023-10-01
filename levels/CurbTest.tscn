@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://nn3284tocbls"]
 
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/Car.tscn" id="1_ukjpy"]
-[ext_resource type="PackedScene" uid="uid://ctcn8lbqfw4oa" path="res://entities/Curb.tscn" id="4_na4dg"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="4_na4dg"]
 
 [node name="CurbTest" type="Node2D"]
 
