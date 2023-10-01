@@ -13,11 +13,11 @@ extends Node2D
 var target : Node2D
 var viewport : Viewport
 
-func clamp_position_in_bounds(position : Vector2) -> Vector2:
+func clamp_position_in_bounds(p : Vector2) -> Vector2:
 	var viewport_size := viewport.get_visible_rect().size
 	return Vector2(
-			clampf(position.x, bounds.position.x + 0.5 * viewport_size.x, bounds.end.x - 0.5 * viewport_size.x),
-			clampf(position.y, bounds.position.y + 0.5 * viewport_size.y, bounds.end.y - 0.5 * viewport_size.y)
+			clampf(p.x, bounds.position.x + 0.5 * viewport_size.x, bounds.end.x - 0.5 * viewport_size.x),
+			clampf(p.y, bounds.position.y + 0.5 * viewport_size.y, bounds.end.y - 0.5 * viewport_size.y)
 		)
 
 func _ready() -> void:

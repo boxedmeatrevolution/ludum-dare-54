@@ -22,7 +22,6 @@ spaces_wide = 9
 spaces_tall = 2
 space_width = 83
 space_height = 123
-fill_with_cars = null
 
 [node name="ParkingSpace2" parent="." instance=ExtResource("2_vw18v")]
 position = Vector2(932, 145)
@@ -30,7 +29,6 @@ rotation = 3.14159
 spaces_wide = 11
 space_width = 83
 space_height = 123
-fill_with_cars = null
 
 [node name="Curb" parent="." instance=ExtResource("3_hrxo4")]
 invert_polygon = true
