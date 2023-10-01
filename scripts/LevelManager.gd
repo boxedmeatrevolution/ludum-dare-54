@@ -10,7 +10,15 @@ func _ready() -> void:
 			file = file.replace(".remap", "")
 		if file.ends_with(".tscn"):
 			level_paths.append(level_dir.get_current_dir() + "/" + file)
-	change_level(0)
+	
+	var level_index = 0
+	
+	# In editor load current scene
+	if OS.has_feature("editor"):
+		var current_scene_path = get_tree().current_scene.scene_file_path
+		level_index = max(0, level_paths.find(current_scene_path))
+	
+	change_level(level_index)
 
 func _process(_delta : float) -> void:
 	if Input.is_action_just_pressed("next_level"):
