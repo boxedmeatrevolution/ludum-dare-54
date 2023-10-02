@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_bw1hm"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="2_fc4ns"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_cgimv"]
-[ext_resource type="PackedScene" path="res://entities/cars/CarMain.tscn" id="4_7ndod"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="4_7ndod"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="5_daue4"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="5_mahqo"]
 
@@ -14,75 +14,67 @@ bounce = 0.3
 [node name="Level" instance=ExtResource("1_bw1hm")]
 bounds = Rect2(0, 0, 1504, 1344)
 
-[node name="TargetSpace" parent="." index="6" instance=ExtResource("2_fc4ns")]
+[node name="TargetSpace" parent="." index="7" instance=ExtResource("2_fc4ns")]
 position = Vector2(184, 1072)
 
-[node name="Curb" parent="." index="7" instance=ExtResource("3_cgimv")]
+[node name="Curb" parent="." index="8" instance=ExtResource("3_cgimv")]
 invert_polygon = true
 
 [node name="Line2D" type="Line2D" parent="Curb" index="2"]
 points = PackedVector2Array(64, 72, 64, 1296, 1448, 1296, 1448, 72, 64, 72)
 
-[node name="CarMain" parent="." index="8" instance=ExtResource("4_7ndod")]
+[node name="CarMain" parent="." index="9" instance=ExtResource("4_7ndod")]
 position = Vector2(768, 688)
 rotation = -1.5708
 physics_material_override = SubResource("PhysicsMaterial_6v8q6")
 
 [node name="PlayerAI" parent="CarMain" index="7" instance=ExtResource("5_mahqo")]
 
-[node name="ParkingSpace" parent="." index="9" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace" parent="." index="10" instance=ExtResource("5_daue4")]
 position = Vector2(496, 184)
 spaces_wide = 6
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 
-[node name="ParkingSpace2" parent="." index="10" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace2" parent="." index="11" instance=ExtResource("5_daue4")]
 position = Vector2(96, 184)
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 
-[node name="ParkingSpace3" parent="." index="11" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace3" parent="." index="12" instance=ExtResource("5_daue4")]
 position = Vector2(1160, 184)
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 
-[node name="ParkingSpace4" parent="." index="12" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace4" parent="." index="13" instance=ExtResource("5_daue4")]
 position = Vector2(496, 928)
 spaces_wide = 6
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 
-[node name="ParkingSpace5" parent="." index="13" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace5" parent="." index="14" instance=ExtResource("5_daue4")]
 position = Vector2(96, 928)
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 instruction = Array[String](["1 1 -1"])
 
-[node name="ParkingSpace6" parent="." index="14" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace6" parent="." index="15" instance=ExtResource("5_daue4")]
 position = Vector2(1160, 928)
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 
-[node name="ParkingSpace7" parent="." index="15" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace7" parent="." index="16" instance=ExtResource("5_daue4")]
 position = Vector2(264, 544)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 
-[node name="ParkingSpace8" parent="." index="16" instance=ExtResource("5_daue4")]
+[node name="ParkingSpace8" parent="." index="17" instance=ExtResource("5_daue4")]
 position = Vector2(848, 544)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false

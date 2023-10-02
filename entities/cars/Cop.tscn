@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmqfhjjncpc6i"]
+[gd_scene load_steps=6 format=3 uid="uid://bmqfhjjncpc6i"]
 
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_5lh5o"]
 [ext_resource type="Script" path="res://scripts/Cop.gd" id="2_cg36b"]
 [ext_resource type="Texture2D" uid="uid://bnj84wb7gky7x" path="res://sprites/Cop.png" id="2_m1kdp"]
+[ext_resource type="Texture2D" uid="uid://cp3fu2cutr4af" path="res://sprites/ScratchCop.png" id="4_c7td1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwv7a"]
 size = Vector2(50, 116)
@@ -14,17 +15,20 @@ script = ExtResource("2_cg36b")
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_m1kdp")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="Sprite2DScratch" parent="." index="1"]
+texture = ExtResource("4_c7td1")
+
+[node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(3.8147e-06, -7.72675e-06)
 shape = SubResource("RectangleShape2D_hwv7a")
 
-[node name="Wheel1" parent="." index="2"]
+[node name="Wheel1" parent="." index="5"]
 position = Vector2(48, -25)
 coeff_forward = 2.0
 coeff_reverse = 2.0
 coeff_friction_perpendicular = 1.5
 
-[node name="Wheel2" parent="." index="3"]
+[node name="Wheel2" parent="." index="6"]
 position = Vector2(48, 25)
 coeff_forward = 2.0
 coeff_reverse = 2.0

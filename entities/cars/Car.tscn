@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhnjpsdtol8td"]
+[gd_scene load_steps=10 format=3 uid="uid://bhnjpsdtol8td"]
 
 [ext_resource type="Script" path="res://scripts/Car.gd" id="1_356we"]
 [ext_resource type="Texture2D" uid="uid://ctfvs1f7c1ard" path="res://sprites/PlayerCar.png" id="2_7liqh"]
+[ext_resource type="Material" uid="uid://d2lecnmvun7v4" path="res://material/Light.tres" id="3_c5mbc"]
 [ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_qqr60"]
+[ext_resource type="Texture2D" uid="uid://dvqiodembhetl" path="res://sprites/HeadlightEffect.png" id="4_lesxf"]
 [ext_resource type="PackedScene" path="res://entities/CarAudio.tscn" id="4_x815w"]
+[ext_resource type="Texture2D" uid="uid://btf78vowq4nx5" path="res://sprites/RearlightEffect.png" id="5_oy765"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3ter"]
 friction = 0.8
@@ -20,6 +23,35 @@ script = ExtResource("1_356we")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("2_7liqh")
+
+[node name="Sprite2DScratch" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.5708
+
+[node name="Sprite2DHeadlightLeft" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+material = ExtResource("3_c5mbc")
+position = Vector2(64, 0)
+scale = Vector2(1, -1)
+texture = ExtResource("4_lesxf")
+centered = false
+
+[node name="Sprite2DHeadlightRight" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+material = ExtResource("3_c5mbc")
+position = Vector2(64, 0)
+texture = ExtResource("4_lesxf")
+centered = false
+
+[node name="Sprite2DRearlight" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 1
+material = ExtResource("3_c5mbc")
+position = Vector2(-72, 0)
+texture = ExtResource("5_oy765")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

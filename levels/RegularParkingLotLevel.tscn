@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_fmejr"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="2_qcbo7"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_sip0q"]
-[ext_resource type="PackedScene" path="res://entities/cars/CarMain.tscn" id="4_tym1p"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="4_tym1p"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_hne33"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="5_lln0r"]
 
@@ -15,14 +15,12 @@ position = Vector2(16, 152)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 
 [node name="ParkingSpace2" parent="." index="7" instance=ExtResource("2_qcbo7")]
 position = Vector2(568, 152)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-street_parking = false
 instruction = Array[String](["3 1 -1"])
 
 [node name="Curb" parent="." index="8" instance=ExtResource("3_sip0q")]
