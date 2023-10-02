@@ -203,9 +203,8 @@ fill_with_cars = true
 street_parking = true
 
 [node name="TargetSpace" parent="." index="33" instance=ExtResource("7_pu5d3")]
-position = Vector2(1136, 48)
-width = 140.0
-height = 90.0
+position = Vector2(1206, 92)
+rotation = 1.57079
 
 [node name="CarSpawner3" parent="." index="34" instance=ExtResource("4_pq0m2")]
 position = Vector2(-206, 288)

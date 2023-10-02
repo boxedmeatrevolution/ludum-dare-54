@@ -18,7 +18,11 @@ region_rect = Rect2(0, 0, 3840, 2400)
 
 [node name="MarkingParent" type="Node2D" parent="."]
 
+[node name="TargetSpaceParent" type="Node2D" parent="."]
+
 [node name="CurbParent" type="Node2D" parent="."]
+
+[node name="ShrubParent" type="Node2D" parent="."]
 
 [node name="CarParent" type="Node2D" parent="."]
 

@@ -13,7 +13,6 @@
 
 [node name="TargetSpace" parent="." instance=ExtResource("1_3p83a")]
 position = Vector2(266, 240)
-height = 130.0
 
 [node name="ParkingSpace" parent="." instance=ExtResource("2_8bsf8")]
 position = Vector2(765, 488)

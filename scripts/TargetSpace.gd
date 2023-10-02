@@ -1,38 +1,17 @@
-@tool
-extends Node
+extends Node2D
 
-@export var width: float:
-	set(value):
-		width = value
-		_init_space()
-@export var height: float:
-	set(value):
-		height = value
-		_init_space()
+@onready var sprite_text := $Sprite2DText
+var text_initial_y : float
+var timer : float = 0.0
+const PERIOD : float = 2.0
 
-@onready var parking_poly = $ParkingSpacePoly
-@onready var parking_area_collision = $ParkingArea/ParkingAreaCollision
+func _ready() -> void:
+	sprite_text.global_transform = Transform2D.IDENTITY
+	sprite_text.global_position = global_position + Vector2.UP * 32.0
+	text_initial_y = sprite_text.global_position.y
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	_init_space();
-	
-func _init_space():
-	if parking_poly == null:
-		return
-		
-	# Corners
-	var top_left = Vector2(0, 0)
-	var top_right = Vector2(width, 0)
-	var bottom_right = Vector2(width, height)
-	var bottom_left = Vector2(0, height)
-	
-	# Visuals
-	parking_poly.set_polygon(
-		PackedVector2Array([top_left, top_right, bottom_right, bottom_left])
-	)
-	
-	# Collisions
-	parking_area_collision.shape.size = Vector2(width, height)
-	parking_area_collision.position = Vector2(width/2, height/2)
+func _process(delta : float) -> void:
+	timer += delta
+	sprite_text.global_position.y = text_initial_y + 16.0 * sin(2 * PI * timer / PERIOD)
+	if timer > PERIOD:
+		timer -= PERIOD

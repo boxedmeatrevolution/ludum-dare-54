@@ -10,6 +10,7 @@ const Surface := preload("res://scripts/Surface.gd")
 const Curb := preload("res://scripts/Curb.gd")
 const Shrub := preload("res://scripts/Shrub.gd")
 const CarSpawner := preload("res://scripts/CarSpawner.gd")
+const TargetSpace := preload("res://scripts/TargetSpace.gd")
 
 const OUT_OF_BOUNDS_PADDING : float = 256.0
 
@@ -22,12 +23,14 @@ const OUT_OF_BOUNDS_PADDING : float = 256.0
 var camera : Camera
 
 @onready var surface_parent := $SurfaceParent
+@onready var shrub_parent := $ShrubParent
 @onready var marking_parent := $MarkingParent
 @onready var curb_parent := $CurbParent
 @onready var car_parent := $CarParent
 @onready var prop_parent := $PropParent
 @onready var player_car_parent := $PlayerCarParent
 @onready var light_parent := $LightParent
+@onready var target_space_parent := $TargetSpaceParent
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -57,8 +60,10 @@ func _ready() -> void:
 		elif child is CarSpawner:
 			child.car_parent = car_parent
 			child.bounds = bounds.grow(OUT_OF_BOUNDS_PADDING)
+		elif child is TargetSpace:
+			child.reparent(target_space_parent)
 		elif child is Shrub:
-			child.reparent(prop_parent)
+			child.reparent(shrub_parent)
 	
 	camera = CameraScene.instantiate()
 	if player_car_parent.get_child_count() != 0:

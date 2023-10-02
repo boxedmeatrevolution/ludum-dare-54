@@ -210,5 +210,3 @@ jitter = 0.2
 
 [node name="TargetSpace" parent="." index="29" instance=ExtResource("9_4x2ji")]
 position = Vector2(1856, 248)
-width = 145.0
-height = 95.0
