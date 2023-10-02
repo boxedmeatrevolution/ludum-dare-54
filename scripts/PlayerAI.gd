@@ -3,6 +3,7 @@ extends Node
 const Car := preload("res://scripts/Car.gd")
 
 @onready var parent : Car = get_parent()
+@onready var win_sfx : AudioStreamPlayer = $WinSfx
 
 var level_manager : LevelManager
 
@@ -137,6 +138,7 @@ func _process(delta : float) -> void:
 	if all_parking_detectors_triggered() and parent.linear_velocity.length() < LINEAR_VELOCITY_AT_REST_THRESHOLD and parent.angular_velocity < ANGULAR_VELOCITY_AT_REST_THRESHOLD:
 		parked_active_timer += delta
 		if parked_active_timer > PARKED_TIME:
+			win_sfx.play()
 			has_won = true
 	else:
 		parked_active_timer = 0.0

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bglu4ajtbwwyn"]
+[gd_scene load_steps=3 format=3 uid="uid://dcoh6kinumowt"]
 
 [ext_resource type="Script" path="res://scripts/PlayerAI.gd" id="1_3awnw"]
+[ext_resource type="AudioStream" uid="uid://74d0xlmayijl" path="res://sounds/win.ogg" id="2_mydp2"]
 
 [node name="PlayerAI" type="Node"]
 script = ExtResource("1_3awnw")
+
+[node name="WinSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mydp2")
