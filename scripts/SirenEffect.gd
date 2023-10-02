@@ -4,7 +4,7 @@ extends Node2D
 
 var car : Node2D = null
 var timer := 0.0
-const LIFETIME := 1.3
+const LIFETIME := 1.8
 
 func _process(delta : float) -> void:
 	if car != null:

@@ -8,6 +8,7 @@ const PlayerAI := preload("res://scripts/PlayerAI.gd")
 const ParkingSpace := preload("res://scripts/ParkingSpace.gd")
 const Ramp := preload("res://scripts/Ramp.gd")
 const Curb := preload("res://scripts/Curb.gd")
+const Shrub := preload("res://scripts/Shrub.gd")
 const CarSpawner := preload("res://scripts/CarSpawner.gd")
 
 const OUT_OF_BOUNDS_PADDING : float = 128.0
@@ -24,6 +25,7 @@ var camera : Camera
 @onready var marking_parent := $MarkingParent
 @onready var curb_parent := $CurbParent
 @onready var car_parent := $CarParent
+@onready var prop_parent := $PropParent
 @onready var player_car_parent := $PlayerCarParent
 @onready var light_parent := $LightParent
 
@@ -53,6 +55,8 @@ func _ready() -> void:
 			child.reparent(curb_parent)
 		elif child is CarSpawner:
 			child.car_parent = car_parent
+		elif child is Shrub:
+			child.reparent(prop_parent)
 	
 	camera = CameraScene.instantiate()
 	if player_car_parent.get_child_count() != 0:

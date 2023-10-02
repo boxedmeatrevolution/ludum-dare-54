@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://beoqxk5k0w4an"]
+
+[ext_resource type="Script" path="res://scripts/Shrub.gd" id="1_yt6k4"]
+[ext_resource type="Texture2D" uid="uid://cavsk4dsvqm02" path="res://sprites/Shrub.png" id="2_6dovn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hntg2"]
+radius = 48.0
+
+[node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_yt6k4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6dovn")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hntg2")
