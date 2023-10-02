@@ -24,6 +24,10 @@ var has_won : bool = false
 var has_won_active_timer : float = 0.0
 const HAS_WON_TIME : float = 2.0
 
+var has_lost : bool = false
+var has_lost_active_timer : float = 0.0
+const HAS_LOST_TIME : float = 3.0
+
 var headlights_on := false
 
 func add_parking_detector(pos : Vector2) -> void:
@@ -77,6 +81,17 @@ func _process(delta : float) -> void:
 		parent.sprite.scale = Vector2(scale, scale)
 		if has_won_active_timer > HAS_WON_TIME:
 			level_manager.change_level(level_manager.current_level + 1)
+	
+	if has_lost:
+		has_lost_active_timer += delta
+		if has_lost_active_timer > HAS_LOST_TIME:
+			level_manager.change_level(level_manager.current_level)
+	
+	if has_won || has_lost:
+		parent.steer_angle = 0.0
+		parent.drive_power = 0.0
+		parent.brake = true
+		parent.sprite_rearlight.visible = true
 		return
 	
 	var mouse_steer := 0.0

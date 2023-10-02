@@ -6,7 +6,7 @@ extends StaticBody2D
 
 @onready var polygon = $Polygon2D
 @onready var collision_polygon = $CollisionPolygon2D
-@onready var line = $Line2D
+@onready var line : Line2D = $Line2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +16,9 @@ func _ready():
 	
 	# Curb texture
 	line.set_texture(texture)
-	line.set_texture_mode(TEXTURE_REPEAT_ENABLED)
+	line.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	line.set_texture_mode(Line2D.LINE_TEXTURE_TILE)
+	line.width = 160.0
 	if (invert_texture):
 		# the reverse function doesn't work, so we do it manually
 		var size = line.get_point_count()

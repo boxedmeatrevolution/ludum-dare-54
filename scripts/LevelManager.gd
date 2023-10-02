@@ -26,6 +26,8 @@ func _process(_delta : float) -> void:
 		change_level(current_level + 1)
 	elif Input.is_action_just_pressed("previous_level"):
 		change_level(current_level - 1)
+	elif Input.is_action_just_pressed("restart_level"):
+		change_level(current_level)
 
 func change_level(idx : int) -> void:
 	current_level = posmod(idx, level_paths.size())

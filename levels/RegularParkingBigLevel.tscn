@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://8f5rkwc200mc"]
+[gd_scene load_steps=7 format=3 uid="uid://ceteyv2cew682"]
 
-[ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_6y2yd"]
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_6y2yd"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="2_gvg6u"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_crdd8"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="4_gnql1"]
@@ -121,6 +121,7 @@ instruction = Array[String](["2 0 -1"])
 
 [node name="Curb" parent="." index="24" instance=ExtResource("3_crdd8")]
 invert_polygon = true
+invert_texture = true
 
 [node name="Line2D" type="Line2D" parent="Curb" index="2"]
 points = PackedVector2Array(-160, 24, 2456, 24, 2456, 1712, 120, 1712, 120, 136, -152, 136)

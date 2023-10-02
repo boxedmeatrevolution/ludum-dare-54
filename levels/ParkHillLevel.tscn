@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://buwxcjpse4sbf"]
+[gd_scene load_steps=10 format=3 uid="uid://dho2rnfekm16e"]
 
-[ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_p16vl"]
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_p16vl"]
 [ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="2_6svmp"]
-[ext_resource type="PackedScene" path="res://entities/Ramp.tscn" id="2_sjcrh"]
+[ext_resource type="PackedScene" uid="uid://dwt50036hqbhk" path="res://entities/Ramp.tscn" id="2_sjcrh"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_4c7lk"]
 [ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="3_t6lu1"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="4_qlvay"]
@@ -102,13 +102,13 @@ spaces_wide = 4
 fill_with_cars = true
 
 [node name="CarSpawner" parent="." index="13" instance=ExtResource("7_r7dac")]
-position = Vector2(208, 896)
+position = Vector2(208, 944)
 rotation = -1.5708
 interval = 3.0
 jitter = 0.2
 
 [node name="CarSpawner2" parent="." index="14" instance=ExtResource("7_r7dac")]
-position = Vector2(328, 896)
+position = Vector2(328, 944)
 rotation = -1.5708
 initial_delay = 1.5
 jitter = 0.2
@@ -128,13 +128,13 @@ spaces_tall = 2
 fill_with_cars = true
 
 [node name="CarSpawner3" parent="." index="17" instance=ExtResource("7_r7dac")]
-position = Vector2(728, -64)
+position = Vector2(728, -128)
 rotation = 1.5708
 interval = 2.0
 jitter = 0.2
 
 [node name="CarSpawner4" parent="." index="18" instance=ExtResource("7_r7dac")]
-position = Vector2(848, -64)
+position = Vector2(848, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
@@ -163,46 +163,46 @@ fill_with_cars = true
 instruction = Array[String](["6 1 -1"])
 
 [node name="CarSpawner5" parent="." index="22" instance=ExtResource("7_r7dac")]
-position = Vector2(1544, -64)
+position = Vector2(1544, -128)
 rotation = 1.5708
 interval = 2.0
 jitter = 0.2
 
 [node name="CarSpawner6" parent="." index="23" instance=ExtResource("7_r7dac")]
-position = Vector2(1664, -64)
+position = Vector2(1664, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
 [node name="CarSpawner7" parent="." index="24" instance=ExtResource("7_r7dac")]
-position = Vector2(2072, -64)
+position = Vector2(2072, -128)
 rotation = 1.5708
 interval = 2.0
 jitter = 0.2
 
 [node name="CarSpawner8" parent="." index="25" instance=ExtResource("7_r7dac")]
-position = Vector2(2208, -64)
+position = Vector2(2208, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
 [node name="CarSpawner9" parent="." index="26" instance=ExtResource("7_r7dac")]
-position = Vector2(2352, -64)
+position = Vector2(2352, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
 [node name="CarSpawner10" parent="." index="27" instance=ExtResource("7_r7dac")]
-position = Vector2(1240, 904)
+position = Vector2(1240, 952)
 rotation = 4.71239
 interval = 2.0
 jitter = 0.2
 
 [node name="CarSpawner11" parent="." index="28" instance=ExtResource("7_r7dac")]
-position = Vector2(1360, 904)
+position = Vector2(1360, 952)
 rotation = 4.71239
 initial_delay = 1.5
 interval = 2.0

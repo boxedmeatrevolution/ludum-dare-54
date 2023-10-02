@@ -13,3 +13,4 @@ texture = ExtResource("2_dj3xm")
 build_mode = 1
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)

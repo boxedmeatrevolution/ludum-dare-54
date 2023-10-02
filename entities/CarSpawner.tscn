@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b48r7at33cyp3"]
+[gd_scene load_steps=10 format=3 uid="uid://b48r7at33cyp3"]
 
 [ext_resource type="Script" path="res://scripts/CarSpawner.gd" id="1_omjkw"]
+[ext_resource type="PackedScene" uid="uid://cl56u6y6i550g" path="res://entities/cars/CarModelA.tscn" id="2_d2mgu"]
 [ext_resource type="Texture2D" uid="uid://1ltn6p2316g5" path="res://sprites/CarMain.png" id="2_fc4c8"]
+[ext_resource type="PackedScene" uid="uid://ctnh28s2l2x35" path="res://entities/cars/CarModelB.tscn" id="3_6dvlx"]
+[ext_resource type="PackedScene" uid="uid://chclyf3t26mgn" path="res://entities/cars/CarModelC.tscn" id="4_56tsr"]
+[ext_resource type="PackedScene" uid="uid://b2fe1j1o3660p" path="res://entities/cars/CarModelD.tscn" id="5_jqt2v"]
+[ext_resource type="PackedScene" uid="uid://bxx3brsgc0bbg" path="res://entities/cars/CarModelE.tscn" id="6_2dgeu"]
+[ext_resource type="PackedScene" uid="uid://c0rajt1g623xm" path="res://entities/cars/CarModelF.tscn" id="7_rs6th"]
+[ext_resource type="PackedScene" uid="uid://cmr72mvg01jw1" path="res://entities/cars/CarModelG.tscn" id="8_ar8ms"]
 
 [node name="CarSpawner" type="Node2D"]
 script = ExtResource("1_omjkw")
+car_scenes = Array[PackedScene]([ExtResource("2_d2mgu"), ExtResource("3_6dvlx"), ExtResource("4_56tsr"), ExtResource("5_jqt2v"), ExtResource("6_2dgeu"), ExtResource("7_rs6th"), ExtResource("8_ar8ms")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
