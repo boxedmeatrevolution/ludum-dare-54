@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwogqoxt5yu1o"]
+[gd_scene load_steps=5 format=3 uid="uid://t72slphr0uq6"]
 
-[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_hmqa6"]
+[ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_hmqa6"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_cx0kc"]
-[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_s8liv"]
+[ext_resource type="PackedScene" path="res://entities/cars/CarMain.tscn" id="3_s8liv"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="4_2mon7"]
 
 [node name="Level" instance=ExtResource("1_hmqa6")]

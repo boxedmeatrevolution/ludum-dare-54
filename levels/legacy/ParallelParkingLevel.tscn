@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://co5qkbrmtpkke"]
+
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_3yrm7"]
+[ext_resource type="PackedScene" path="res://entities/Camera.tscn" id="2_x6a3g"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_cpqtg"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="4_hhuys"]
+[ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="5_bdrlw"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="6_rwqbb"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="7_pu5d3"]
+
+[node name="ParallelParkingLevel" type="Node2D"]
+script = ExtResource("1_3yrm7")
+
+[node name="Camera" parent="." instance=ExtResource("2_x6a3g")]
+bounds = Rect2(0, 0, 1570, 1024)
+target_path = NodePath("../Car")
+
+[node name="Curb" parent="." instance=ExtResource("3_cpqtg")]
+
+[node name="Line2D" type="Line2D" parent="Curb"]
+points = PackedVector2Array(-168, 128, 88, 128, 184, 56, 496, 56, 584, 128, 824, 128, 920, 56, 1224, 56, 1312, 128, 1728, 128, 1728, -128, -168, -128)
+
+[node name="Curb2" parent="." instance=ExtResource("3_cpqtg")]
+
+[node name="Line2D" type="Line2D" parent="Curb2"]
+points = PackedVector2Array(-160, 344, 80, 344, 120, 384, 120, 792, 160, 832, 376, 832, 448, 920, 760, 920, 840, 832, 1072, 832, 1152, 920, 1464, 920, 1544, 824, 1720, 824, 1720, 1072, -160, 1072, -160, 408)
+
+[node name="ParkingSpace" parent="." instance=ExtResource("4_hhuys")]
+position = Vector2(472, 152)
+rotation = 3.14159
+spaces_wide = 2
+space_width = 140
+space_height = 85
+fill_with_cars = true
+street_parking = true
+rng_seed = "dsf"
+
+[node name="Car" parent="." instance=ExtResource("5_bdrlw")]
+position = Vector2(1184, 720)
+rotation = 3.14159
+
+[node name="PlayerAI" parent="Car" instance=ExtResource("6_rwqbb")]
+
+[node name="Curb3" parent="." instance=ExtResource("3_cpqtg")]
+
+[node name="Line2D" type="Line2D" parent="Curb3"]
+points = PackedVector2Array(1736, 344, 384, 344, 352, 384, 352, 560, 384, 592, 1736, 592)
+
+[node name="ParkingSpace2" parent="." instance=ExtResource("4_hhuys")]
+position = Vector2(1216, 152)
+rotation = -3.14159
+spaces_wide = 2
+space_width = 140
+space_height = 85
+fill_with_cars = true
+street_parking = true
+instruction = Array[String](["1 0 -1"])
+
+[node name="ParkingSpace3" parent="." instance=ExtResource("4_hhuys")]
+position = Vector2(464, 824)
+rotation = -6.28319
+spaces_wide = 2
+space_width = 140
+space_height = 85
+fill_with_cars = true
+street_parking = true
+rng_seed = "as"
+
+[node name="ParkingSpace4" parent="." instance=ExtResource("4_hhuys")]
+position = Vector2(1168, 824)
+rotation = -6.28319
+spaces_wide = 2
+space_width = 140
+space_height = 85
+fill_with_cars = true
+street_parking = true
+
+[node name="TargetSpace" parent="." instance=ExtResource("7_pu5d3")]
+position = Vector2(936, 64)
+width = 140.0
+height = 85.0

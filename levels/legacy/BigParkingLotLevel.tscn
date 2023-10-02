@@ -1,64 +1,64 @@
-[gd_scene load_steps=8 format=3 uid="uid://do82nbdv7xogn"]
+[gd_scene load_steps=8 format=3 uid="uid://ctavg3yye5a8v"]
 
-[ext_resource type="Script" path="res://scripts/Level.gd" id="1_hq0mg"]
-[ext_resource type="PackedScene" uid="uid://bfu5s8jl18as7" path="res://entities/Camera.tscn" id="2_n61sl"]
-[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="3_pq8bb"]
-[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="4_v32rb"]
-[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="5_86433"]
-[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="6_5e0xl"]
-[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="7_vffj0"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_0tdbp"]
+[ext_resource type="PackedScene" path="res://entities/Camera.tscn" id="1_4gf4n"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="2_46lwy"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_p2jki"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="3_7vqy0"]
+[ext_resource type="PackedScene" path="res://entities/cars/CarMain.tscn" id="4_lxmwu"]
+[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="5_wwppr"]
 
 [node name="BigParkingLotLevel" type="Node2D"]
-script = ExtResource("1_hq0mg")
+script = ExtResource("1_0tdbp")
 
-[node name="Camera" parent="." instance=ExtResource("2_n61sl")]
+[node name="Camera" parent="." instance=ExtResource("1_4gf4n")]
 bounds = Rect2(0, 0, 1525, 1376)
 target_path = NodePath("../CarMain")
 
-[node name="TargetSpace" parent="." instance=ExtResource("3_pq8bb")]
+[node name="TargetSpace" parent="." instance=ExtResource("2_46lwy")]
 position = Vector2(184, 1072)
 
-[node name="Curb" parent="." instance=ExtResource("4_v32rb")]
+[node name="Curb" parent="." instance=ExtResource("2_p2jki")]
 invert_polygon = true
 
 [node name="Line2D" type="Line2D" parent="Curb"]
 points = PackedVector2Array(64, 72, 64, 1296, 1448, 1296, 1448, 72, 64, 72)
 
-[node name="CarMain" parent="." instance=ExtResource("5_86433")]
+[node name="CarMain" parent="." instance=ExtResource("4_lxmwu")]
 position = Vector2(768, 688)
 rotation = -1.5708
 
-[node name="PlayerAI" parent="CarMain" instance=ExtResource("6_5e0xl")]
+[node name="PlayerAI" parent="CarMain" instance=ExtResource("5_wwppr")]
 
-[node name="ParkingSpace" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(496, 184)
 spaces_wide = 6
 spaces_tall = 2
 fill_with_cars = true
 street_parking = false
 
-[node name="ParkingSpace2" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace2" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(96, 184)
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
 street_parking = false
 
-[node name="ParkingSpace3" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace3" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(1160, 184)
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
 street_parking = false
 
-[node name="ParkingSpace4" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace4" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(496, 928)
 spaces_wide = 6
 spaces_tall = 2
 fill_with_cars = true
 street_parking = false
 
-[node name="ParkingSpace5" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace5" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(96, 928)
 spaces_wide = 3
 spaces_tall = 2
@@ -66,21 +66,21 @@ fill_with_cars = true
 street_parking = false
 instruction = Array[String](["1 1 -1"])
 
-[node name="ParkingSpace6" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace6" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(1160, 928)
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
 street_parking = false
 
-[node name="ParkingSpace7" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace7" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(264, 544)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
 street_parking = false
 
-[node name="ParkingSpace8" parent="." instance=ExtResource("7_vffj0")]
+[node name="ParkingSpace8" parent="." instance=ExtResource("3_7vqy0")]
 position = Vector2(848, 544)
 spaces_wide = 5
 spaces_tall = 2
