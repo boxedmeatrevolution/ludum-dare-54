@@ -24,7 +24,6 @@ points = PackedVector2Array(192, 78, 713, 78, 852, 290, 817, 539, 383, 563, 71, 
 position = Vector2(8, 408)
 scale = Vector2(16.64, 2.84)
 texture = ExtResource("2_yakgc")
-mirrored = true
 
 [node name="SurfaceIce" parent="." index="11" instance=ExtResource("5_o0h00")]
 position = Vector2(648, 144)
@@ -36,7 +35,6 @@ mirrored = false
 position = Vector2(176, 208)
 rotation = 2.23816
 scale = Vector2(2.07154, 0.83266)
-mirrored = false
 
 [node name="CarMain" parent="." index="13" instance=ExtResource("3_s8liv")]
 position = Vector2(253, 252)

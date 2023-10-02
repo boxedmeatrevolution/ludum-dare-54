@@ -15,8 +15,8 @@ centered = true
 metadata/_edit_pinned_properties_ = [&"centered"]
 
 [node name="Sprite2D" parent="." index="0"]
-texture_repeat = 2
 texture = ExtResource("3_l7fvx")
+centered = true
 region_enabled = true
 region_rect = Rect2(0, 0, 100, 100)
 
