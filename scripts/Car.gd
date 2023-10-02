@@ -46,4 +46,4 @@ func _integrate_forces(state : PhysicsDirectBodyState2D) -> void:
 
 func _process(_delta : float) -> void:
 	if !bounds.has_point(global_position):
-		pass
+		queue_free()
