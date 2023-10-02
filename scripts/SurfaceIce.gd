@@ -13,4 +13,5 @@ const texture_ice_smooth := preload("res://sprites/TileIceSmooth.png")
 			texture = texture_ice_pebble
 
 func _ready() -> void:
+	super()
 	smooth = smooth
