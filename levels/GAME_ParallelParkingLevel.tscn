@@ -49,7 +49,7 @@ texture_mode = 1
 [node name="CarSpawner" parent="." index="9" instance=ExtResource("4_pq0m2")]
 position = Vector2(1966, 192)
 rotation = 3.14159
-interval = 2.0
+interval = 3.0
 speed = 400.0
 car_scenes = Array[PackedScene]([ExtResource("5_8crlx"), ExtResource("11_w43np"), ExtResource("6_eh0fs"), ExtResource("7_o8jk0"), ExtResource("12_ghkxs"), ExtResource("8_fn37f"), ExtResource("9_nsosx"), ExtResource("10_nekem")])
 
