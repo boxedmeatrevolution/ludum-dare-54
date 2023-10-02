@@ -12,199 +12,217 @@
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="11_fas00"]
 
 [node name="Level" instance=ExtResource("1_tq6ad")]
-bounds = Rect2(0, 0, 2000, 600)
+bounds = Rect2(0, 0, 2450, 600)
 
 [node name="CarMain" parent="." index="12" instance=ExtResource("2_1yp65")]
-position = Vector2(205, 289)
+position = Vector2(206, 289)
 
 [node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("3_u3mpe")]
 
 [node name="SurfaceIce" parent="." index="13" instance=ExtResource("4_e6jcn")]
-position = Vector2(1767, 405)
-scale = Vector2(9.15999, 11.64)
+position = Vector2(2062, 382)
+scale = Vector2(15.32, 11.64)
 
 [node name="Surface4" parent="." index="14" instance=ExtResource("5_snorj")]
-position = Vector2(829, 297)
+position = Vector2(830, 297)
 texture = ExtResource("6_i44tx")
 
 [node name="Surface2" parent="." index="15" instance=ExtResource("5_snorj")]
-position = Vector2(825, 229)
+position = Vector2(826, 229)
 texture = ExtResource("6_i44tx")
 
 [node name="Surface3" parent="." index="16" instance=ExtResource("5_snorj")]
-position = Vector2(1342, 255)
+position = Vector2(1343, 255)
 texture = ExtResource("6_i44tx")
 
-[node name="Surface5" parent="." index="17" instance=ExtResource("5_snorj")]
-position = Vector2(1850, 395)
+[node name="Surface10" parent="." index="17" instance=ExtResource("5_snorj")]
+position = Vector2(1553, 253)
+texture = ExtResource("6_i44tx")
+
+[node name="Surface11" parent="." index="18" instance=ExtResource("5_snorj")]
+position = Vector2(1746, 251)
+texture = ExtResource("6_i44tx")
+
+[node name="Surface5" parent="." index="19" instance=ExtResource("5_snorj")]
+position = Vector2(2249, 396)
 rotation = -2.87979
 texture = ExtResource("6_i44tx")
 
-[node name="Surface6" parent="." index="18" instance=ExtResource("5_snorj")]
-position = Vector2(1855, 220)
+[node name="Surface6" parent="." index="20" instance=ExtResource("5_snorj")]
+position = Vector2(2254, 221)
 rotation = -3.40339
 texture = ExtResource("6_i44tx")
 
-[node name="Surface7" parent="." index="19" instance=ExtResource("5_snorj")]
-position = Vector2(1860, 308)
+[node name="Surface7" parent="." index="21" instance=ExtResource("5_snorj")]
+position = Vector2(2259, 309)
 rotation = -3.14159
 texture = ExtResource("6_i44tx")
 
-[node name="ParkingSpace" parent="." index="20" instance=ExtResource("7_v15v2")]
-position = Vector2(930, 366)
+[node name="ParkingSpace" parent="." index="22" instance=ExtResource("7_v15v2")]
+position = Vector2(931, 366)
 spaces_wide = 3
 fill_with_cars = true
 
-[node name="ParkingSpace3" parent="." index="21" instance=ExtResource("7_v15v2")]
-position = Vector2(1548, 579)
+[node name="ParkingSpace3" parent="." index="23" instance=ExtResource("7_v15v2")]
+position = Vector2(1970, 583)
 rotation = -1.57079
 spaces_wide = 7
 fill_with_cars = true
 instruction = Array[String](["3 0 -1"])
 
-[node name="ParkingSpace2" parent="." index="22" instance=ExtResource("7_v15v2")]
-position = Vector2(1183, 215)
+[node name="ParkingSpace2" parent="." index="24" instance=ExtResource("7_v15v2")]
+position = Vector2(1184, 215)
 rotation = 3.14159
 spaces_wide = 3
 fill_with_cars = true
 
-[node name="Shrub" parent="." index="23" instance=ExtResource("8_lxhyd")]
-position = Vector2(963, 13)
+[node name="Shrub" parent="." index="25" instance=ExtResource("8_lxhyd")]
+position = Vector2(964, 13)
 
-[node name="Shrub2" parent="." index="24" instance=ExtResource("8_lxhyd")]
-position = Vector2(1055, 13)
+[node name="Shrub2" parent="." index="26" instance=ExtResource("8_lxhyd")]
+position = Vector2(1056, 13)
 
-[node name="Shrub5" parent="." index="25" instance=ExtResource("8_lxhyd")]
-position = Vector2(1061, 564)
+[node name="Shrub5" parent="." index="27" instance=ExtResource("8_lxhyd")]
+position = Vector2(1062, 564)
 
-[node name="Shrub4" parent="." index="26" instance=ExtResource("8_lxhyd")]
-position = Vector2(965, 563)
+[node name="Shrub4" parent="." index="28" instance=ExtResource("8_lxhyd")]
+position = Vector2(966, 563)
 
-[node name="Shrub3" parent="." index="27" instance=ExtResource("8_lxhyd")]
-position = Vector2(1159, 16)
+[node name="Shrub3" parent="." index="29" instance=ExtResource("8_lxhyd")]
+position = Vector2(1160, 16)
 
-[node name="Shrub6" parent="." index="28" instance=ExtResource("8_lxhyd")]
-position = Vector2(1157, 562)
+[node name="Shrub6" parent="." index="30" instance=ExtResource("8_lxhyd")]
+position = Vector2(1158, 562)
 
-[node name="Shrub8" parent="." index="29" instance=ExtResource("8_lxhyd")]
-position = Vector2(1243, 131)
+[node name="Shrub8" parent="." index="31" instance=ExtResource("8_lxhyd")]
+position = Vector2(1244, 131)
 
-[node name="Shrub9" parent="." index="30" instance=ExtResource("8_lxhyd")]
-position = Vector2(856, 131)
+[node name="Shrub9" parent="." index="32" instance=ExtResource("8_lxhyd")]
+position = Vector2(857, 131)
 
-[node name="Shrub18" parent="." index="31" instance=ExtResource("8_lxhyd")]
-position = Vector2(1252, 434)
+[node name="Shrub18" parent="." index="33" instance=ExtResource("8_lxhyd")]
+position = Vector2(1253, 434)
 
-[node name="Shrub19" parent="." index="32" instance=ExtResource("8_lxhyd")]
-position = Vector2(848, 443)
+[node name="Shrub19" parent="." index="34" instance=ExtResource("8_lxhyd")]
+position = Vector2(849, 443)
 
-[node name="Surface8" parent="." index="33" instance=ExtResource("5_snorj")]
-position = Vector2(319, 305)
+[node name="Surface8" parent="." index="35" instance=ExtResource("5_snorj")]
+position = Vector2(320, 305)
 texture = ExtResource("6_i44tx")
 
-[node name="Surface9" parent="." index="34" instance=ExtResource("5_snorj")]
-position = Vector2(315, 237)
+[node name="Surface9" parent="." index="36" instance=ExtResource("5_snorj")]
+position = Vector2(316, 237)
 texture = ExtResource("6_i44tx")
 
-[node name="ParkingSpace4" parent="." index="35" instance=ExtResource("7_v15v2")]
-position = Vector2(420, 374)
+[node name="ParkingSpace4" parent="." index="37" instance=ExtResource("7_v15v2")]
+position = Vector2(421, 374)
 spaces_wide = 3
 fill_with_cars = true
 
-[node name="ParkingSpace5" parent="." index="36" instance=ExtResource("7_v15v2")]
-position = Vector2(673, 223)
+[node name="ParkingSpace5" parent="." index="38" instance=ExtResource("7_v15v2")]
+position = Vector2(674, 223)
 rotation = 3.14159
 spaces_wide = 3
 fill_with_cars = true
 
-[node name="Shrub7" parent="." index="37" instance=ExtResource("8_lxhyd")]
-position = Vector2(453, 21)
+[node name="Shrub7" parent="." index="39" instance=ExtResource("8_lxhyd")]
+position = Vector2(454, 21)
 
-[node name="Shrub10" parent="." index="38" instance=ExtResource("8_lxhyd")]
-position = Vector2(545, 21)
+[node name="Shrub10" parent="." index="40" instance=ExtResource("8_lxhyd")]
+position = Vector2(546, 21)
 
-[node name="Shrub11" parent="." index="39" instance=ExtResource("8_lxhyd")]
-position = Vector2(551, 572)
+[node name="Shrub11" parent="." index="41" instance=ExtResource("8_lxhyd")]
+position = Vector2(552, 572)
 
-[node name="Shrub12" parent="." index="40" instance=ExtResource("8_lxhyd")]
-position = Vector2(455, 571)
+[node name="Shrub12" parent="." index="42" instance=ExtResource("8_lxhyd")]
+position = Vector2(456, 571)
 
-[node name="Shrub13" parent="." index="41" instance=ExtResource("8_lxhyd")]
-position = Vector2(649, 24)
+[node name="Shrub13" parent="." index="43" instance=ExtResource("8_lxhyd")]
+position = Vector2(650, 24)
 
-[node name="Shrub14" parent="." index="42" instance=ExtResource("8_lxhyd")]
-position = Vector2(647, 570)
+[node name="Shrub14" parent="." index="44" instance=ExtResource("8_lxhyd")]
+position = Vector2(648, 570)
 
-[node name="Shrub15" parent="." index="43" instance=ExtResource("8_lxhyd")]
-position = Vector2(752, 139)
+[node name="Shrub15" parent="." index="45" instance=ExtResource("8_lxhyd")]
+position = Vector2(753, 139)
 
-[node name="Shrub16" parent="." index="44" instance=ExtResource("8_lxhyd")]
-position = Vector2(346, 139)
+[node name="Shrub16" parent="." index="46" instance=ExtResource("8_lxhyd")]
+position = Vector2(347, 139)
 
-[node name="Shrub17" parent="." index="45" instance=ExtResource("8_lxhyd")]
-position = Vector2(248, 140)
+[node name="Shrub17" parent="." index="47" instance=ExtResource("8_lxhyd")]
+position = Vector2(249, 140)
 
-[node name="Shrub22" parent="." index="46" instance=ExtResource("8_lxhyd")]
-position = Vector2(145, 143)
+[node name="Shrub22" parent="." index="48" instance=ExtResource("8_lxhyd")]
+position = Vector2(146, 143)
 
-[node name="Shrub23" parent="." index="47" instance=ExtResource("8_lxhyd")]
-position = Vector2(59, 214)
+[node name="Shrub23" parent="." index="49" instance=ExtResource("8_lxhyd")]
+position = Vector2(60, 214)
 
-[node name="Shrub24" parent="." index="48" instance=ExtResource("8_lxhyd")]
-position = Vector2(58, 327)
+[node name="Shrub24" parent="." index="50" instance=ExtResource("8_lxhyd")]
+position = Vector2(59, 327)
 
-[node name="Shrub25" parent="." index="49" instance=ExtResource("8_lxhyd")]
-position = Vector2(126, 443)
+[node name="Shrub25" parent="." index="51" instance=ExtResource("8_lxhyd")]
+position = Vector2(127, 443)
 
-[node name="Shrub26" parent="." index="50" instance=ExtResource("8_lxhyd")]
-position = Vector2(230, 462)
+[node name="Shrub26" parent="." index="52" instance=ExtResource("8_lxhyd")]
+position = Vector2(231, 462)
 
-[node name="Shrub20" parent="." index="51" instance=ExtResource("8_lxhyd")]
-position = Vector2(742, 442)
+[node name="Shrub20" parent="." index="53" instance=ExtResource("8_lxhyd")]
+position = Vector2(743, 442)
 
-[node name="Shrub21" parent="." index="52" instance=ExtResource("8_lxhyd")]
-position = Vector2(338, 451)
+[node name="Shrub21" parent="." index="54" instance=ExtResource("8_lxhyd")]
+position = Vector2(339, 451)
 
-[node name="TargetSpace" parent="." index="53" instance=ExtResource("10_3uh1a")]
-position = Vector2(1617, 282)
+[node name="TargetSpace" parent="." index="55" instance=ExtResource("10_3uh1a")]
+position = Vector2(2039, 286)
 rotation = 1.57079
 
-[node name="CarSpawner" parent="." index="54" instance=ExtResource("11_fas00")]
-position = Vector2(1421, -88)
+[node name="CarSpawner" parent="." index="56" instance=ExtResource("11_fas00")]
+position = Vector2(1419, -119)
 rotation = 1.57079
 
-[node name="CarSpawner2" parent="." index="55" instance=ExtResource("11_fas00")]
-position = Vector2(1724, -92)
+[node name="CarSpawner7" parent="." index="57" instance=ExtResource("11_fas00")]
+position = Vector2(1628, -119)
+rotation = 1.57079
+initial_delay = 1.5
+
+[node name="CarSpawner8" parent="." index="58" instance=ExtResource("11_fas00")]
+position = Vector2(1826, -118)
+rotation = 1.57079
+initial_delay = 3.0
+
+[node name="CarSpawner2" parent="." index="59" instance=ExtResource("11_fas00")]
+position = Vector2(2146, -88)
 rotation = 1.57079
 interval = 2.0
 jitter = 0.5
 speed = 700.0
 
-[node name="CarSpawner5" parent="." index="56" instance=ExtResource("11_fas00")]
-position = Vector2(1957, -90)
+[node name="CarSpawner5" parent="." index="60" instance=ExtResource("11_fas00")]
+position = Vector2(2379, -86)
 rotation = 1.57079
 interval = 2.0
 jitter = 0.5
 speed = 700.0
 
-[node name="CarSpawner3" parent="." index="57" instance=ExtResource("11_fas00")]
-position = Vector2(1879, -91)
+[node name="CarSpawner3" parent="." index="61" instance=ExtResource("11_fas00")]
+position = Vector2(2301, -87)
 rotation = 1.57079
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.5
 speed = 700.0
 
-[node name="CarSpawner4" parent="." index="58" instance=ExtResource("11_fas00")]
-position = Vector2(1803, -91)
+[node name="CarSpawner4" parent="." index="62" instance=ExtResource("11_fas00")]
+position = Vector2(2225, -87)
 rotation = 1.57079
 initial_delay = 1.0
 interval = 2.0
 jitter = 0.5
 speed = 700.0
 
-[node name="CarSpawner6" parent="." index="59" instance=ExtResource("11_fas00")]
-position = Vector2(2037, -92)
+[node name="CarSpawner6" parent="." index="63" instance=ExtResource("11_fas00")]
+position = Vector2(2459, -88)
 rotation = 1.57079
 initial_delay = 1.0
 interval = 2.0
