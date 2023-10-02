@@ -11,6 +11,11 @@ var car_types : Array = [
 	preload("res://entities/cars/CarModelG.tscn")	
 ]
 
+@export var texture: Texture2D:
+	set(value):
+		texture = value
+		if Engine.is_editor_hint():
+			init()
 @export var spaces_wide: int:
 	set(value):
 		spaces_wide = value
@@ -36,16 +41,24 @@ var car_types : Array = [
 		fill_with_cars = value
 		if Engine.is_editor_hint():
 			init()
+@export var street_parking: bool:
+	set(value):
+		street_parking = value
+		if Engine.is_editor_hint():
+			init()
 @export var instruction: Array[String]:
 	set(value):
 		instruction = value
 		if Engine.is_editor_hint():
 			init()
-@export var rng_seed: String:
+@export var rng_seed: String = "":
 	set(value):
 		rng_seed = value
 		if Engine.is_editor_hint():
 			init()
+
+var _space_width: int;
+var _space_height: int;
 
 var lines: Array[Line2D] = []
 var cars: Array[Node2D] = []
@@ -58,12 +71,18 @@ func _ready() -> void:
 
 func init() -> void:
 	rng = RandomNumberGenerator.new()
-	rng.seed = hash(rng_seed)
+	if rng_seed != "":
+		rng.seed = hash(rng_seed)
+	
+	_space_width = space_width if not street_parking else space_height
+	_space_height = space_height if not street_parking else space_width
+	
 	init_lines()
 	init_cars()
 
 func init_cars():
 	# destroy cars that already exist
+	print(cars.size())
 	for car in cars:
 		remove_child(car)
 	cars = []
@@ -94,8 +113,10 @@ func init_cars():
 				continue
 			
 			var car = car_types[type_idx].instantiate()
-			car.position = Vector2(space_width * (x + 0.5), space_height * (y+0.5))
-			car.rotation = PI / 2
+			car.position = Vector2(_space_width * (x + 0.5), _space_height * (y+0.5))
+			
+			if not street_parking:
+				car.rotation = PI / 2
 			if flipped:
 				car.rotation += PI
 			cars.append(car)
@@ -113,11 +134,11 @@ func init_lines():
 	# create lines
 	for x in range(0, spaces_wide):
 		for y in range(0, spaces_tall):
-			var offset = Vector2(x * space_width, y * space_height)
+			var offset = Vector2(x * _space_width, y * _space_height)
 			var top_left = Vector2(0, 0) + offset
-			var bottom_left = Vector2(0, space_height) + offset
-			var bottom_right = Vector2(space_width, space_height) + offset
-			var top_right = Vector2(space_width, 0) + offset
+			var bottom_left = Vector2(0, _space_height) + offset
+			var bottom_right = Vector2(_space_width, _space_height) + offset
+			var top_right = Vector2(_space_width, 0) + offset
 			
 			if y == 0 || y < spaces_tall - 1:
 				var line = Line2D.new()
@@ -140,4 +161,7 @@ func init_lines():
 	
 	#add lines
 	for line in lines:
+		if texture != null:
+			line.set_texture(texture)
+			line.set_texture_mode(Line2D.LINE_TEXTURE_TILE)
 		add_child(line)
