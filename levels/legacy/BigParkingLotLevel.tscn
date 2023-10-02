@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_p2jki"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="3_7vqy0"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="4_lxmwu"]
-[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="5_wwppr"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="5_wwppr"]
 
 [node name="BigParkingLotLevel" type="Node2D"]
 script = ExtResource("1_0tdbp")

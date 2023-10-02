@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfu5s8jl18as7" path="res://entities/Camera.tscn" id="1_hnhn4"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_8ugkb"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_w6bhe"]
-[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="4_d41oh"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="4_d41oh"]
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="5_a5nuo"]
 
 [node name="TestLevel" type="Node2D"]

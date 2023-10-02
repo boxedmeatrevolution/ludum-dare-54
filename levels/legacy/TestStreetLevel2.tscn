@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="1_oeu7q"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="2_0vked"]
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="3_1m328"]
-[ext_resource type="PackedScene" uid="uid://dotuqxda72lpy" path="res://entities/Ramp.tscn" id="4_6vspr"]
+[ext_resource type="PackedScene" uid="uid://dotuqxda72lpy" path="res://entities/SurfaceRamp.tscn" id="4_6vspr"]
 
 [node name="TestStreetLevel" type="Node2D"]
 
@@ -41,4 +41,4 @@ speed = 200.0
 
 [node name="Ramp" parent="." instance=ExtResource("4_6vspr")]
 position = Vector2(512, 472)
-scale = Vector2(4, 4)
+scale = Vector2(1, 1)

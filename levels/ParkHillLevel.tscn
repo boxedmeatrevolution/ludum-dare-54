@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cux7fi3yy2hxk" path="res://entities/SurfaceRamp.tscn" id="2_sjcrh"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_4c7lk"]
 [ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="3_t6lu1"]
-[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="4_qlvay"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="4_qlvay"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="5_sr3fo"]
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="7_r7dac"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="9_4x2ji"]

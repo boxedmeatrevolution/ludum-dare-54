@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ctnh28s2l2x35" path="res://entities/cars/CarModelB.tscn" id="5_5uwa2"]
 [ext_resource type="PackedScene" uid="uid://chclyf3t26mgn" path="res://entities/cars/CarModelC.tscn" id="6_40hn0"]
 [ext_resource type="PackedScene" uid="uid://bhnjpsdtol8td" path="res://entities/cars/Car.tscn" id="7_8vtjc"]
-[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="8_ucass"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="8_ucass"]
 
 [node name="TutorialLevel2" type="Node2D"]
 

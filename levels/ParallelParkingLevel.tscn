@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cl56u6y6i550g" path="res://entities/cars/CarModelA.tscn" id="5_8crlx"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="5_ln1eu"]
 [ext_resource type="PackedScene" uid="uid://chclyf3t26mgn" path="res://entities/cars/CarModelC.tscn" id="6_eh0fs"]
-[ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="6_rwqbb"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="6_rwqbb"]
 [ext_resource type="PackedScene" uid="uid://b2fe1j1o3660p" path="res://entities/cars/CarModelD.tscn" id="7_o8jk0"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="7_pu5d3"]
 [ext_resource type="PackedScene" uid="uid://c0rajt1g623xm" path="res://entities/cars/CarModelF.tscn" id="8_fn37f"]
