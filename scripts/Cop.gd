@@ -8,7 +8,7 @@ func _on_damage_received(_damage : float, _total_damage : float, destroyed : boo
 	if destroyed && !death_animation_triggered:
 		death_animation_triggered = true
 		var siren := SirenEffectScene.instantiate()
-		light_effect_parent.add_child(siren)
+		light_parent.add_child(siren)
 		siren.global_transform = global_transform
 		siren.car = self
 		sprite_headlight_left.visible = true

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2gtas65p02sk"]
+
+[ext_resource type="Script" path="res://scripts/SmokeEffect.gd" id="1_aw8i2"]
+[ext_resource type="Texture2D" uid="uid://bqjjdoasdkfcm" path="res://sprites/SmokeEffect.png" id="1_v8vpg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cqxy"]
+atlas = ExtResource("1_v8vpg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74xqc"]
+atlas = ExtResource("1_v8vpg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odnav"]
+atlas = ExtResource("1_v8vpg")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7eyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cqxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74xqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odnav")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="SmokeEffect" type="Node2D"]
+script = ExtResource("1_aw8i2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g7eyf")
+frame = 2
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/TargetSpace.gd" id="1_ydppf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um46i"]
-size = Vector2(85, 140)
+size = Vector2(140, 90)
 
 [node name="TargetSpace" type="Node2D"]
 script = ExtResource("1_ydppf")

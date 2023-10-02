@@ -9,10 +9,10 @@ script = ExtResource("1_mkbax")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_repeat = 2
-scale = Vector2(2, 2)
 texture = ExtResource("2_oqsa0")
+centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 1920, 1200)
+region_rect = Rect2(0, 0, 3840, 2400)
 
 [node name="RampParent" type="Node2D" parent="."]
 
