@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5ytb81u00n7b"
-path="res://.godot/imported/LDD54-_White line.png-0129ceb412e1acd03b464a9bee2fe059.ctex"
+path="res://.godot/imported/WhiteLine.png-f417b5b3985e6165781bb28ee07dc33a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/LDD54-_White line.png"
-dest_files=["res://.godot/imported/LDD54-_White line.png-0129ceb412e1acd03b464a9bee2fe059.ctex"]
+source_file="res://sprites/WhiteLine.png"
+dest_files=["res://.godot/imported/WhiteLine.png-f417b5b3985e6165781bb28ee07dc33a.ctex"]
 
 [params]
 
