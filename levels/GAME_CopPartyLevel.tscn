@@ -1,0 +1,136 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1ob3x8he3iao"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_qnjyr"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="2_hgpoi"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="3_c47fk"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="4_cl2ct"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_mgpln"]
+[ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="6_rdduf"]
+[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="7_flusc"]
+[ext_resource type="PackedScene" uid="uid://bmqfhjjncpc6i" path="res://entities/cars/Cop.tscn" id="8_hp7ym"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="9_aay0t"]
+
+[node name="Level" instance=ExtResource("1_qnjyr")]
+bounds = Rect2(0, -100, 1375, 800)
+
+[node name="CarMain" parent="." index="12" instance=ExtResource("2_hgpoi")]
+position = Vector2(141, 304)
+
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("3_c47fk")]
+
+[node name="ParkingSpace3" parent="." index="13" instance=ExtResource("4_cl2ct")]
+position = Vector2(1074, 205)
+rotation = 1.57079
+spaces_tall = 3
+fill_with_cars = true
+cop_lot = true
+
+[node name="ParkingSpace" parent="." index="14" instance=ExtResource("4_cl2ct")]
+position = Vector2(375, 547)
+rotation = -1.5708
+spaces_wide = 4
+spaces_tall = 2
+fill_with_cars = true
+cop_lot = true
+instruction = Array[String](["2 1 -1"])
+
+[node name="ParkingSpace4" parent="." index="15" instance=ExtResource("4_cl2ct")]
+position = Vector2(374, 206)
+rotation = -1.57079
+spaces_tall = 5
+fill_with_cars = true
+cop_lot = true
+
+[node name="ParkingSpace2" parent="." index="16" instance=ExtResource("4_cl2ct")]
+position = Vector2(799, 546)
+rotation = -1.57079
+spaces_wide = 3
+spaces_tall = 2
+fill_with_cars = true
+cop_lot = true
+
+[node name="ParkingSpace5" parent="." index="17" instance=ExtResource("4_cl2ct")]
+position = Vector2(1199, 546)
+rotation = -1.57079
+spaces_wide = 5
+fill_with_cars = true
+cop_lot = true
+
+[node name="TargetSpace" parent="." index="18" instance=ExtResource("5_mgpln")]
+position = Vector2(585, 335)
+rotation = -1.57079
+
+[node name="Shrub" parent="." index="19" instance=ExtResource("6_rdduf")]
+position = Vector2(72, 510)
+
+[node name="Shrub2" parent="." index="20" instance=ExtResource("6_rdduf")]
+position = Vector2(155, 512)
+
+[node name="Shrub3" parent="." index="21" instance=ExtResource("6_rdduf")]
+position = Vector2(241, 512)
+
+[node name="Shrub4" parent="." index="22" instance=ExtResource("6_rdduf")]
+position = Vector2(326, 515)
+
+[node name="Shrub5" parent="." index="23" instance=ExtResource("6_rdduf")]
+position = Vector2(-9, 509)
+
+[node name="CarSpawner" parent="." index="24" instance=ExtResource("7_flusc")]
+position = Vector2(-98, 62)
+car_scenes = Array[PackedScene]([ExtResource("8_hp7ym")])
+
+[node name="CarSpawner2" parent="." index="25" instance=ExtResource("7_flusc")]
+position = Vector2(1461, 601)
+rotation = -3.14159
+car_scenes = Array[PackedScene]([ExtResource("8_hp7ym")])
+
+[node name="Curb3" parent="." index="26" instance=ExtResource("9_aay0t")]
+
+[node name="Line2D" type="Line2D" parent="Curb3" index="2"]
+points = PackedVector2Array(-149, 647, 1532, 650, 1534, 777, -148, 779)
+
+[node name="Curb2" parent="." index="27" instance=ExtResource("9_aay0t")]
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb2" index="2"]
+points = PackedVector2Array(1525, 123, 1350, 122, 1349, 546, 1528, 546)
+
+[node name="Curb" parent="." index="28" instance=ExtResource("9_aay0t")]
+position = Vector2(908.535, 432.31)
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb" index="2"]
+points = PackedVector2Array(-1067.54, -433.31, 611.465, -430.31, 616.465, -566.31, -1064.54, -548.31)
+
+[node name="Shrub6" parent="." index="29" instance=ExtResource("6_rdduf")]
+position = Vector2(-78, 507)
+
+[node name="Shrub7" parent="." index="30" instance=ExtResource("6_rdduf")]
+position = Vector2(-157, 512)
+
+[connection signal="damage_received" from="ParkingSpace3/Cop" to="ParkingSpace3/Cop" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace3/@RigidBody2D@201865" to="ParkingSpace3/@RigidBody2D@201865" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace3/@RigidBody2D@201866" to="ParkingSpace3/@RigidBody2D@201866" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/Cop" to="ParkingSpace/Cop" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@201876" to="ParkingSpace/@RigidBody2D@201876" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@201877" to="ParkingSpace/@RigidBody2D@201877" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@201878" to="ParkingSpace/@RigidBody2D@201878" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@201879" to="ParkingSpace/@RigidBody2D@201879" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@201880" to="ParkingSpace/@RigidBody2D@201880" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@201881" to="ParkingSpace/@RigidBody2D@201881" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/Cop" to="ParkingSpace4/Cop" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@201888" to="ParkingSpace4/@RigidBody2D@201888" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@201889" to="ParkingSpace4/@RigidBody2D@201889" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@201890" to="ParkingSpace4/@RigidBody2D@201890" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@201891" to="ParkingSpace4/@RigidBody2D@201891" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/Cop" to="ParkingSpace2/Cop" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@201899" to="ParkingSpace2/@RigidBody2D@201899" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@201900" to="ParkingSpace2/@RigidBody2D@201900" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@201901" to="ParkingSpace2/@RigidBody2D@201901" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@201902" to="ParkingSpace2/@RigidBody2D@201902" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@201903" to="ParkingSpace2/@RigidBody2D@201903" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/Cop" to="ParkingSpace5/Cop" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@201909" to="ParkingSpace5/@RigidBody2D@201909" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@201910" to="ParkingSpace5/@RigidBody2D@201910" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@201911" to="ParkingSpace5/@RigidBody2D@201911" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@201912" to="ParkingSpace5/@RigidBody2D@201912" method="_on_damage_received" flags=18]
