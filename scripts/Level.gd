@@ -24,6 +24,7 @@ const OUT_OF_BOUNDS_PADDING : float = 64.0
 var camera : Camera = null
 var target_space : TargetSpace = null
 var ticket : Ticket = null
+var player_ai : PlayerAI = null
 
 @onready var surface_parent := $SurfaceParent
 @onready var shrub_parent := $ShrubParent
@@ -45,6 +46,7 @@ func _ready() -> void:
 			var is_player := false
 			for grandchild in child.get_children():
 				if grandchild is PlayerAI:
+					player_ai = grandchild
 					is_player = true
 					break
 			if is_player:
@@ -77,6 +79,10 @@ func _ready() -> void:
 		ticket.ticket_collected.connect(target_space.ticket_collected)
 	elif target_space != null:
 		target_space.ticket_collected()
+		
+	if player_ai != null &&  target_space != null:
+		player_ai.on_target_space.connect(target_space.on)
+		player_ai.off_target_space.connect(target_space.off)
 	
 	camera = CameraScene.instantiate()
 	if player_car_parent.get_child_count() != 0:

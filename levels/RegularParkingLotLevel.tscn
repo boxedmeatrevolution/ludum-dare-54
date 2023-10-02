@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvttpxh6056ir"]
+[gd_scene load_steps=12 format=3 uid="uid://cvttpxh6056ir"]
 
 [ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_fmejr"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="2_qcbo7"]
@@ -6,37 +6,72 @@
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="4_tym1p"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_hne33"]
 [ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="5_lln0r"]
+[ext_resource type="PackedScene" uid="uid://chclyf3t26mgn" path="res://entities/cars/CarModelC.tscn" id="7_30law"]
+[ext_resource type="PackedScene" uid="uid://b3ceo5q3ktvei" path="res://entities/cars/Truck.tscn" id="8_vsf6w"]
+[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="9_787ui"]
+[ext_resource type="Texture2D" uid="uid://b00htjfg64mux" path="res://sprites/TileArrowYellow.png" id="10_6bts6"]
+[ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="10_8qncn"]
 
 [node name="Level" instance=ExtResource("1_fmejr")]
-bounds = Rect2(0, 0, 1144, 600)
+bounds = Rect2(0, 0, 1250, 600)
 
 [node name="ParkingSpace" parent="." index="6" instance=ExtResource("2_qcbo7")]
-position = Vector2(16, 152)
+position = Vector2(62, 151.641)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
 
 [node name="ParkingSpace2" parent="." index="7" instance=ExtResource("2_qcbo7")]
-position = Vector2(568, 152)
+position = Vector2(606, 152.641)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-instruction = Array[String](["3 1 -1"])
+instruction = Array[String](["2 1 -1"])
 
 [node name="Curb" parent="." index="8" instance=ExtResource("3_sip0q")]
-position = Vector2(1859.89, 40.3592)
+position = Vector2(1907, 48)
 invert_polygon = true
 invert_texture = true
 
 [node name="Line2D" type="Line2D" parent="Curb" index="2"]
-points = PackedVector2Array(-2003.89, -24.3592, -731.891, -24.3592, -731.891, 535.641, -1859.89, 535.641, -1859.89, 119.641, -2003.89, 119.641)
+points = PackedVector2Array(-2003.89, -24.3592, -1399.86, -24.3592, -731.891, -24.3592, -731.891, 535.641, -1859.89, 535.641, -1862, 119, -2003.89, 119.641)
 
 [node name="CarMain" parent="." index="9" instance=ExtResource("4_tym1p")]
-position = Vector2(24, 80)
+position = Vector2(37, 83)
 
 [node name="PlayerAI" parent="CarMain" index="7" instance=ExtResource("5_lln0r")]
 
 [node name="TargetSpace" parent="." index="10" instance=ExtResource("5_hne33")]
-position = Vector2(824, 296)
-colour_closed = null
-colour_open = null
+position = Vector2(820, 363)
+
+[node name="Truck" parent="." index="17" instance=ExtResource("8_vsf6w")]
+position = Vector2(154, 524)
+
+[node name="Shrub" parent="." index="18" instance=ExtResource("10_8qncn")]
+position = Vector2(1134, 535)
+
+[node name="Shrub2" parent="." index="19" instance=ExtResource("10_8qncn")]
+position = Vector2(1132, 65)
+
+[node name="Surface" parent="." index="20" instance=ExtResource("9_787ui")]
+position = Vector2(592, 220)
+rotation = 1.5708
+scale = Vector2(1, 2.04)
+texture = ExtResource("10_6bts6")
+
+[node name="Surface2" parent="." index="21" instance=ExtResource("9_787ui")]
+position = Vector2(1056, 344)
+rotation = 4.71239
+scale = Vector2(1, 2.04)
+texture = ExtResource("10_6bts6")
+
+[node name="CarModelC" parent="." index="22" instance=ExtResource("7_30law")]
+position = Vector2(526, 125)
+rotation = 1.0472
+
+[node name="CarModelC2" parent="." index="23" instance=ExtResource("7_30law")]
+position = Vector2(675, 501)
+
+[node name="CarModelC3" parent="." index="24" instance=ExtResource("7_30law")]
+position = Vector2(1115, 262)
+rotation = -1.8326
