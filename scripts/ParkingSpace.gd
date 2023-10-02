@@ -11,6 +11,11 @@ var car_types : Array = [
 	preload("res://entities/cars/CarModelG.tscn")	
 ]
 
+@export var texture: Texture2D:
+	set(value):
+		texture = value
+		if Engine.is_editor_hint():
+			init()
 @export var spaces_wide: int:
 	set(value):
 		spaces_wide = value
@@ -156,4 +161,7 @@ func init_lines():
 	
 	#add lines
 	for line in lines:
+		if texture != null:
+			line.set_texture(texture)
+			line.set_texture_mode(Line2D.LINE_TEXTURE_TILE)
 		add_child(line)
