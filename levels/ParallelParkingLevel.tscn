@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1k324eikv0k7"]
+[gd_scene load_steps=8 format=3 uid="uid://bc1eagtxovavp"]
 
-[ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_os2s5"]
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_os2s5"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_cpqtg"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="4_hhuys"]
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="4_pq0m2"]
