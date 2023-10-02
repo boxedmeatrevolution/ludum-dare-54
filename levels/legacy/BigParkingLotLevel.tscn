@@ -19,6 +19,7 @@ target_path = NodePath("../CarMain")
 position = Vector2(184, 1072)
 colour_closed = null
 colour_open = null
+colour_open_and_on = null
 
 [node name="Curb" parent="." instance=ExtResource("2_p2jki")]
 invert_polygon = true

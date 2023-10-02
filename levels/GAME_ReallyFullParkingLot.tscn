@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv8uvhbmarowe"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_g100v"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_nye7f"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_syx4u"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="4_k505c"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="5_2tf6a"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="6_i7kls"]
+
+[node name="Level" instance=ExtResource("1_g100v")]
+
+[node name="Curb" parent="." index="12" instance=ExtResource("2_nye7f")]
+invert_polygon = true
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb" index="2"]
+points = PackedVector2Array(-143, 147, 86, 143, 140, 71, 840, 74, 913, 190, 917, 556, 103, 561, 83, 260, -142, 266)
+
+[node name="CarMain" parent="." index="13" instance=ExtResource("3_syx4u")]
+position = Vector2(48, 202)
+rotation = -0.0601458
+
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("4_k505c")]
+
+[node name="ParkingSpace" parent="." index="14" instance=ExtResource("5_2tf6a")]
+position = Vector2(148, 149)
+rotation = -0.00113904
+spaces_wide = 11
+spaces_tall = 3
+space_width = 65
+space_height = 115
+fill_with_cars = true
+rotational_variance = 0.15
+instruction = Array[String](["10 2 -1"])
+
+[node name="ParkingSpace2" parent="." index="15" instance=ExtResource("5_2tf6a")]
+position = Vector2(834, 151)
+rotation = -3.13947
+spaces_wide = 6
+space_width = 65
+space_height = 115
+fill_with_cars = true
+street_parking = true
+
+[node name="ParkingSpace3" parent="." index="16" instance=ExtResource("5_2tf6a")]
+position = Vector2(108, 490)
+rotation = -0.00809508
+spaces_wide = 7
+space_width = 65
+space_height = 115
+fill_with_cars = true
+street_parking = true
+
+[node name="TargetSpace" parent="." index="17" instance=ExtResource("6_i7kls")]
+position = Vector2(833, 433)
+rotation = -0.00316039

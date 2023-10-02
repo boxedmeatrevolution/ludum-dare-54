@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://bmqfhjjncpc6i" path="res://entities/cars/Cop.tscn" id="5_p45cn"]
 [ext_resource type="PackedScene" uid="uid://cux7fi3yy2hxk" path="res://entities/SurfaceRamp.tscn" id="6_0p4yf"]
 [ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="6_1vma8"]
-[ext_resource type="PackedScene" path="res://entities/Ticket.tscn" id="11_22qkx"]
+[ext_resource type="PackedScene" uid="uid://b3cac7f6lc5j" path="res://entities/Ticket.tscn" id="11_22qkx"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="12_ahs75"]
 
-[node name="Level" instance=ExtResource("1_hmqa6")]
+[node name="Level2" instance=ExtResource("1_hmqa6")]
 
 [node name="Curb" parent="." index="9" instance=ExtResource("2_cx0kc")]
 invert_polygon = true

@@ -15,6 +15,7 @@
 position = Vector2(267, 237)
 colour_closed = null
 colour_open = null
+colour_open_and_on = null
 
 [node name="ParkingSpace" parent="." instance=ExtResource("2_nrtas")]
 position = Vector2(765, 488)

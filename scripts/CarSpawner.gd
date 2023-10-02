@@ -20,6 +20,7 @@ var timer : float = 0.0
 
 func _ready() -> void:
 	timer = initial_delay
+	$Line2D.queue_free()
 
 func _process(delta : float) -> void:
 	timer -= delta
