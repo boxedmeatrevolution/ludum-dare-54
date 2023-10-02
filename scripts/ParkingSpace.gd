@@ -82,7 +82,6 @@ func init() -> void:
 
 func init_cars():
 	# destroy cars that already exist
-	print(cars.size())
 	for car in cars:
 		remove_child(car)
 	cars = []
