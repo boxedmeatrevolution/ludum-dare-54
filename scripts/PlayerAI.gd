@@ -33,7 +33,7 @@ var headlights_on := false
 func add_parking_detector(pos : Vector2) -> void:
 	var idx := parking_detectors.size()
 	var circle := CircleShape2D.new()
-	circle.radius = 4
+	circle.radius = 12
 	var shape := CollisionShape2D.new()
 	shape.shape = circle
 	shape.position = Vector2.ZERO
