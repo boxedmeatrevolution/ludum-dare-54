@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://cwogqoxt5yu1o"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_qrwlh"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_kmjox"]
+[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="3_nk1c0"]
+[ext_resource type="Texture2D" uid="uid://bdbpgt3w4nmnx" path="res://sprites/TileGlass.png" id="4_q8w0v"]
+[ext_resource type="PackedScene" uid="uid://6pjvwcnna3ud" path="res://entities/SurfaceIce.tscn" id="5_vk6dd"]
+[ext_resource type="PackedScene" uid="uid://cux7fi3yy2hxk" path="res://entities/SurfaceRamp.tscn" id="6_3vlok"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="7_ff1tr"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="8_jg8rc"]
+[ext_resource type="PackedScene" uid="uid://bmqfhjjncpc6i" path="res://entities/cars/Cop.tscn" id="9_amxto"]
+[ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="10_ratq6"]
+[ext_resource type="PackedScene" path="res://entities/Ticket.tscn" id="11_1je8i"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="12_kajrr"]
+
+[node name="Level" instance=ExtResource("1_qrwlh")]
+
+[node name="Curb" parent="." index="9" instance=ExtResource("2_kmjox")]
+invert_polygon = true
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb" index="2"]
+points = PackedVector2Array(192, 78, 713, 78, 852, 290, 817, 539, 383, 563, 71, 473, 26, 210)
+
+[node name="Surface" parent="." index="10" instance=ExtResource("3_nk1c0")]
+position = Vector2(8, 408)
+scale = Vector2(16.64, 2.84)
+texture = ExtResource("4_q8w0v")
+
+[node name="SurfaceIce" parent="." index="11" instance=ExtResource("5_vk6dd")]
+position = Vector2(648, 144)
+rotation = 0.472275
+scale = Vector2(6.56891, 2.02835)
+
+[node name="SurfaceRamp" parent="." index="12" instance=ExtResource("6_3vlok")]
+position = Vector2(176, 208)
+rotation = 2.23816
+scale = Vector2(2.07154, 0.83266)
+mirrored = true
+
+[node name="CarMain" parent="." index="13" instance=ExtResource("7_ff1tr")]
+position = Vector2(288, 240)
+rotation = 0.177215
+
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("8_jg8rc")]
+
+[node name="Cop" parent="." index="14" instance=ExtResource("9_amxto")]
+position = Vector2(600, 381)
+rotation = -1.0472
+
+[node name="Tree" parent="." index="15" instance=ExtResource("10_ratq6")]
+position = Vector2(277, 443)
+
+[node name="Tree2" parent="." index="16" instance=ExtResource("10_ratq6")]
+position = Vector2(464, 168)
+
+[node name="Tree3" parent="." index="17" instance=ExtResource("10_ratq6")]
+position = Vector2(693, 257)
+
+[node name="Ticket" parent="." index="21" instance=ExtResource("11_1je8i")]
+position = Vector2(456, 456)
+
+[node name="TargetSpace" parent="." index="22" instance=ExtResource("12_kajrr")]
+position = Vector2(600, 200)
+rotation = 0.608157

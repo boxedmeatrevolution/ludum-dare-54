@@ -12,6 +12,7 @@ func _ready() -> void:
 			file = file.replace(".remap", "")
 		if file.ends_with(".tscn"):
 			level_paths.append(level_dir.get_current_dir() + "/" + file)
+	print(level_paths)
 	
 	var level_index = 0
 	
