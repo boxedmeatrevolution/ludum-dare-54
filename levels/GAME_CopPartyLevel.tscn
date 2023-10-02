@@ -14,7 +14,8 @@
 bounds = Rect2(0, -100, 1375, 800)
 
 [node name="CarMain" parent="." index="12" instance=ExtResource("2_hgpoi")]
-position = Vector2(141, 304)
+position = Vector2(86, 385)
+rotation = -0.785397
 
 [node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("3_c47fk")]
 
@@ -108,29 +109,37 @@ position = Vector2(-78, 507)
 [node name="Shrub7" parent="." index="30" instance=ExtResource("6_rdduf")]
 position = Vector2(-157, 512)
 
+[node name="Cop" parent="." index="31" instance=ExtResource("8_hp7ym")]
+position = Vector2(306, 383)
+rotation = 4.18878
+
+[node name="Cop2" parent="." index="32" instance=ExtResource("8_hp7ym")]
+position = Vector2(307, 238)
+rotation = 4.18878
+
 [connection signal="damage_received" from="ParkingSpace3/Cop" to="ParkingSpace3/Cop" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace3/@RigidBody2D@20670" to="ParkingSpace3/@RigidBody2D@20670" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace3/@RigidBody2D@20671" to="ParkingSpace3/@RigidBody2D@20671" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace3/@RigidBody2D@77857" to="ParkingSpace3/@RigidBody2D@77857" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace3/@RigidBody2D@77858" to="ParkingSpace3/@RigidBody2D@77858" method="_on_damage_received" flags=18]
 [connection signal="damage_received" from="ParkingSpace/Cop" to="ParkingSpace/Cop" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@20681" to="ParkingSpace/@RigidBody2D@20681" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@20682" to="ParkingSpace/@RigidBody2D@20682" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@20683" to="ParkingSpace/@RigidBody2D@20683" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@20684" to="ParkingSpace/@RigidBody2D@20684" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@20685" to="ParkingSpace/@RigidBody2D@20685" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@20686" to="ParkingSpace/@RigidBody2D@20686" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@77868" to="ParkingSpace/@RigidBody2D@77868" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@77869" to="ParkingSpace/@RigidBody2D@77869" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@77870" to="ParkingSpace/@RigidBody2D@77870" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@77871" to="ParkingSpace/@RigidBody2D@77871" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@77872" to="ParkingSpace/@RigidBody2D@77872" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace/@RigidBody2D@77873" to="ParkingSpace/@RigidBody2D@77873" method="_on_damage_received" flags=18]
 [connection signal="damage_received" from="ParkingSpace4/Cop" to="ParkingSpace4/Cop" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@20693" to="ParkingSpace4/@RigidBody2D@20693" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@20694" to="ParkingSpace4/@RigidBody2D@20694" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@20695" to="ParkingSpace4/@RigidBody2D@20695" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@20696" to="ParkingSpace4/@RigidBody2D@20696" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@77880" to="ParkingSpace4/@RigidBody2D@77880" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@77881" to="ParkingSpace4/@RigidBody2D@77881" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@77882" to="ParkingSpace4/@RigidBody2D@77882" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace4/@RigidBody2D@77883" to="ParkingSpace4/@RigidBody2D@77883" method="_on_damage_received" flags=18]
 [connection signal="damage_received" from="ParkingSpace2/Cop" to="ParkingSpace2/Cop" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@20704" to="ParkingSpace2/@RigidBody2D@20704" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@20705" to="ParkingSpace2/@RigidBody2D@20705" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@20706" to="ParkingSpace2/@RigidBody2D@20706" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@20707" to="ParkingSpace2/@RigidBody2D@20707" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@20708" to="ParkingSpace2/@RigidBody2D@20708" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@77891" to="ParkingSpace2/@RigidBody2D@77891" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@77892" to="ParkingSpace2/@RigidBody2D@77892" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@77893" to="ParkingSpace2/@RigidBody2D@77893" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@77894" to="ParkingSpace2/@RigidBody2D@77894" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace2/@RigidBody2D@77895" to="ParkingSpace2/@RigidBody2D@77895" method="_on_damage_received" flags=18]
 [connection signal="damage_received" from="ParkingSpace5/Cop" to="ParkingSpace5/Cop" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@20714" to="ParkingSpace5/@RigidBody2D@20714" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@20715" to="ParkingSpace5/@RigidBody2D@20715" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@20716" to="ParkingSpace5/@RigidBody2D@20716" method="_on_damage_received" flags=18]
-[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@20717" to="ParkingSpace5/@RigidBody2D@20717" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@77901" to="ParkingSpace5/@RigidBody2D@77901" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@77902" to="ParkingSpace5/@RigidBody2D@77902" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@77903" to="ParkingSpace5/@RigidBody2D@77903" method="_on_damage_received" flags=18]
+[connection signal="damage_received" from="ParkingSpace5/@RigidBody2D@77904" to="ParkingSpace5/@RigidBody2D@77904" method="_on_damage_received" flags=18]

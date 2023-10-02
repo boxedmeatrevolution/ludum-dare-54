@@ -176,98 +176,107 @@ position = Vector2(1618, 638)
 [node name="Shrub13" parent="." index="37" instance=ExtResource("8_d85kd")]
 position = Vector2(1629, 987)
 
-[node name="Shrub15" parent="." index="38" instance=ExtResource("8_d85kd")]
+[node name="Shrub14" parent="." index="38" instance=ExtResource("8_d85kd")]
+position = Vector2(1629, 1102)
+
+[node name="Shrub15" parent="." index="39" instance=ExtResource("8_d85kd")]
 position = Vector2(1739, 1453)
 
-[node name="Shrub26" parent="." index="39" instance=ExtResource("8_d85kd")]
+[node name="Shrub26" parent="." index="40" instance=ExtResource("8_d85kd")]
 position = Vector2(1843, 1451)
 
-[node name="Shrub27" parent="." index="40" instance=ExtResource("8_d85kd")]
+[node name="Shrub27" parent="." index="41" instance=ExtResource("8_d85kd")]
 position = Vector2(1947, 1452)
 
-[node name="Shrub16" parent="." index="41" instance=ExtResource("8_d85kd")]
+[node name="Shrub16" parent="." index="42" instance=ExtResource("8_d85kd")]
 position = Vector2(1638, 1456)
 
-[node name="Shrub11" parent="." index="42" instance=ExtResource("8_d85kd")]
+[node name="Shrub41" parent="." index="43" instance=ExtResource("8_d85kd")]
+position = Vector2(1640, 1578)
+
+[node name="Shrub34" parent="." index="44" instance=ExtResource("8_d85kd")]
+position = Vector2(1631, 1348)
+
+[node name="Shrub11" parent="." index="45" instance=ExtResource("8_d85kd")]
 position = Vector2(1131, 636)
 
-[node name="Curb" parent="." index="43" instance=ExtResource("9_exts3")]
+[node name="Curb" parent="." index="46" instance=ExtResource("9_exts3")]
 position = Vector2(2849, 725)
 
 [node name="Line2D" type="Line2D" parent="Curb" index="2"]
 points = PackedVector2Array(-2890.24, 949.739, -1058.24, 939.739, -1054.24, 1104.74, -2895.24, 1093.74)
 
-[node name="Curb2" parent="." index="44" instance=ExtResource("9_exts3")]
+[node name="Curb2" parent="." index="47" instance=ExtResource("9_exts3")]
 position = Vector2(2832, -1051)
 
 [node name="Line2D" type="Line2D" parent="Curb2" index="2"]
 points = PackedVector2Array(-2890.24, 949.739, -1058.24, 939.739, -1054.24, 1104.74, -2895.24, 1093.74)
 
-[node name="TargetSpace" parent="." index="45" instance=ExtResource("10_k6yxx")]
+[node name="TargetSpace" parent="." index="48" instance=ExtResource("10_k6yxx")]
 position = Vector2(1432, 1439)
 
-[node name="Shrub17" parent="." index="46" instance=ExtResource("8_d85kd")]
+[node name="Shrub17" parent="." index="49" instance=ExtResource("8_d85kd")]
 position = Vector2(-54, 281)
 
-[node name="Shrub18" parent="." index="47" instance=ExtResource("8_d85kd")]
+[node name="Shrub18" parent="." index="50" instance=ExtResource("8_d85kd")]
 position = Vector2(-153, 281)
 
-[node name="Shrub19" parent="." index="48" instance=ExtResource("8_d85kd")]
+[node name="Shrub19" parent="." index="51" instance=ExtResource("8_d85kd")]
 position = Vector2(-255, 283)
 
-[node name="Shrub20" parent="." index="49" instance=ExtResource("8_d85kd")]
+[node name="Shrub20" parent="." index="52" instance=ExtResource("8_d85kd")]
 position = Vector2(-44, 1001)
 
-[node name="Shrub21" parent="." index="50" instance=ExtResource("8_d85kd")]
+[node name="Shrub21" parent="." index="53" instance=ExtResource("8_d85kd")]
 position = Vector2(-143, 1001)
 
-[node name="Shrub22" parent="." index="51" instance=ExtResource("8_d85kd")]
+[node name="Shrub22" parent="." index="54" instance=ExtResource("8_d85kd")]
 position = Vector2(-245, 1003)
 
-[node name="Shrub23" parent="." index="52" instance=ExtResource("8_d85kd")]
+[node name="Shrub23" parent="." index="55" instance=ExtResource("8_d85kd")]
 position = Vector2(-147, 624)
 
-[node name="Shrub24" parent="." index="53" instance=ExtResource("8_d85kd")]
+[node name="Shrub24" parent="." index="56" instance=ExtResource("8_d85kd")]
 position = Vector2(-246, 627)
 
-[node name="Shrub25" parent="." index="54" instance=ExtResource("8_d85kd")]
+[node name="Shrub25" parent="." index="57" instance=ExtResource("8_d85kd")]
 position = Vector2(-48, 624)
 
-[node name="Shrub8" parent="." index="55" instance=ExtResource("8_d85kd")]
+[node name="Shrub8" parent="." index="58" instance=ExtResource("8_d85kd")]
 position = Vector2(45, 1433)
 
-[node name="Shrub28" parent="." index="56" instance=ExtResource("8_d85kd")]
+[node name="Shrub28" parent="." index="59" instance=ExtResource("8_d85kd")]
 position = Vector2(-156, 1432)
 
-[node name="Shrub32" parent="." index="57" instance=ExtResource("8_d85kd")]
+[node name="Shrub32" parent="." index="60" instance=ExtResource("8_d85kd")]
 position = Vector2(-255, 1435)
 
-[node name="Shrub33" parent="." index="58" instance=ExtResource("8_d85kd")]
+[node name="Shrub33" parent="." index="61" instance=ExtResource("8_d85kd")]
 position = Vector2(-57, 1432)
 
-[node name="Shrub29" parent="." index="59" instance=ExtResource("8_d85kd")]
+[node name="Shrub29" parent="." index="62" instance=ExtResource("8_d85kd")]
 position = Vector2(1922, 268)
 
-[node name="Shrub30" parent="." index="60" instance=ExtResource("8_d85kd")]
+[node name="Shrub30" parent="." index="63" instance=ExtResource("8_d85kd")]
 position = Vector2(1823, 268)
 
-[node name="Shrub31" parent="." index="61" instance=ExtResource("8_d85kd")]
+[node name="Shrub31" parent="." index="64" instance=ExtResource("8_d85kd")]
 position = Vector2(1721, 270)
 
-[node name="Shrub35" parent="." index="62" instance=ExtResource("8_d85kd")]
+[node name="Shrub35" parent="." index="65" instance=ExtResource("8_d85kd")]
 position = Vector2(1924, 629)
 
-[node name="Shrub36" parent="." index="63" instance=ExtResource("8_d85kd")]
+[node name="Shrub36" parent="." index="66" instance=ExtResource("8_d85kd")]
 position = Vector2(1825, 629)
 
-[node name="Shrub37" parent="." index="64" instance=ExtResource("8_d85kd")]
+[node name="Shrub37" parent="." index="67" instance=ExtResource("8_d85kd")]
 position = Vector2(1723, 631)
 
-[node name="Shrub38" parent="." index="65" instance=ExtResource("8_d85kd")]
+[node name="Shrub38" parent="." index="68" instance=ExtResource("8_d85kd")]
 position = Vector2(1931, 984)
 
-[node name="Shrub39" parent="." index="66" instance=ExtResource("8_d85kd")]
+[node name="Shrub39" parent="." index="69" instance=ExtResource("8_d85kd")]
 position = Vector2(1832, 984)
 
-[node name="Shrub40" parent="." index="67" instance=ExtResource("8_d85kd")]
+[node name="Shrub40" parent="." index="70" instance=ExtResource("8_d85kd")]
 position = Vector2(1730, 986)

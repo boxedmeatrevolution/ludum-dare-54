@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="3_odmb7"]
 [ext_resource type="Texture2D" uid="uid://c5ytb81u00n7b" path="res://sprites/WhiteLine.png" id="3_t0yg1"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="4_3llnx"]
-[ext_resource type="PackedScene" uid="uid://b3cac7f6lc5j" path="res://entities/Ticket.tscn" id="5_jnalm"]
+[ext_resource type="PackedScene" path="res://entities/Ticket.tscn" id="5_jnalm"]
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="6_diqi0"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="7_76s6d"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="10_jb5s8"]
@@ -91,14 +91,12 @@ position = Vector2(256, 1064)
 rotation = -1.57079
 spaces_wide = 4
 fill_with_cars = true
-cop_lot = false
 
 [node name="ParkingSpace2" parent="." index="19" instance=ExtResource("7_76s6d")]
 position = Vector2(904, 1064)
 rotation = -3.14159
 spaces_wide = 6
 fill_with_cars = true
-cop_lot = false
 
 [node name="CarSpawner2" parent="." index="20" instance=ExtResource("6_diqi0")]
 position = Vector2(40, -104)
@@ -125,7 +123,6 @@ rotation = 3.14159
 spaces_wide = 6
 space_width = 75
 space_height = 120
-cop_lot = false
 
 [node name="Shrub" parent="." index="24" instance=ExtResource("11_eka04")]
 position = Vector2(1072, 1072)

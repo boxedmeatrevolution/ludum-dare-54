@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_j5n48"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="6_necw3"]
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="7_13stk"]
-[ext_resource type="PackedScene" uid="uid://b3cac7f6lc5j" path="res://entities/Ticket.tscn" id="8_014qs"]
+[ext_resource type="PackedScene" path="res://entities/Ticket.tscn" id="8_014qs"]
 [ext_resource type="PackedScene" uid="uid://cux7fi3yy2hxk" path="res://entities/SurfaceRamp.tscn" id="9_rnuwe"]
 
 [node name="Level" instance=ExtResource("1_mvme5")]
@@ -36,7 +36,6 @@ rotation = 0.38399
 spaces_wide = 10
 spaces_tall = 5
 fill_with_cars = true
-cop_lot = false
 instruction = Array[String](["5 2 -1", "4 2 -1"])
 
 [node name="ParkingSpace2" parent="." index="14" instance=ExtResource("4_a4h6p")]
@@ -45,7 +44,6 @@ rotation = 0.418416
 spaces_wide = 10
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = false
 
 [node name="ParkingSpace3" parent="." index="15" instance=ExtResource("4_a4h6p")]
 position = Vector2(1429, 338)
@@ -53,7 +51,6 @@ rotation = -2.76314
 spaces_wide = 7
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = false
 
 [node name="TargetSpace" parent="." index="16" instance=ExtResource("5_j5n48")]
 position = Vector2(859, 591)
