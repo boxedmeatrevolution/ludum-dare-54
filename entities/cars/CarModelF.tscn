@@ -27,26 +27,26 @@ texture = ExtResource("3_03nhm")
 position = Vector2(-33, 0)
 shape = SubResource("CapsuleShape2D_x6jca")
 
-[node name="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" parent="." index="5"]
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_1leko")
 
-[node name="Wheel1" parent="." index="4"]
+[node name="Wheel1" parent="." index="6"]
 position = Vector2(44, -22)
 coeff_reverse = 2.0
 coeff_friction_parallel = 0.8
 coeff_friction_perpendicular = 1.2
 
-[node name="Wheel2" parent="." index="5"]
+[node name="Wheel2" parent="." index="7"]
 position = Vector2(44, 22)
 coeff_reverse = 2.0
 coeff_friction_parallel = 0.8
 coeff_friction_perpendicular = 1.2
 
-[node name="Wheel3" parent="." index="6"]
+[node name="Wheel3" parent="." index="8"]
 coeff_friction_parallel = 0.8
 coeff_friction_perpendicular = 1.2
 
-[node name="Wheel4" parent="." index="7"]
+[node name="Wheel4" parent="." index="9"]
 coeff_friction_parallel = 0.8
 coeff_friction_perpendicular = 1.2

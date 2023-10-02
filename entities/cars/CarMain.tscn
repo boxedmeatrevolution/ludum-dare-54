@@ -12,20 +12,20 @@ height = 126.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_dwpmd")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(-2, 0)
 shape = SubResource("CapsuleShape2D_am343")
 
-[node name="Wheel1" parent="." index="2"]
+[node name="Wheel1" parent="." index="5"]
 position = Vector2(42, -25)
 coeff_reverse = 1.5
 
-[node name="Wheel2" parent="." index="3"]
+[node name="Wheel2" parent="." index="6"]
 position = Vector2(42, 25)
 coeff_reverse = 1.5
 
-[node name="Wheel3" parent="." index="4"]
+[node name="Wheel3" parent="." index="7"]
 position = Vector2(-33, -25)
 
-[node name="Wheel4" parent="." index="5"]
+[node name="Wheel4" parent="." index="8"]
 position = Vector2(-33, 25)

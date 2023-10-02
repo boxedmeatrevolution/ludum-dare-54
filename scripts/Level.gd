@@ -25,6 +25,7 @@ var camera : Camera
 @onready var curb_parent := $CurbParent
 @onready var car_parent := $CarParent
 @onready var player_car_parent := $PlayerCarParent
+@onready var light_parent := $LightParent
 
 func _ready() -> void:
 	if Engine.is_editor_hint():

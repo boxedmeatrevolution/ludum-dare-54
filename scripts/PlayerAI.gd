@@ -24,6 +24,8 @@ var has_won : bool = false
 var has_won_active_timer : float = 0.0
 const HAS_WON_TIME : float = 2.0
 
+var headlights_on := false
+
 func add_parking_detector(pos : Vector2) -> void:
 	var idx := parking_detectors.size()
 	var circle := CircleShape2D.new()
@@ -53,6 +55,10 @@ func _ready():
 	level_manager = get_node("/root/LevelManager")
 
 func _process(delta : float) -> void:
+	if !headlights_on:
+		headlights_on = true
+		parent.sprite_headlight_left.visible = true
+		parent.sprite_headlight_right.visible = true
 	if parking_detectors.is_empty():
 		var bound := parent.collision_shape.shape.get_rect()
 		var x1 := bound.position.x
@@ -103,6 +109,10 @@ func _process(delta : float) -> void:
 		drive_forward = maxf(drive_forward, Input.get_action_strength("drive_forward_analog"))
 		drive_reverse = maxf(drive_reverse, Input.get_action_strength("drive_reverse_analog"))
 		parent.drive_power = drive_forward - drive_reverse
+	if parent.drive_power < 0.0 || parent.brake == true:
+		parent.sprite_rearlight.visible = true
+	else:
+		parent.sprite_rearlight.visible = false
 	
 	if Input.is_action_pressed("brake"):
 		parent.brake = true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmujtlh6ah6pk"]
+[gd_scene load_steps=3 format=3 uid="uid://dmujtlh6ah6pk"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_mkbax"]
+[ext_resource type="Material" uid="uid://d2lecnmvun7v4" path="res://material/Light.tres" id="2_b0qh5"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_mkbax")
@@ -16,3 +17,6 @@ script = ExtResource("1_mkbax")
 [node name="PlayerCarParent" type="Node2D" parent="."]
 
 [node name="EffectParent" type="Node2D" parent="."]
+
+[node name="LightParent" type="Node2D" parent="."]
+material = ExtResource("2_b0qh5")

@@ -17,25 +17,25 @@ hframes = 4
 [node name="Sprite2DScratch" parent="." index="1"]
 texture = ExtResource("3_t2ub5")
 
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="4"]
 shape = SubResource("CapsuleShape2D_ljmdd")
 
-[node name="Wheel1" parent="." index="3"]
+[node name="Wheel1" parent="." index="5"]
 position = Vector2(37, -22)
 coeff_forward = 1.1
 coeff_reverse = 1.1
 
-[node name="Wheel2" parent="." index="4"]
+[node name="Wheel2" parent="." index="6"]
 position = Vector2(37, 22)
 coeff_forward = 1.1
 coeff_reverse = 1.1
 
-[node name="Wheel3" parent="." index="5"]
+[node name="Wheel3" parent="." index="7"]
 position = Vector2(-33, -25)
 coeff_friction_parallel = 0.8
 coeff_friction_perpendicular = 0.8
 
-[node name="Wheel4" parent="." index="6"]
+[node name="Wheel4" parent="." index="8"]
 position = Vector2(-33, 25)
 coeff_friction_parallel = 0.8
 coeff_friction_perpendicular = 0.8

@@ -4,7 +4,13 @@ extends RigidBody2D
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var sprite_scratch : Sprite2D = $Sprite2DScratch
 
+@onready var light_effect_parent : Node2D = get_node("/root/Level/LightParent")
+
 @export var max_steer_deg : float = 55.0
+
+@onready var sprite_headlight_left : Sprite2D = $Sprite2DHeadlightLeft
+@onready var sprite_headlight_right : Sprite2D = $Sprite2DHeadlightRight
+@onready var sprite_rearlight : Sprite2D = $Sprite2DRearlight
 
 var steer_angle : float = 0.0
 var drive_power : float = 0.0
@@ -14,7 +20,7 @@ var wheel_count : int = 0
 var damage : float = 0.0
 var destroyed : bool = false
 const DAMAGE_MIN_AMOUNT : float = 5.0
-const DAMAGE_MAX_AMOUNT : float = 50.0
+const DAMAGE_MAX_AMOUNT : float = 35.0
 var previous_linear_velocity : Vector2 = Vector2.ZERO
 
 signal damage_received(damage : float, total_damage : float, destroyed : bool)
