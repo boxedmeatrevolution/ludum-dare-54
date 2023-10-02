@@ -64,7 +64,7 @@ func _physics_process(delta : float) -> void:
 	var velocity_perp := velocity.cross(forward_dir)
 	var parent_velocity_par := parent.linear_velocity.dot(parent.global_transform.x)
 	
-	if parent.brake || (drive_power > 0.0 && parent_velocity_par < -FORWARD_SPEED_THRESHOLD) || (drive_power < 0.0 && parent_velocity_par > REVERSE_SPEED_THRESHOLD):
+	if parent.brake || (drive_power < 0.0 && parent_velocity_par > REVERSE_SPEED_THRESHOLD):
 		brake_lock_timer = BRAKE_LOCK_TIME
 	var is_braking := false
 	if brake_lock_timer > 0.0:

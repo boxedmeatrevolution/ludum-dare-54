@@ -1,14 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dcsu5xhuq6vdv"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://cn3oms2opw0cy" path="res://physics_material/Basic.tres" id="1_6oeqg"]
 [ext_resource type="Script" path="res://scripts/Curb.gd" id="1_7f507"]
 [ext_resource type="Texture2D" uid="uid://c1h5l3pthf41t" path="res://sprites/Curb.png" id="2_dj3xm"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ukpdb"]
-friction = 0.8
-bounce = 0.3
-
 [node name="Curb" type="StaticBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_ukpdb")
+physics_material_override = ExtResource("1_6oeqg")
 script = ExtResource("1_7f507")
 texture = ExtResource("2_dj3xm")
 

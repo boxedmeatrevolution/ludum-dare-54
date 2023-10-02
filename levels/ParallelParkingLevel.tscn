@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1k324eikv0k7"]
+[gd_scene load_steps=11 format=3 uid="uid://bc1eagtxovavp"]
 
-[ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_os2s5"]
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_os2s5"]
 [ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="2_86dg7"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_cpqtg"]
 [ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="3_d3akw"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="5_ln1eu"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="6_rwqbb"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="7_pu5d3"]
-[ext_resource type="PackedScene" path="res://entities/Shrub.tscn" id="10_3ojas"]
+[ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="10_3ojas"]
 
 [node name="Level" instance=ExtResource("1_os2s5")]
 bounds = Rect2(0, 0, 1750, 600)

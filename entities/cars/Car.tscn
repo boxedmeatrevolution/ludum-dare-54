@@ -1,23 +1,20 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhnjpsdtol8td"]
 
 [ext_resource type="Script" path="res://scripts/Car.gd" id="1_356we"]
+[ext_resource type="PhysicsMaterial" uid="uid://cn3oms2opw0cy" path="res://physics_material/Basic.tres" id="1_dy1mg"]
 [ext_resource type="Texture2D" uid="uid://ctfvs1f7c1ard" path="res://sprites/PlayerCar.png" id="2_7liqh"]
 [ext_resource type="Material" uid="uid://d2lecnmvun7v4" path="res://material/Light.tres" id="3_c5mbc"]
 [ext_resource type="PackedScene" uid="uid://di6sanvtqkb1v" path="res://entities/Wheel.tscn" id="3_qqr60"]
 [ext_resource type="Texture2D" uid="uid://dvqiodembhetl" path="res://sprites/HeadlightEffect.png" id="4_lesxf"]
-[ext_resource type="PackedScene" path="res://entities/CarAudio.tscn" id="4_x815w"]
+[ext_resource type="PackedScene" uid="uid://cqnftrdxdcwrl" path="res://entities/CarAudio.tscn" id="4_x815w"]
 [ext_resource type="Texture2D" uid="uid://btf78vowq4nx5" path="res://sprites/RearlightEffect.png" id="5_oy765"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3ter"]
-friction = 0.8
-bounce = 0.3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qugl5"]
 radius = 25.0
 height = 112.0
 
 [node name="Car" type="RigidBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_y3ter")
+physics_material_override = ExtResource("1_dy1mg")
 script = ExtResource("1_356we")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

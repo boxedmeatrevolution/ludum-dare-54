@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/Wheel.gd" id="1_bask5"]
 
 [sub_resource type="Curve" id="Curve_shpkh"]
-max_value = 400.0
-_data = [Vector2(0, 350), 0.0, 0.0, 0, 0, Vector2(0.330189, 164.583), -758.085, -758.085, 0, 0, Vector2(0.901887, 0), -4.83108, 0.0, 0, 0]
+max_value = 550.0
+_data = [Vector2(0, 461.198), 0.0, 0.0, 0, 0, Vector2(0.14313, 340.885), -1389.85, -1389.85, 0, 0, Vector2(0.901887, 0), -4.83108, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_1arv8"]
@@ -24,7 +24,7 @@ point_count = 6
 
 [sub_resource type="Curve" id="Curve_1wger"]
 max_value = 200.0
-_data = [Vector2(0, 0), 0.0, 2843.23, 0, 0, Vector2(0.116981, 132.292), 99.5558, 99.5558, 0, 0, Vector2(1, 25), -34.5052, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 5458.33, 0, 0, Vector2(0.0419847, 138.542), 167.949, 167.949, 0, 0, Vector2(1, 25), -34.5052, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_qj7vc"]
