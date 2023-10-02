@@ -13,7 +13,7 @@ const Ticket := preload("res://scripts/Ticket.gd")
 const CarSpawner := preload("res://scripts/CarSpawner.gd")
 const TargetSpace := preload("res://scripts/TargetSpace.gd")
 
-const OUT_OF_BOUNDS_PADDING : float = 256.0
+const OUT_OF_BOUNDS_PADDING : float = 64.0
 
 @export var bounds : Rect2 = Rect2(0.0, 0.0, 960.0, 600.0):
 	set(value):

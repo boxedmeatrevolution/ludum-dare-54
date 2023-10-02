@@ -33,6 +33,8 @@ const HAS_LOST_TIME : float = 3.0
 
 var headlights_on := false
 
+var setup_despawn_signal := false
+
 func add_parking_detector(pos : Vector2) -> void:
 	var idx := parking_detectors.size()
 	var circle := CircleShape2D.new()
@@ -77,6 +79,10 @@ func _ready():
 	level_manager = get_node("/root/LevelManager")
 
 func _process(delta : float) -> void:
+	if !setup_despawn_signal:
+		setup_despawn_signal = true
+		parent.can_despawn = false
+		parent.out_of_bounds.connect(_on_out_of_bounds)
 	if !headlights_on:
 		headlights_on = true
 		parent.sprite_headlight_left.visible = true
@@ -166,6 +172,9 @@ func _process(delta : float) -> void:
 func _input(event : InputEvent) -> void:
 	if event is InputEventMouse:
 		mouse_active_timer = MOUSE_ACTIVE_TIME
+
+func _on_out_of_bounds() -> void:
+	has_lost = true
 
 func _on_parking_detector_entered(_area: Area2D, idx : int) -> void:
 	parking_detector_triggered[idx] = true

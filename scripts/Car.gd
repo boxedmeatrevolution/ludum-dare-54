@@ -21,6 +21,9 @@ var drive_power : float = 0.0
 var brake : bool = false
 var wheel_count : int = 0
 
+var can_despawn : bool = true
+var was_in_bounds : bool = false
+
 var damage : float = 0.0
 var destroyed : bool = false
 const DAMAGE_MIN_AMOUNT : float = 5.0
@@ -31,6 +34,7 @@ const SMOKE_TIME := 0.4
 var smoke_timer := 0.0
 
 signal damage_received(damage : float, total_damage : float, destroyed : bool)
+signal out_of_bounds()
 
 var bounds : Rect2 = Rect2(-INF, -INF, INF, INF)
 
@@ -69,4 +73,9 @@ func _process(delta : float) -> void:
 	if smoke_timer > 0.0:
 		smoke_timer -= delta
 	if !bounds.has_point(global_position):
-		queue_free()
+		if was_in_bounds:
+			if can_despawn:
+				queue_free()
+			out_of_bounds.emit()
+	else:
+		was_in_bounds = true
