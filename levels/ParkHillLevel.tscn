@@ -13,6 +13,9 @@
 [node name="Level" instance=ExtResource("1_p16vl")]
 bounds = Rect2(0, 0, 2368, 846)
 
+[node name="Background" parent="." index="0"]
+position = Vector2(0, 32)
+
 [node name="Line2D" type="Line2D" parent="MarkingParent" index="0"]
 texture_repeat = 2
 points = PackedVector2Array(272, -176, 272, 968)
@@ -99,13 +102,13 @@ spaces_wide = 4
 fill_with_cars = true
 
 [node name="CarSpawner" parent="." index="13" instance=ExtResource("7_r7dac")]
-position = Vector2(208, 904)
+position = Vector2(208, 896)
 rotation = -1.5708
 interval = 3.0
 jitter = 0.2
 
 [node name="CarSpawner2" parent="." index="14" instance=ExtResource("7_r7dac")]
-position = Vector2(328, 904)
+position = Vector2(328, 896)
 rotation = -1.5708
 initial_delay = 1.5
 jitter = 0.2

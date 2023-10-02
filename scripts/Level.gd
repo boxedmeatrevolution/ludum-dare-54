@@ -11,7 +11,7 @@ const Curb := preload("res://scripts/Curb.gd")
 const Shrub := preload("res://scripts/Shrub.gd")
 const CarSpawner := preload("res://scripts/CarSpawner.gd")
 
-const OUT_OF_BOUNDS_PADDING : float = 128.0
+const OUT_OF_BOUNDS_PADDING : float = 256.0
 
 @export var bounds : Rect2 = Rect2(0.0, 0.0, 960.0, 600.0):
 	set(value):
@@ -48,6 +48,7 @@ func _ready() -> void:
 		elif child is ParkingSpace:
 			for car in child.cars:
 				car.reparent(car_parent)
+				car.bounds = bounds.grow(OUT_OF_BOUNDS_PADDING)
 			child.reparent(marking_parent)
 		elif child is Ramp:
 			child.reparent(ramp_parent)
@@ -55,6 +56,7 @@ func _ready() -> void:
 			child.reparent(curb_parent)
 		elif child is CarSpawner:
 			child.car_parent = car_parent
+			child.bounds = bounds.grow(OUT_OF_BOUNDS_PADDING)
 		elif child is Shrub:
 			child.reparent(prop_parent)
 	

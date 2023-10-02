@@ -10,6 +10,7 @@ const LevelManager := preload("res://scripts/LevelManager.gd")
 @export var speed : float = 500.0
 
 var car_parent : Node2D
+var bounds : Rect2
 
 var timer : float = 0.0
 
@@ -27,3 +28,4 @@ func _process(delta : float) -> void:
 		car.add_child(ai)
 		car_parent.add_child(car)
 		car.global_transform = global_transform
+		car.bounds = bounds
