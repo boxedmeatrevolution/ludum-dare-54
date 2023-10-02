@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://ciwyo7be3odo6"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_iaydo"]
+[ext_resource type="Texture2D" uid="uid://bpbobb546fn37" path="res://sprites/Title.png" id="2_j4nnx"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_x0g4p"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="4_ewcta"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="4_t8wqk"]
+[ext_resource type="Texture2D" uid="uid://bs5psqc6i43m1" path="res://sprites/TextInstructions.png" id="6_4w1cw"]
+[ext_resource type="Script" path="res://scripts/Instructions.gd" id="7_y8hgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ayqt"]
+size = Vector2(685, 93)
+
+[node name="Level" instance=ExtResource("1_iaydo")]
+
+[node name="Sprite2DTitle" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_j4nnx")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(485.5, 279.5)
+shape = SubResource("RectangleShape2D_7ayqt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="14"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" index="0"]
+build_mode = 1
+polygon = PackedVector2Array(0, 600, 960, 600, 960, 0, 0, 0)
+
+[node name="CarMain" parent="." index="15" instance=ExtResource("3_x0g4p")]
+position = Vector2(84, 527)
+rotation = -0.785397
+
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("4_ewcta")]
+
+[node name="TargetSpace" parent="." index="16" instance=ExtResource("4_t8wqk")]
+position = Vector2(866, 535)
+rotation = -1.57079
+
+[node name="Sprite2DInstructions" type="Sprite2D" parent="." index="17"]
+position = Vector2(472, 360)
+texture = ExtResource("6_4w1cw")
+script = ExtResource("7_y8hgn")

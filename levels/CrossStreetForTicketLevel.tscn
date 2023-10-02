@@ -1,0 +1,130 @@
+[gd_scene load_steps=16 format=3 uid="uid://cntw78fnkd5ne"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_kyivh"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_v8nxw"]
+[ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="2_yh11f"]
+[ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="3_pcr5r"]
+[ext_resource type="PackedScene" uid="uid://b3cac7f6lc5j" path="res://entities/Ticket.tscn" id="3_rnlyi"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="4_4buj0"]
+[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="4_kbfgh"]
+[ext_resource type="Texture2D" uid="uid://b35a0ilgnx87o" path="res://sprites/TileQuadrantWhite.png" id="5_jj4pd"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="5_ped6u"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="5_xnkxm"]
+[ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="6_5xvgf"]
+[ext_resource type="PackedScene" uid="uid://ctnh28s2l2x35" path="res://entities/cars/CarModelB.tscn" id="7_1pia3"]
+[ext_resource type="PackedScene" uid="uid://b2fe1j1o3660p" path="res://entities/cars/CarModelD.tscn" id="8_1sn64"]
+[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="9_0aocn"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="11_5bu5x"]
+
+[node name="Level" instance=ExtResource("1_kyivh")]
+
+[node name="Line2D" type="Line2D" parent="MarkingParent" index="0"]
+texture_repeat = 2
+points = PackedVector2Array(525, -187, 750, 767)
+width = 7.0
+texture = ExtResource("2_yh11f")
+texture_mode = 1
+
+[node name="Line2D2" type="Line2D" parent="MarkingParent" index="1"]
+texture_repeat = 2
+position = Vector2(-84, 8)
+points = PackedVector2Array(525, -187, 750, 767)
+width = 7.0
+texture = ExtResource("3_pcr5r")
+texture_mode = 1
+
+[node name="Line2D3" type="Line2D" parent="MarkingParent" index="2"]
+texture_repeat = 2
+position = Vector2(-172, 23)
+points = PackedVector2Array(525, -187, 750, 767)
+width = 7.0
+texture = ExtResource("2_yh11f")
+texture_mode = 1
+
+[node name="Surface" parent="." index="12" instance=ExtResource("4_kbfgh")]
+position = Vector2(1008, 119)
+rotation = 1.35075
+texture = ExtResource("5_jj4pd")
+
+[node name="Curb" parent="." index="13" instance=ExtResource("2_v8nxw")]
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb" index="2"]
+points = PackedVector2Array(88, 100, 400, 81, 353, -118, -119, -123, -165, 786, 560, 771, 494, 503, 97, 478)
+
+[node name="Curb2" parent="." index="14" instance=ExtResource("2_v8nxw")]
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb2" index="2"]
+points = PackedVector2Array(660, -196, 749, 239, 899, 293, 927, 489, 815, 523, 856, 752, 1154, 718, 1125, -160)
+
+[node name="Ticket" parent="." index="15" instance=ExtResource("3_rnlyi")]
+position = Vector2(869, 443)
+
+[node name="CarMain" parent="." index="16" instance=ExtResource("4_4buj0")]
+position = Vector2(281, 289)
+rotation = 3.34865
+
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("5_xnkxm")]
+
+[node name="ParkingSpace" parent="." index="17" instance=ExtResource("5_ped6u")]
+position = Vector2(144, 327)
+rotation = 0.0587087
+spaces_wide = 4
+fill_with_cars = true
+rng_seed = "2"
+
+[node name="ParkingSpace2" parent="." index="18" instance=ExtResource("5_ped6u")]
+position = Vector2(399, 237)
+rotation = 3.07928
+spaces_wide = 3
+fill_with_cars = true
+instruction = Array[String](["2 0 -1"])
+
+[node name="Shrub" parent="." index="19" instance=ExtResource("6_5xvgf")]
+position = Vector2(99, 109)
+pot_type = 2
+
+[node name="Shrub2" parent="." index="20" instance=ExtResource("6_5xvgf")]
+position = Vector2(89, 458)
+pot_type = 2
+
+[node name="CarModelB" parent="." index="21" instance=ExtResource("7_1pia3")]
+position = Vector2(821, 316)
+rotation = 0.436433
+
+[node name="CarModelD" parent="." index="22" instance=ExtResource("8_1sn64")]
+position = Vector2(790, 412)
+rotation = -1.71331
+
+[node name="CarSpawner" parent="." index="23" instance=ExtResource("9_0aocn")]
+position = Vector2(420, -83)
+rotation = 1.32458
+interval = 2.0
+jitter = 0.6
+speed = 400.0
+
+[node name="CarSpawner2" parent="." index="24" instance=ExtResource("9_0aocn")]
+position = Vector2(508, -84)
+rotation = 1.32458
+initial_delay = 0.5
+interval = 2.0
+jitter = 0.6
+speed = 350.0
+
+[node name="CarSpawner3" parent="." index="25" instance=ExtResource("9_0aocn")]
+position = Vector2(774, 673)
+rotation = 4.4663
+interval = 2.0
+jitter = 0.6
+speed = 400.0
+
+[node name="TargetSpace" parent="." index="26" instance=ExtResource("11_5bu5x")]
+position = Vector2(183, 181)
+rotation = -0.0720277
+
+[node name="Shrub3" parent="." index="27" instance=ExtResource("6_5xvgf")]
+position = Vector2(832, 179)
+
+[node name="Shrub4" parent="." index="28" instance=ExtResource("6_5xvgf")]
+position = Vector2(913, 589)
