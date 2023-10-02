@@ -38,3 +38,5 @@ position = Vector2(24, 80)
 
 [node name="TargetSpace" parent="." index="10" instance=ExtResource("5_hne33")]
 position = Vector2(824, 296)
+colour_closed = null
+colour_open = null

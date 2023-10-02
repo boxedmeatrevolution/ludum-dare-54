@@ -22,6 +22,8 @@ points = PackedVector2Array(41, 43, 931, 43, 931, 573, 18, 572, 20, 44)
 
 [node name="TargetSpace" parent="." instance=ExtResource("3_cghem")]
 position = Vector2(729, 305)
+colour_closed = null
+colour_open = null
 
 [node name="ParkingSpace" parent="." instance=ExtResource("4_wnbjg")]
 position = Vector2(61, 164)

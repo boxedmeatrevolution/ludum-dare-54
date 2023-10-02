@@ -17,6 +17,8 @@ target_path = NodePath("../CarMain")
 
 [node name="TargetSpace" parent="." instance=ExtResource("2_46lwy")]
 position = Vector2(184, 1072)
+colour_closed = null
+colour_open = null
 
 [node name="Curb" parent="." instance=ExtResource("2_p2jki")]
 invert_polygon = true

@@ -9,6 +9,7 @@ const ParkingSpace := preload("res://scripts/ParkingSpace.gd")
 const Surface := preload("res://scripts/Surface.gd")
 const Curb := preload("res://scripts/Curb.gd")
 const Shrub := preload("res://scripts/Shrub.gd")
+const Ticket := preload("res://scripts/Ticket.gd")
 const CarSpawner := preload("res://scripts/CarSpawner.gd")
 const TargetSpace := preload("res://scripts/TargetSpace.gd")
 
@@ -20,7 +21,9 @@ const OUT_OF_BOUNDS_PADDING : float = 256.0
 		if Engine.is_editor_hint():
 			queue_redraw()
 
-var camera : Camera
+var camera : Camera = null
+var target_space : TargetSpace = null
+var ticket : Ticket = null
 
 @onready var surface_parent := $SurfaceParent
 @onready var shrub_parent := $ShrubParent
@@ -30,6 +33,7 @@ var camera : Camera
 @onready var prop_parent := $PropParent
 @onready var player_car_parent := $PlayerCarParent
 @onready var light_parent := $LightParent
+@onready var ticket_parent := $TicketParent
 @onready var target_space_parent := $TargetSpaceParent
 
 func _ready() -> void:
@@ -62,8 +66,17 @@ func _ready() -> void:
 			child.bounds = bounds.grow(OUT_OF_BOUNDS_PADDING)
 		elif child is TargetSpace:
 			child.reparent(target_space_parent)
+			target_space = child
 		elif child is Shrub:
 			child.reparent(shrub_parent)
+		elif child is Ticket:
+			child.reparent(ticket_parent)
+			ticket = child
+	
+	if ticket != null && target_space != null:
+		ticket.ticket_collected.connect(target_space.ticket_collected)
+	elif target_space != null:
+		target_space.ticket_collected()
 	
 	camera = CameraScene.instantiate()
 	if player_car_parent.get_child_count() != 0:

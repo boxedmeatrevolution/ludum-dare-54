@@ -153,3 +153,5 @@ fill_with_cars = true
 
 [node name="TargetSpace" parent="." index="30" instance=ExtResource("6_yf2f7")]
 position = Vector2(2027, 1320)
+colour_closed = null
+colour_open = null

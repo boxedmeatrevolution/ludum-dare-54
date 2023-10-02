@@ -13,10 +13,12 @@ const MOUSE_STEER_TOLERANCE_DEG : float = 1.0
 
 var parking_detectors : Array[Area2D] = []
 var parking_detector_triggered : Array[bool] = []
+var pickup_detector : Area2D = null
 var in_target_space : bool = false
 var parked_active_timer : float = 0.0
 const PARKED_TIME : float = 0.2
 const PARKING_DETECTOR_LAYER_NUMBER : int = 4
+const PLAYER_LAYER_NUMBER : int = 2
 
 const LINEAR_VELOCITY_AT_REST_THRESHOLD : float = 3.0
 const ANGULAR_VELOCITY_AT_REST_THRESHOLD : float = 0.05
@@ -49,6 +51,21 @@ func add_parking_detector(pos : Vector2) -> void:
 	parking_detectors.append(area)
 	parking_detector_triggered.append(false)
 
+func add_pickup_detector(tr : Transform2D, size : Vector2) -> void:
+	var rect := RectangleShape2D.new()
+	rect.size = size
+	var shape := CollisionShape2D.new()
+	shape.shape = rect
+	shape.position = Vector2.ZERO
+	shape.rotation = 0.5 * PI
+	var area := Area2D.new()
+	area.add_child(shape)
+	area.transform = tr
+	area.set_collision_layer_value(1, false)
+	area.set_collision_layer_value(PLAYER_LAYER_NUMBER, true)
+	parent.add_child(area)
+	pickup_detector = area
+
 func all_parking_detectors_triggered() -> bool:
 	for p in parking_detector_triggered:
 		if !p:
@@ -75,6 +92,9 @@ func _process(delta : float) -> void:
 		add_parking_detector(transform * Vector2(x1, y2))
 		add_parking_detector(transform * Vector2(x2, y1))
 		add_parking_detector(transform * Vector2(x2, y2))
+	if pickup_detector == null:
+		var bound := parent.collision_shape.shape.get_rect()
+		add_pickup_detector(Transform2D.IDENTITY, bound.size)
 	
 	if has_won:
 		has_won_active_timer += delta

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dujpx2vr3u6rd"
-path="res://.godot/imported/ParkText.png-1a3f499f29c00c36936a91ee94985e44.ctex"
+uid="uid://bqpjlw831wx3w"
+path="res://.godot/imported/GlowEffect.png-c23366c88442f0a27e953d57dcc3213d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ParkText.png"
-dest_files=["res://.godot/imported/ParkText.png-1a3f499f29c00c36936a91ee94985e44.ctex"]
+source_file="res://sprites/GlowEffect.png"
+dest_files=["res://.godot/imported/GlowEffect.png-c23366c88442f0a27e953d57dcc3213d.ctex"]
 
 [params]
 

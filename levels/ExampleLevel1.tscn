@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwogqoxt5yu1o"]
+[gd_scene load_steps=13 format=3 uid="uid://cwogqoxt5yu1o"]
 
 [ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_hmqa6"]
 [ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="2_6crms"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bmqfhjjncpc6i" path="res://entities/cars/Cop.tscn" id="5_p45cn"]
 [ext_resource type="PackedScene" uid="uid://cux7fi3yy2hxk" path="res://entities/SurfaceRamp.tscn" id="6_0p4yf"]
 [ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="6_1vma8"]
+[ext_resource type="PackedScene" uid="uid://b3cac7f6lc5j" path="res://entities/Ticket.tscn" id="11_22qkx"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="12_ahs75"]
 
 [node name="Level" instance=ExtResource("1_hmqa6")]
 
@@ -53,3 +55,10 @@ position = Vector2(464, 168)
 
 [node name="Tree3" parent="." index="17" instance=ExtResource("6_1vma8")]
 position = Vector2(693, 257)
+
+[node name="Ticket" parent="." index="21" instance=ExtResource("11_22qkx")]
+position = Vector2(456, 456)
+
+[node name="TargetSpace" parent="." index="22" instance=ExtResource("12_ahs75")]
+position = Vector2(600, 200)
+rotation = 0.608157

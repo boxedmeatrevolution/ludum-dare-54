@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfybrqb6xyeeo"]
 
 [ext_resource type="Script" path="res://scripts/TargetSpace.gd" id="1_ydppf"]
-[ext_resource type="Texture2D" uid="uid://dujpx2vr3u6rd" path="res://sprites/ParkText.png" id="1_ylxro"]
+[ext_resource type="Texture2D" uid="uid://ct4aary8fc482" path="res://sprites/TextNeedTicket.png" id="2_eyho6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um46i"]
 size = Vector2(85, 140)
 
 [node name="TargetSpace" type="Node2D"]
 script = ExtResource("1_ydppf")
+colour_closed = Color(0.639216, 0.145098, 0.239216, 0.784314)
+colour_open = Color(0.145098, 0.498039, 0.215686, 0.784314)
 
 [node name="ParkingSpacePoly" type="Polygon2D" parent="."]
 color = Color(0.145098, 0.498039, 0.34902, 0.784314)
@@ -22,5 +24,4 @@ shape = SubResource("RectangleShape2D_um46i")
 
 [node name="Sprite2DText" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(0, -96)
-texture = ExtResource("1_ylxro")
+texture = ExtResource("2_eyho6")

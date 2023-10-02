@@ -30,6 +30,8 @@ region_rect = Rect2(0, 0, 3840, 2400)
 
 [node name="PropParent" type="Node2D" parent="."]
 
+[node name="TicketParent" type="Node2D" parent="."]
+
 [node name="EffectParent" type="Node2D" parent="."]
 
 [node name="LightParent" type="Node2D" parent="."]
