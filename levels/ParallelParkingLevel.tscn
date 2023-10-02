@@ -1,15 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1k324eikv0k7"]
+[gd_scene load_steps=11 format=3 uid="uid://b1k324eikv0k7"]
 
 [ext_resource type="PackedScene" path="res://levels/Level.tscn" id="1_os2s5"]
+[ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="2_86dg7"]
 [ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="3_cpqtg"]
+[ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="3_d3akw"]
 [ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="4_hhuys"]
 [ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="4_pq0m2"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="5_ln1eu"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="6_rwqbb"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="7_pu5d3"]
+[ext_resource type="PackedScene" path="res://entities/Shrub.tscn" id="10_3ojas"]
 
 [node name="Level" instance=ExtResource("1_os2s5")]
 bounds = Rect2(0, 0, 1750, 600)
+
+[node name="Line2D" type="Line2D" parent="MarkingParent" index="0"]
+texture_repeat = 2
+position = Vector2(0, 8)
+points = PackedVector2Array(-320, 320, 5240, 320)
+width = 7.0
+texture = ExtResource("2_86dg7")
+texture_mode = 1
+
+[node name="Line2D2" type="Line2D" parent="MarkingParent" index="1"]
+texture_repeat = 2
+position = Vector2(0, -72)
+points = PackedVector2Array(-320, 320, 5240, 320)
+width = 7.0
+texture = ExtResource("3_d3akw")
+texture_mode = 1
+
+[node name="Line2D3" type="Line2D" parent="MarkingParent" index="2"]
+texture_repeat = 2
+position = Vector2(0, -80)
+points = PackedVector2Array(-320, 320, 5240, 320)
+width = 7.0
+texture = ExtResource("3_d3akw")
+texture_mode = 1
 
 [node name="CarSpawner" parent="." index="6" instance=ExtResource("4_pq0m2")]
 position = Vector2(1896, 192)
@@ -176,3 +203,24 @@ height = 90.0
 position = Vector2(-152, 288)
 initial_delay = 1.0
 interval = 2.0
+
+[node name="Tree" parent="." index="35" instance=ExtResource("10_3ojas")]
+position = Vector2(224, 512)
+
+[node name="Tree2" parent="." index="36" instance=ExtResource("10_3ojas")]
+position = Vector2(488, 64)
+
+[node name="Tree3" parent="." index="37" instance=ExtResource("10_3ojas")]
+position = Vector2(752, 512)
+
+[node name="Tree4" parent="." index="38" instance=ExtResource("10_3ojas")]
+position = Vector2(1016, 48)
+
+[node name="Tree5" parent="." index="39" instance=ExtResource("10_3ojas")]
+position = Vector2(1272, 512)
+
+[node name="Tree6" parent="." index="40" instance=ExtResource("10_3ojas")]
+position = Vector2(1536, 56)
+
+[node name="Tree7" parent="." index="41" instance=ExtResource("10_3ojas")]
+position = Vector2(1800, 520)
