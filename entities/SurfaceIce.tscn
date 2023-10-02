@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://6pjvwcnna3ud"]
+
+[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="1_ryjxi"]
+[ext_resource type="Script" path="res://scripts/SurfaceIce.gd" id="2_gj3ss"]
+[ext_resource type="Texture2D" uid="uid://bnr56t5w1atbe" path="res://sprites/TileIceSmooth.png" id="3_l7fvx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6uar"]
+size = Vector2(100, 100)
+
+[node name="SurfaceIce" instance=ExtResource("1_ryjxi")]
+script = ExtResource("2_gj3ss")
+smooth = true
+texture = ExtResource("3_l7fvx")
+centered = true
+metadata/_edit_pinned_properties_ = [&"centered"]
+
+[node name="Sprite2D" parent="." index="0"]
+texture_repeat = 2
+texture = ExtResource("3_l7fvx")
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_c6uar")

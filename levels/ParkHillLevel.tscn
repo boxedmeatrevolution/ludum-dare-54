@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_p16vl"]
 [ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="2_6svmp"]
-[ext_resource type="PackedScene" uid="uid://dwt50036hqbhk" path="res://entities/Ramp.tscn" id="2_sjcrh"]
+[ext_resource type="PackedScene" uid="uid://cux7fi3yy2hxk" path="res://entities/SurfaceRamp.tscn" id="2_sjcrh"]
 [ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_4c7lk"]
 [ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="3_t6lu1"]
 [ext_resource type="PackedScene" uid="uid://bglu4ajtbwwyn" path="res://entities/PlayerAI.tscn" id="4_qlvay"]
@@ -79,10 +79,10 @@ width = 7.0
 texture = ExtResource("2_6svmp")
 texture_mode = 1
 
-[node name="Ramp" parent="." index="9" instance=ExtResource("2_sjcrh")]
-position = Vector2(1920, 2048)
-rotation = 3.14159
-scale = Vector2(150, 50)
+[node name="SurfaceRamp" parent="." index="9" instance=ExtResource("2_sjcrh")]
+position = Vector2(71, 422)
+rotation = 1.57079
+scale = Vector2(1.36001, 1.48)
 
 [node name="CarMain" parent="." index="10" instance=ExtResource("3_4c7lk")]
 position = Vector2(62, 423)

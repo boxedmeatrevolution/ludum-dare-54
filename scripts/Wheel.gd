@@ -1,7 +1,8 @@
 extends Node2D
 
 const Car := preload("res://scripts/Car.gd")
-const Ramp := preload("res://scripts/Ramp.gd")
+const SurfaceRamp := preload("res://scripts/SurfaceRamp.gd")
+const SurfaceIce := preload("res://scripts/SurfaceIce.gd")
 
 @export var coeff_steer : float = 0.0
 @export var steer_time : float = 0.6
@@ -28,10 +29,14 @@ const Ramp := preload("res://scripts/Ramp.gd")
 
 var steer_angle := 0.0
 var drive_power := 0.0
-var current_ramp : Ramp = null
+var current_ramp : SurfaceRamp = null
+var current_ice : SurfaceIce = null
 
 const FORWARD_SPEED_THRESHOLD : float = 2.0
 const REVERSE_SPEED_THRESHOLD : float = 2.0
+
+const ICE_FACTOR_SMOOTH : float = 0.1
+const ICE_FACTOR_ROUGH : float = 0.4
 
 var BRAKE_LOCK_TIME : float = 0.12
 var brake_lock_timer : float = 0.0
@@ -71,33 +76,50 @@ func _physics_process(delta : float) -> void:
 		brake_lock_timer -= delta
 		is_braking = true
 	
+	var ice_factor : float = 1.0
+	if current_ice != null:
+		if current_ice.smooth:
+			ice_factor = ICE_FACTOR_SMOOTH
+		else:
+			ice_factor = ICE_FACTOR_ROUGH
+	
 	# Ground friction.
 	if velocity_par != 0.0:
 		var force_friction_par := -coeff_friction_parallel * curve_friction_parallel.sample(absf(velocity_par / max_curve_velocity)) * signf(velocity_par) * forward_dir
 		if is_braking:
 			force_friction_par += -coeff_brake * curve_brake.sample(absf(velocity_par / max_curve_velocity)) * signf(velocity_par) * forward_dir
-		parent.apply_force(force_friction_par, global_position - parent.global_position)
+		parent.apply_force(ice_factor * force_friction_par, global_position - parent.global_position)
 	if velocity_perp != 0.0:
 		var force_friction_perp := -coeff_friction_perpendicular * curve_friction_perpendicular.sample(absf(velocity_perp / max_curve_velocity)) * signf(velocity_perp) * forward_dir.orthogonal()
 		if is_braking:
 			force_friction_perp *= 1.0 - coeff_brake * curve_brake_slip.sample(absf(velocity_perp) / max_curve_velocity)
-		parent.apply_force(force_friction_perp, global_position - parent.global_position)
+		parent.apply_force(ice_factor * force_friction_perp, global_position - parent.global_position)
 	
 	# Acceleration and decceleration.
 	if drive_power > 0.0 && !is_braking:
 		var force_forward := drive_power * curve_forward.sample(velocity_par / max_curve_velocity) * forward_dir
-		parent.apply_force(force_forward, global_position - parent.global_position)
+		parent.apply_force(ice_factor * force_forward, global_position - parent.global_position)
 	elif drive_power < 0.0 && !is_braking:
 		var force_reverse := drive_power * curve_reverse.sample(-velocity_par / max_curve_velocity) * forward_dir
-		parent.apply_force(force_reverse, global_position - parent.global_position)
+		parent.apply_force(ice_factor * force_reverse, global_position - parent.global_position)
 	
 	# Rolling down ramps.
 	if current_ramp != null:
-		var force_gravity := parent.mass / parent.wheel_count * current_ramp.steepness * current_ramp.direction.dot(forward_dir) * forward_dir
+		var direction := -current_ramp.global_transform.y.normalized()
+		var steepness := current_ramp.height / current_ramp.global_transform.get_scale().y
+		var force_gravity := parent.mass / parent.wheel_count * steepness * direction.dot(forward_dir) * forward_dir
 		parent.apply_force(force_gravity, global_position - parent.global_position)
 
-func _on_ramp_entered(area : Area2D) -> void:
-	current_ramp = area as Ramp
+func _on_area_entered(area : Area2D) -> void:
+	var surface : Node2D = area.get_parent()
+	if surface is SurfaceRamp:
+		current_ramp = surface as SurfaceRamp
+	elif surface is SurfaceIce:
+		current_ice = surface as SurfaceIce
 
-func _on_ramp_exited(_area : Area2D) -> void:
-	current_ramp = null
+func _on_area_exited(area : Area2D) -> void:
+	var surface : Node2D = area.get_parent()
+	if current_ramp == surface:
+		current_ramp = null
+	elif current_ice == surface:
+		current_ice = null

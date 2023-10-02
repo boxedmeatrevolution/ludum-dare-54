@@ -6,7 +6,7 @@ const CameraScene := preload("res://entities/Camera.tscn")
 const Car := preload("res://scripts/Car.gd")
 const PlayerAI := preload("res://scripts/PlayerAI.gd")
 const ParkingSpace := preload("res://scripts/ParkingSpace.gd")
-const Ramp := preload("res://scripts/Ramp.gd")
+const Surface := preload("res://scripts/Surface.gd")
 const Curb := preload("res://scripts/Curb.gd")
 const Shrub := preload("res://scripts/Shrub.gd")
 const CarSpawner := preload("res://scripts/CarSpawner.gd")
@@ -21,7 +21,7 @@ const OUT_OF_BOUNDS_PADDING : float = 256.0
 
 var camera : Camera
 
-@onready var ramp_parent := $RampParent
+@onready var surface_parent := $SurfaceParent
 @onready var marking_parent := $MarkingParent
 @onready var curb_parent := $CurbParent
 @onready var car_parent := $CarParent
@@ -50,8 +50,8 @@ func _ready() -> void:
 				car.reparent(car_parent)
 				car.bounds = bounds.grow(OUT_OF_BOUNDS_PADDING)
 			child.reparent(marking_parent)
-		elif child is Ramp:
-			child.reparent(ramp_parent)
+		elif child is Surface:
+			child.reparent(surface_parent)
 		elif child is Curb:
 			child.reparent(curb_parent)
 		elif child is CarSpawner:

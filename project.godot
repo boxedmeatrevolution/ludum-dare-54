@@ -127,6 +127,7 @@ restart_level={
 2d_physics/layer_4="Finish"
 2d_physics/layer_5="Ramp"
 2d_physics/layer_6="Wheel"
+2d_physics/layer_7="Ice"
 
 [physics]
 

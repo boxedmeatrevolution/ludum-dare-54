@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cux7fi3yy2hxk"]
+
+[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="1_b58rf"]
+[ext_resource type="Script" path="res://scripts/SurfaceRamp.gd" id="2_tlw5u"]
+[ext_resource type="Texture2D" uid="uid://7oqu7ifnaqmu" path="res://sprites/TileRamp.png" id="3_6p2mx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6uar"]
+size = Vector2(100, 100)
+
+[node name="SurfaceRamp" instance=ExtResource("1_b58rf")]
+script = ExtResource("2_tlw5u")
+height = 400.0
+texture = ExtResource("3_6p2mx")
+mirrored = false
+centered = true
+metadata/_edit_pinned_properties_ = [&"centered"]
+
+[node name="Sprite2D" parent="." index="0"]
+texture_repeat = 2
+texture = ExtResource("3_6p2mx")
+centered = true
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="1"]
+scale = Vector2(50, 50)
+polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
+vertex_colors = PackedColorArray(0, 0, 0, 0.501961, 0, 0, 0, 0.501961, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+visible = false
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_c6uar")

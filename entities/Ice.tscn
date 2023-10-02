@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctfya734uhae"]
+
+[ext_resource type="Texture2D" uid="uid://7oqu7ifnaqmu" path="res://sprites/TileRamp.png" id="1_b46a4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eajgl"]
+size = Vector2(32, 32)
+
+[node name="Ice" type="Area2D"]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eajgl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b46a4")

@@ -7,7 +7,7 @@ const SirenEffectScene := preload("res://entities/SirenEffect.tscn")
 @onready var player_car_parent := get_node("/root/Level/PlayerCarParent")
 var death_animation_triggered : bool = false
 
-func _on_damage_received(_damage : float, _total_damage : float, destroyed : bool) -> void:
+func _on_damage_received(_damage : float, _total_damage : float, _destroyed : bool) -> void:
 	if destroyed && !death_animation_triggered:
 		death_animation_triggered = true
 		var siren := SirenEffectScene.instantiate()
