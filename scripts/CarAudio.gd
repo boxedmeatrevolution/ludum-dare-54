@@ -18,11 +18,14 @@ const Wheel := preload("res://scripts/Wheel.gd")
 @onready var drifting : AudioStreamPlayer2D = $Drifting
 @onready var drift_exit : AudioStreamPlayer2D = $DriftExit
 
+@onready var destroyed_sfx : AudioStreamPlayer2D = $Destroyed
+
 enum {DRIFT_OFF, DRIFT_ENTER, DRIFT_ON, DRIFT_EXIT}
 enum {ENGINE_OFF, ENGINE_IDLE, ENGINE_UP, ENGINE_HIGH, ENGINE_DOWN}
 
 var drift_state = DRIFT_OFF
 var engine_state = ENGINE_OFF
+var is_destroyed = false
 
 var sound_loop_offset = 0
 
@@ -114,9 +117,16 @@ func update_drift_state(drift_amount, drift_enter_finished, drift_exit_finished)
 			print("CarAudio: Error!!! Unknown drift state.")
 
 
+func damage_callback(damage, total_damage, destroyed):
+	if not is_destroyed and destroyed:
+		destroyed_sfx.play()
+		is_destroyed = true
+
+
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
 	sound_loop_offset = rng.randf()
+	parent.damage_received.connect(damage_callback)
 
 
 func _process(_delta : float) -> void:
