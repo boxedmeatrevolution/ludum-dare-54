@@ -41,6 +41,16 @@ var car_types : Array = [
 		fill_with_cars = value
 		if Engine.is_editor_hint():
 			init()
+@export var positional_variance: float:
+	set(value):
+		positional_variance = value
+		if Engine.is_editor_hint():
+			init()
+@export var rotational_variance: float:
+	set(value):
+		rotational_variance = value
+		if Engine.is_editor_hint():
+			init()
 @export var street_parking: bool:
 	set(value):
 		street_parking = value
@@ -103,6 +113,9 @@ func init_cars():
 		for y in range(0, spaces_tall):
 			var type_idx = rng.randi_range(0, car_types.size() - 1)
 			var flipped = rng.randf() < 0.5
+			var x_shift = rng.randf_range(-positional_variance, positional_variance)
+			var y_shift = rng.randf_range(-positional_variance, positional_variance)
+			var rot_shift = rng.randf_range(-rotational_variance, rotational_variance)
 			
 			var custom_instr_idx = custom_instr_coords.find(Vector2(x, y))
 			if custom_instr_idx > -1:
@@ -112,12 +125,17 @@ func init_cars():
 				continue
 			
 			var car = car_types[type_idx].instantiate()
-			car.position = Vector2(_space_width * (x + 0.5), _space_height * (y+0.5))
+			car.position = Vector2(
+				_space_width * (x + 0.5) + x_shift, 
+				_space_height * (y+0.5) + y_shift
+			)
 			
 			if not street_parking:
 				car.rotation = PI / 2
 			if flipped:
 				car.rotation += PI
+			car.rotation += rot_shift
+			
 			cars.append(car)
 	
 	# add cars

@@ -35,6 +35,9 @@ var headlights_on := false
 
 var setup_despawn_signal := false
 
+signal on_target_space()
+signal off_target_space()
+
 func add_parking_detector(pos : Vector2) -> void:
 	var idx := parking_detectors.size()
 	var circle := CircleShape2D.new()
@@ -178,5 +181,8 @@ func _on_out_of_bounds() -> void:
 
 func _on_parking_detector_entered(_area: Area2D, idx : int) -> void:
 	parking_detector_triggered[idx] = true
+	if all_parking_detectors_triggered():
+		on_target_space.emit()
 func _on_parking_detector_exited(_area: Area2D, idx : int) -> void:
 	parking_detector_triggered[idx] = false
+	off_target_space.emit()

@@ -10,6 +10,7 @@ size = Vector2(85, 140)
 script = ExtResource("1_ydppf")
 colour_closed = Color(0.639216, 0.145098, 0.239216, 0.784314)
 colour_open = Color(0.145098, 0.498039, 0.215686, 0.784314)
+colour_open_and_on = Color(0, 1, 0, 0.729412)
 
 [node name="ParkingSpacePoly" type="Polygon2D" parent="."]
 color = Color(0.145098, 0.498039, 0.34902, 0.784314)
