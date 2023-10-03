@@ -28,6 +28,7 @@ points = PackedVector2Array(272, 184, 376, 136, 456, 192, 328, 248)
 position = Vector2(496, 288)
 colour_closed = null
 colour_open = null
+colour_open_and_on = null
 
 [node name="Car" parent="." instance=ExtResource("3_c0hqj")]
 position = Vector2(176, 264)

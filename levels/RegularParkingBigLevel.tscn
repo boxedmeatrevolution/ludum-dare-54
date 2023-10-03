@@ -155,3 +155,4 @@ fill_with_cars = true
 position = Vector2(2027, 1320)
 colour_closed = null
 colour_open = null
+colour_open_and_on = null
