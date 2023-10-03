@@ -30,6 +30,8 @@ const DAMAGE_MIN_AMOUNT : float = 5.0
 const DAMAGE_MAX_AMOUNT : float = 35.0
 var previous_linear_velocity : Vector2 = Vector2.ZERO
 
+var destroy_factor : float = 1.0
+
 const SMOKE_TIME := 0.4
 var smoke_timer := 0.0
 
@@ -63,7 +65,7 @@ func _integrate_forces(state : PhysicsDirectBodyState2D) -> void:
 						effect_parent.add_child(little_smoke)
 						little_smoke.global_position = big_smoke.global_position + Vector2(randf_range(-48.0, 48.0), randf_range(-48.0, 48.0))
 						little_smoke.scale = Vector2(0.4, 0.4)
-		if damage > DAMAGE_MAX_AMOUNT && !destroyed:
+		if damage > destroy_factor * DAMAGE_MAX_AMOUNT && !destroyed:
 			destroyed = true
 			sprite_scratch.visible = true
 		damage_received.emit(next_damage, damage, destroyed)
