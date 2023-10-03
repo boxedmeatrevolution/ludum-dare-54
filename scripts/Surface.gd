@@ -42,8 +42,9 @@ func _notification(what: int) -> void:
 
 func _ready() -> void:
 	set_notify_transform(true)
+	var old_mirrored := mirrored
 	mirrored = false
 	mirrored = true
-	mirrored = mirrored
+	mirrored = old_mirrored
 	centered = centered
 	init()

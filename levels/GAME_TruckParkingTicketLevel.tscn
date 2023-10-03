@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://c23a5yufhbjhp"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_mvme5"]
+[ext_resource type="PackedScene" uid="uid://b3ceo5q3ktvei" path="res://entities/cars/Truck.tscn" id="2_6c4wa"]
+[ext_resource type="Texture2D" uid="uid://b6b0jbhsewrdq" path="res://sprites/TileQuadrantYellow.png" id="2_qku10"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="3_th30f"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="4_a4h6p"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="5_j5n48"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="6_necw3"]
+[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="7_13stk"]
+[ext_resource type="PackedScene" uid="uid://b3cac7f6lc5j" path="res://entities/Ticket.tscn" id="8_014qs"]
+[ext_resource type="PackedScene" uid="uid://cux7fi3yy2hxk" path="res://entities/SurfaceRamp.tscn" id="9_rnuwe"]
+
+[node name="Level" instance=ExtResource("1_mvme5")]
+bounds = Rect2(0, 0, 2400, 1200)
+
+[node name="TileQuadrantWhite" type="Sprite2D" parent="MarkingParent" index="0"]
+position = Vector2(1893, 1030)
+rotation = -1.15143
+texture = ExtResource("2_qku10")
+
+[node name="Polygon2D" type="Polygon2D" parent="MarkingParent" index="1"]
+position = Vector2(29, 50)
+polygon = PackedVector2Array(1383, 1016, 1562, 592, 1563, 495, 1670, 223, 1600, -75, 1462, -80, 1229, -76, 474, 1337, 1804, 1594, 1732, 1202)
+vertex_colors = PackedColorArray(0, 0, 0, 0.501961, 0, 0, 0, 0.501961, 0, 0, 0, 0.501961, 0, 0, 0, 0.501961, 0, 0, 0, 0.501961, 0, 0, 0, 0.501961, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.501961, 0, 0, 0, 0.501961)
+
+[node name="Truck" parent="." index="12" instance=ExtResource("2_6c4wa")]
+position = Vector2(165, 206)
+rotation = 0.575197
+
+[node name="PlayerAI" parent="Truck" index="14" instance=ExtResource("3_th30f")]
+
+[node name="ParkingSpace" parent="." index="13" instance=ExtResource("4_a4h6p")]
+position = Vector2(597, 107)
+rotation = 0.38399
+spaces_wide = 10
+spaces_tall = 5
+fill_with_cars = true
+instruction = Array[String](["5 2 -1", "4 2 -1"])
+
+[node name="ParkingSpace2" parent="." index="14" instance=ExtResource("4_a4h6p")]
+position = Vector2(274, 903)
+rotation = 0.418416
+spaces_wide = 10
+spaces_tall = 2
+fill_with_cars = true
+
+[node name="ParkingSpace3" parent="." index="15" instance=ExtResource("4_a4h6p")]
+position = Vector2(1429, 338)
+rotation = -2.76314
+spaces_wide = 7
+spaces_tall = 2
+fill_with_cars = true
+
+[node name="TargetSpace" parent="." index="16" instance=ExtResource("5_j5n48")]
+position = Vector2(859, 591)
+rotation = -1.18637
+scale = Vector2(1.66695, 1.24288)
+
+[node name="Curb" parent="." index="17" instance=ExtResource("6_necw3")]
+position = Vector2(1347, 254)
+
+[node name="Line2D" type="Line2D" parent="Curb" index="2"]
+points = PackedVector2Array(-1080.56, -465.317, -1512.56, 228.683, -1786.56, -507.317)
+
+[node name="CarSpawner" parent="." index="18" instance=ExtResource("7_13stk")]
+position = Vector2(-101, 634)
+rotation = 0.433215
+interval = 4.0
+jitter = 0.7
+speed = 150.0
+
+[node name="CarSpawner2" parent="." index="19" instance=ExtResource("7_13stk")]
+position = Vector2(324, -57)
+rotation = 0.382539
+interval = 4.0
+jitter = 0.7
+speed = 150.0
+
+[node name="Curb2" parent="." index="20" instance=ExtResource("6_necw3")]
+position = Vector2(29, 50)
+
+[node name="Line2D" type="Line2D" parent="Curb2" index="2"]
+points = PackedVector2Array(507, 131, 288, 646, 159, 580, 162, 471, 317, 143, 422, 96)
+
+[node name="Ticket" parent="." index="21" instance=ExtResource("8_014qs")]
+position = Vector2(1862, 1008)
+
+[node name="SurfaceRamp" parent="." index="22" instance=ExtResource("9_rnuwe")]
+position = Vector2(1594, 884)
+rotation = -1.17306
+scale = Vector2(3.01247, 1.98401)
+height = 3000.0
+
+[node name="SurfaceRamp3" parent="." index="23" instance=ExtResource("9_rnuwe")]
+position = Vector2(1972, 538)
+rotation = -1.21233
+scale = Vector2(2.0065, 6.99423)
+height = 3000.0
+
+[node name="Curb3" parent="." index="24" instance=ExtResource("6_necw3")]
+position = Vector2(29, 50)
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb3" index="2"]
+points = PackedVector2Array(1602, 1008, 1371, 911, 1238, 1114, 1805, 1380)
+
+[node name="Curb4" parent="." index="25" instance=ExtResource("6_necw3")]
+position = Vector2(29, 50)
+
+[node name="Line2D" type="Line2D" parent="Curb4" index="2"]
+points = PackedVector2Array(1749, 761, 1474, 646, 1581, 462, 2134, 669)
+
+[node name="Curb5" parent="." index="26" instance=ExtResource("6_necw3")]
+position = Vector2(29, 50)
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb5" index="2"]
+points = PackedVector2Array(1569, -109, 1650, 272, 2329, 527, 2483, -115)
