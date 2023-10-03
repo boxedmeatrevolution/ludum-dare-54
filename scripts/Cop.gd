@@ -8,6 +8,7 @@ const SirenEffectScene := preload("res://entities/SirenEffect.tscn")
 var death_animation_triggered : bool = false
 
 func _ready() -> void:
+	super()
 	destroy_factor = 0.5
 
 func _on_damage_received(_damage : float, _total_damage : float, _destroyed : bool) -> void:

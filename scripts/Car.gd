@@ -43,7 +43,7 @@ var bounds : Rect2 = Rect2(-INF, -INF, INF, INF)
 func _ready() -> void:
 	sprite.frame = randi_range(0, sprite.hframes * sprite.vframes - 1)
 	contact_monitor = true
-	max_contacts_reported = 4
+	max_contacts_reported = 10
 
 func _integrate_forces(state : PhysicsDirectBodyState2D) -> void:
 	if state.get_contact_count() > 0:
@@ -65,10 +65,10 @@ func _integrate_forces(state : PhysicsDirectBodyState2D) -> void:
 						effect_parent.add_child(little_smoke)
 						little_smoke.global_position = big_smoke.global_position + Vector2(randf_range(-48.0, 48.0), randf_range(-48.0, 48.0))
 						little_smoke.scale = Vector2(0.4, 0.4)
-		if damage > destroy_factor * DAMAGE_MAX_AMOUNT && !destroyed:
-			destroyed = true
-			sprite_scratch.visible = true
-		damage_received.emit(next_damage, damage, destroyed)
+			if damage > destroy_factor * DAMAGE_MAX_AMOUNT && !destroyed:
+				destroyed = true
+				sprite_scratch.visible = true
+			damage_received.emit(next_damage, damage, destroyed)
 	previous_linear_velocity = linear_velocity
 
 func _process(delta : float) -> void:

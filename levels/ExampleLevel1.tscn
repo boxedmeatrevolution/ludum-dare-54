@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b3cac7f6lc5j" path="res://entities/Ticket.tscn" id="11_22qkx"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="12_ahs75"]
 
-[node name="Level2" instance=ExtResource("1_hmqa6")]
+[node name="Level" instance=ExtResource("1_hmqa6")]
 
 [node name="Curb" parent="." index="9" instance=ExtResource("2_cx0kc")]
 invert_polygon = true
@@ -31,17 +31,18 @@ texture = ExtResource("2_yakgc")
 position = Vector2(648, 144)
 rotation = 0.472275
 scale = Vector2(6.56891, 2.02835)
-mirrored = false
 
 [node name="SurfaceRamp" parent="." index="12" instance=ExtResource("6_0p4yf")]
 position = Vector2(176, 208)
 rotation = 2.23816
 scale = Vector2(2.07154, 0.83266)
+mirrored = true
 
 [node name="CarMain" parent="." index="13" instance=ExtResource("3_s8liv")]
-position = Vector2(253, 252)
+position = Vector2(288, 240)
+rotation = 0.177215
 
-[node name="PlayerAI" parent="CarMain" index="7" instance=ExtResource("4_2mon7")]
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("4_2mon7")]
 
 [node name="Cop" parent="." index="14" instance=ExtResource("5_p45cn")]
 position = Vector2(600, 381)
