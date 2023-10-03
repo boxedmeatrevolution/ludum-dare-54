@@ -8,7 +8,8 @@ var car_types : Array = [
 	preload("res://entities/cars/CarModelD.tscn"),
 	preload("res://entities/cars/CarModelE.tscn"),
 	preload("res://entities/cars/CarModelF.tscn"),
-	preload("res://entities/cars/CarModelG.tscn")	
+	preload("res://entities/cars/CarModelG.tscn"),
+	preload("res://entities/cars/Cop.tscn")	
 ]
 
 @export var texture: Texture2D:
@@ -39,6 +40,11 @@ var car_types : Array = [
 @export var fill_with_cars: bool:
 	set(value):
 		fill_with_cars = value
+		if Engine.is_editor_hint():
+			init()
+@export var cop_lot: bool:
+	set(value):
+		cop_lot = value
 		if Engine.is_editor_hint():
 			init()
 @export var positional_variance: float:
@@ -111,11 +117,14 @@ func init_cars():
 	# create cars
 	for x in range(0, spaces_wide):
 		for y in range(0, spaces_tall):
-			var type_idx = rng.randi_range(0, car_types.size() - 1)
+			var type_idx = rng.randi_range(0, car_types.size() - 2)
 			var flipped = rng.randf() < 0.5
 			var x_shift = rng.randf_range(-positional_variance, positional_variance)
 			var y_shift = rng.randf_range(-positional_variance, positional_variance)
 			var rot_shift = rng.randf_range(-rotational_variance, rotational_variance)
+			
+			if cop_lot:
+				type_idx = car_types.size() - 1
 			
 			var custom_instr_idx = custom_instr_coords.find(Vector2(x, y))
 			if custom_instr_idx > -1:

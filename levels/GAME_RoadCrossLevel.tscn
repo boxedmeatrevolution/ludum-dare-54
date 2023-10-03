@@ -1,17 +1,17 @@
 [gd_scene load_steps=11 format=3 uid="uid://dho2rnfekm16e"]
 
-[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_p16vl"]
-[ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="2_6svmp"]
-[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="3_4c7lk"]
-[ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="3_t6lu1"]
-[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="4_qlvay"]
-[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="5_sr3fo"]
-[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="7_r7dac"]
-[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="9_4x2ji"]
-[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="10_jhq5o"]
-[ext_resource type="Texture2D" uid="uid://dmohckmicaa70" path="res://sprites/TileMosaic.png" id="11_1snsv"]
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_b8vyp"]
+[ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="2_lowmy"]
+[ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="3_h4xvd"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="4_i4iyt"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="5_cnp13"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="6_dxtiq"]
+[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="7_0stb7"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="8_4o263"]
+[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="9_q2p7d"]
+[ext_resource type="Texture2D" uid="uid://dmohckmicaa70" path="res://sprites/TileMosaic.png" id="10_k6tm6"]
 
-[node name="Level" instance=ExtResource("1_p16vl")]
+[node name="Level" instance=ExtResource("1_b8vyp")]
 bounds = Rect2(0, 0, 2368, 846)
 
 [node name="Background" parent="." index="0"]
@@ -23,7 +23,7 @@ scale = Vector2(0.427079, 1.34154)
 texture_repeat = 2
 points = PackedVector2Array(272, -176, 272, 968)
 width = 7.0
-texture = ExtResource("2_6svmp")
+texture = ExtResource("2_lowmy")
 texture_mode = 1
 
 [node name="Line2D2" type="Line2D" parent="MarkingParent" index="1"]
@@ -31,7 +31,7 @@ texture_repeat = 2
 position = Vector2(520, 0)
 points = PackedVector2Array(272, -176, 272, 337.923, 272, 968)
 width = 7.0
-texture = ExtResource("2_6svmp")
+texture = ExtResource("2_lowmy")
 texture_mode = 1
 
 [node name="Line2D3" type="Line2D" parent="MarkingParent" index="2"]
@@ -39,7 +39,7 @@ texture_repeat = 2
 position = Vector2(1032, 0)
 points = PackedVector2Array(272, -176, 272, 337.923, 272, 968)
 width = 7.0
-texture = ExtResource("2_6svmp")
+texture = ExtResource("2_lowmy")
 texture_mode = 1
 
 [node name="Line2D4" type="Line2D" parent="MarkingParent" index="3"]
@@ -47,7 +47,7 @@ texture_repeat = 2
 position = Vector2(1336, 0)
 points = PackedVector2Array(272, -176, 272, 337.923, 272, 968)
 width = 7.0
-texture = ExtResource("2_6svmp")
+texture = ExtResource("2_lowmy")
 texture_mode = 1
 
 [node name="Line2D5" type="Line2D" parent="MarkingParent" index="4"]
@@ -55,7 +55,7 @@ texture_repeat = 2
 position = Vector2(1183, -1)
 points = PackedVector2Array(272, -176, 272, 210.581, 272, 337.923, 272, 968)
 width = 7.0
-texture = ExtResource("3_t6lu1")
+texture = ExtResource("3_h4xvd")
 texture_mode = 1
 
 [node name="Line2D6" type="Line2D" parent="MarkingParent" index="5"]
@@ -63,7 +63,7 @@ texture_repeat = 2
 position = Vector2(1191, -1)
 points = PackedVector2Array(272, -176, 272, 210.581, 272, 337.923, 272, 968)
 width = 7.0
-texture = ExtResource("3_t6lu1")
+texture = ExtResource("3_h4xvd")
 texture_mode = 1
 
 [node name="Line2D7" type="Line2D" parent="MarkingParent" index="6"]
@@ -71,7 +71,7 @@ texture_repeat = 2
 position = Vector2(1864, -8)
 points = PackedVector2Array(272, -176, 272, 337.923, 272, 968)
 width = 7.0
-texture = ExtResource("2_6svmp")
+texture = ExtResource("2_lowmy")
 texture_mode = 1
 
 [node name="Line2D8" type="Line2D" parent="MarkingParent" index="7"]
@@ -79,150 +79,157 @@ texture_repeat = 2
 position = Vector2(2000, -8)
 points = PackedVector2Array(272, -176, 272, 337.923, 272, 968)
 width = 7.0
-texture = ExtResource("2_6svmp")
+texture = ExtResource("2_lowmy")
 texture_mode = 1
 
-[node name="CarMain" parent="." index="9" instance=ExtResource("3_4c7lk")]
+[node name="CarMain" parent="." index="9" instance=ExtResource("4_i4iyt")]
 position = Vector2(62, 423)
 
-[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("4_qlvay")]
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("5_cnp13")]
 
-[node name="ParkingSpace" parent="." index="10" instance=ExtResource("5_sr3fo")]
+[node name="ParkingSpace" parent="." index="10" instance=ExtResource("6_dxtiq")]
 position = Vector2(144, 8)
 rotation = 1.5708
 spaces_wide = 4
 fill_with_cars = true
+cop_lot = null
 
-[node name="ParkingSpace2" parent="." index="11" instance=ExtResource("5_sr3fo")]
+[node name="ParkingSpace2" parent="." index="11" instance=ExtResource("6_dxtiq")]
 position = Vector2(144, 496)
 rotation = 1.5708
 spaces_wide = 4
 fill_with_cars = true
+cop_lot = null
 
-[node name="CarSpawner" parent="." index="12" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner" parent="." index="12" instance=ExtResource("7_0stb7")]
 position = Vector2(208, 944)
 rotation = -1.5708
 interval = 3.0
 jitter = 0.2
 
-[node name="CarSpawner2" parent="." index="13" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner2" parent="." index="13" instance=ExtResource("7_0stb7")]
 position = Vector2(328, 944)
 rotation = -1.5708
 initial_delay = 1.5
 jitter = 0.2
 
-[node name="ParkingSpace3" parent="." index="14" instance=ExtResource("5_sr3fo")]
+[node name="ParkingSpace3" parent="." index="14" instance=ExtResource("6_dxtiq")]
 position = Vector2(384, 264)
 rotation = -1.5708
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
+cop_lot = null
 
-[node name="ParkingSpace4" parent="." index="15" instance=ExtResource("5_sr3fo")]
+[node name="ParkingSpace4" parent="." index="15" instance=ExtResource("6_dxtiq")]
 position = Vector2(384, 835)
 rotation = -1.5708
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
+cop_lot = null
 
-[node name="CarSpawner3" parent="." index="16" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner3" parent="." index="16" instance=ExtResource("7_0stb7")]
 position = Vector2(728, -128)
 rotation = 1.5708
 interval = 2.0
 jitter = 0.2
 
-[node name="CarSpawner4" parent="." index="17" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner4" parent="." index="17" instance=ExtResource("7_0stb7")]
 position = Vector2(848, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
-[node name="ParkingSpace5" parent="." index="18" instance=ExtResource("5_sr3fo")]
+[node name="ParkingSpace5" parent="." index="18" instance=ExtResource("6_dxtiq")]
 position = Vector2(910, 832)
 rotation = -1.5708
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
+cop_lot = null
 
-[node name="ParkingSpace6" parent="." index="19" instance=ExtResource("5_sr3fo")]
+[node name="ParkingSpace6" parent="." index="19" instance=ExtResource("6_dxtiq")]
 position = Vector2(912, 432)
 rotation = -1.5708
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
+cop_lot = null
 
-[node name="ParkingSpace7" parent="." index="20" instance=ExtResource("5_sr3fo")]
+[node name="ParkingSpace7" parent="." index="20" instance=ExtResource("6_dxtiq")]
 position = Vector2(1720, 848)
 rotation = -1.5708
 spaces_wide = 10
 spaces_tall = 2
 fill_with_cars = true
+cop_lot = null
 instruction = Array[String](["6 1 -1"])
 
-[node name="CarSpawner5" parent="." index="21" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner5" parent="." index="21" instance=ExtResource("7_0stb7")]
 position = Vector2(1544, -128)
 rotation = 1.5708
 interval = 2.0
 jitter = 0.2
 
-[node name="CarSpawner6" parent="." index="22" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner6" parent="." index="22" instance=ExtResource("7_0stb7")]
 position = Vector2(1664, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
-[node name="CarSpawner7" parent="." index="23" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner7" parent="." index="23" instance=ExtResource("7_0stb7")]
 position = Vector2(2072, -128)
 rotation = 1.5708
 interval = 2.0
 jitter = 0.2
 
-[node name="CarSpawner8" parent="." index="24" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner8" parent="." index="24" instance=ExtResource("7_0stb7")]
 position = Vector2(2208, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
-[node name="CarSpawner9" parent="." index="25" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner9" parent="." index="25" instance=ExtResource("7_0stb7")]
 position = Vector2(2352, -128)
 rotation = 1.5708
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
-[node name="CarSpawner10" parent="." index="26" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner10" parent="." index="26" instance=ExtResource("7_0stb7")]
 position = Vector2(1240, 952)
 rotation = 4.71239
 interval = 2.0
 jitter = 0.2
 
-[node name="CarSpawner11" parent="." index="27" instance=ExtResource("7_r7dac")]
+[node name="CarSpawner11" parent="." index="27" instance=ExtResource("7_0stb7")]
 position = Vector2(1360, 952)
 rotation = 4.71239
 initial_delay = 1.5
 interval = 2.0
 jitter = 0.2
 
-[node name="TargetSpace" parent="." index="28" instance=ExtResource("9_4x2ji")]
+[node name="TargetSpace" parent="." index="28" instance=ExtResource("8_4o263")]
 position = Vector2(1928, 296)
 rotation = 1.5708
 colour_closed = null
 colour_open = null
 
-[node name="Surface" parent="." index="32" instance=ExtResource("10_jhq5o")]
+[node name="Surface" parent="." index="32" instance=ExtResource("9_q2p7d")]
 position = Vector2(391, 272)
 scale = Vector2(5, 2.36)
-texture = ExtResource("11_1snsv")
+texture = ExtResource("10_k6tm6")
 
-[node name="Surface2" parent="." index="33" instance=ExtResource("10_jhq5o")]
+[node name="Surface2" parent="." index="33" instance=ExtResource("9_q2p7d")]
 position = Vector2(914, 440)
 scale = Vector2(5, 2.36)
-texture = ExtResource("11_1snsv")
+texture = ExtResource("10_k6tm6")
 
-[node name="Surface3" parent="." index="34" instance=ExtResource("10_jhq5o")]
+[node name="Surface3" parent="." index="34" instance=ExtResource("9_q2p7d")]
 position = Vector2(-130, 357)
 scale = Vector2(5, 2.36)
-texture = ExtResource("11_1snsv")
+texture = ExtResource("10_k6tm6")
