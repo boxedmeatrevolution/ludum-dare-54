@@ -92,14 +92,14 @@ position = Vector2(144, 8)
 rotation = 1.5708
 spaces_wide = 4
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace2" parent="." index="11" instance=ExtResource("6_dxtiq")]
 position = Vector2(144, 496)
 rotation = 1.5708
 spaces_wide = 4
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="CarSpawner" parent="." index="12" instance=ExtResource("7_0stb7")]
 position = Vector2(208, 944)
@@ -119,7 +119,7 @@ rotation = -1.5708
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace4" parent="." index="15" instance=ExtResource("6_dxtiq")]
 position = Vector2(384, 835)
@@ -127,7 +127,7 @@ rotation = -1.5708
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="CarSpawner3" parent="." index="16" instance=ExtResource("7_0stb7")]
 position = Vector2(728, -128)
@@ -148,7 +148,7 @@ rotation = -1.5708
 spaces_wide = 3
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace6" parent="." index="19" instance=ExtResource("6_dxtiq")]
 position = Vector2(912, 432)
@@ -156,7 +156,7 @@ rotation = -1.5708
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace7" parent="." index="20" instance=ExtResource("6_dxtiq")]
 position = Vector2(1720, 848)
@@ -164,7 +164,7 @@ rotation = -1.5708
 spaces_wide = 10
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 instruction = Array[String](["6 1 -1"])
 
 [node name="CarSpawner5" parent="." index="21" instance=ExtResource("7_0stb7")]

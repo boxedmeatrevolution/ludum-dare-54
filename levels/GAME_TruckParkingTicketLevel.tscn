@@ -36,7 +36,7 @@ rotation = 0.38399
 spaces_wide = 10
 spaces_tall = 5
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 instruction = Array[String](["5 2 -1", "4 2 -1"])
 
 [node name="ParkingSpace2" parent="." index="14" instance=ExtResource("4_a4h6p")]
@@ -45,7 +45,7 @@ rotation = 0.418416
 spaces_wide = 10
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace3" parent="." index="15" instance=ExtResource("4_a4h6p")]
 position = Vector2(1429, 338)
@@ -53,7 +53,7 @@ rotation = -2.76314
 spaces_wide = 7
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="TargetSpace" parent="." index="16" instance=ExtResource("5_j5n48")]
 position = Vector2(859, 591)

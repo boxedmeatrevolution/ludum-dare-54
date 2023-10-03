@@ -81,6 +81,7 @@ position = Vector2(368, 136)
 rotation = 3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace3" parent="." index="15" instance=ExtResource("4_hhuys")]
@@ -88,6 +89,7 @@ position = Vector2(888, 136)
 rotation = 3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace7" parent="." index="16" instance=ExtResource("4_hhuys")]
@@ -95,6 +97,7 @@ position = Vector2(1416, 136)
 rotation = 3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 instruction = Array[String](["1 0 -1"])
 
@@ -103,6 +106,7 @@ position = Vector2(2464, 136)
 rotation = -3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace5" parent="." index="18" instance=ExtResource("4_hhuys")]
@@ -110,6 +114,7 @@ position = Vector2(1944, 136)
 rotation = -3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace6" parent="." index="19" instance=ExtResource("4_hhuys")]
@@ -117,6 +122,7 @@ position = Vector2(3512, 136)
 rotation = -3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace9" parent="." index="20" instance=ExtResource("4_hhuys")]
@@ -124,6 +130,7 @@ position = Vector2(2992, 136)
 rotation = -3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace10" parent="." index="21" instance=ExtResource("4_hhuys")]
@@ -131,6 +138,7 @@ position = Vector2(4560, 136)
 rotation = -3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace11" parent="." index="22" instance=ExtResource("4_hhuys")]
@@ -138,6 +146,7 @@ position = Vector2(4040, 136)
 rotation = -3.14159
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 instruction = Array[String](["1 0 -1"])
 
@@ -145,12 +154,14 @@ instruction = Array[String](["1 0 -1"])
 position = Vector2(-176, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace8" parent="." index="24" instance=ExtResource("4_hhuys")]
 position = Vector2(344, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 instruction = Array[String](["0 0 -1"])
 
@@ -158,48 +169,56 @@ instruction = Array[String](["0 0 -1"])
 position = Vector2(872, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace13" parent="." index="26" instance=ExtResource("4_hhuys")]
 position = Vector2(1920, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace14" parent="." index="27" instance=ExtResource("4_hhuys")]
 position = Vector2(1400, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace15" parent="." index="28" instance=ExtResource("4_hhuys")]
 position = Vector2(2968, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace16" parent="." index="29" instance=ExtResource("4_hhuys")]
 position = Vector2(2448, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace17" parent="." index="30" instance=ExtResource("4_hhuys")]
 position = Vector2(4016, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace18" parent="." index="31" instance=ExtResource("4_hhuys")]
 position = Vector2(3496, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace19" parent="." index="32" instance=ExtResource("4_hhuys")]
 position = Vector2(4520, 440)
 spaces_wide = 2
 fill_with_cars = true
+cop_lot = false
 street_parking = true
 
 [node name="TargetSpace" parent="." index="33" instance=ExtResource("7_pu5d3")]

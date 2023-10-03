@@ -15,14 +15,14 @@ position = Vector2(16, 152)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace2" parent="." index="7" instance=ExtResource("2_qcbo7")]
 position = Vector2(568, 152)
 spaces_wide = 5
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 instruction = Array[String](["3 1 -1"])
 
 [node name="Curb" parent="." index="8" instance=ExtResource("3_sip0q")]

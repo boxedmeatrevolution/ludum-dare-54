@@ -30,7 +30,7 @@ spaces_tall = 3
 space_width = 65
 space_height = 115
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 rotational_variance = 0.15
 instruction = Array[String](["10 2 -1"])
 
@@ -41,7 +41,7 @@ spaces_wide = 6
 space_width = 65
 space_height = 115
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 street_parking = true
 
 [node name="ParkingSpace3" parent="." index="16" instance=ExtResource("5_2tf6a")]
@@ -51,7 +51,7 @@ spaces_wide = 7
 space_width = 65
 space_height = 115
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 street_parking = true
 
 [node name="TargetSpace" parent="." index="17" instance=ExtResource("6_i7kls")]

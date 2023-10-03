@@ -15,126 +15,126 @@ position = Vector2(136, 128)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace2" parent="." index="7" instance=ExtResource("2_gvg6u")]
 position = Vector2(624, 128)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace4" parent="." index="8" instance=ExtResource("2_gvg6u")]
 position = Vector2(1112, 128)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace5" parent="." index="9" instance=ExtResource("2_gvg6u")]
 position = Vector2(1600, 128)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace6" parent="." index="10" instance=ExtResource("2_gvg6u")]
 position = Vector2(2088, 128)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace3" parent="." index="11" instance=ExtResource("2_gvg6u")]
 position = Vector2(384, 536)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace7" parent="." index="12" instance=ExtResource("2_gvg6u")]
 position = Vector2(872, 536)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace8" parent="." index="13" instance=ExtResource("2_gvg6u")]
 position = Vector2(1360, 536)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace9" parent="." index="14" instance=ExtResource("2_gvg6u")]
 position = Vector2(1848, 536)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace10" parent="." index="15" instance=ExtResource("2_gvg6u")]
 position = Vector2(144, 912)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace11" parent="." index="16" instance=ExtResource("2_gvg6u")]
 position = Vector2(632, 912)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace12" parent="." index="17" instance=ExtResource("2_gvg6u")]
 position = Vector2(1120, 912)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace13" parent="." index="18" instance=ExtResource("2_gvg6u")]
 position = Vector2(1608, 912)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace14" parent="." index="19" instance=ExtResource("2_gvg6u")]
 position = Vector2(2096, 912)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace15" parent="." index="20" instance=ExtResource("2_gvg6u")]
 position = Vector2(392, 1320)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace16" parent="." index="21" instance=ExtResource("2_gvg6u")]
 position = Vector2(880, 1320)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace17" parent="." index="22" instance=ExtResource("2_gvg6u")]
 position = Vector2(1368, 1320)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace18" parent="." index="23" instance=ExtResource("2_gvg6u")]
 position = Vector2(1856, 1320)
 spaces_wide = 4
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 instruction = Array[String](["2 0 -1"])
 
 [node name="Curb" parent="." index="24" instance=ExtResource("3_crdd8")]
@@ -148,7 +148,7 @@ points = PackedVector2Array(-160, 24, 2456, 24, 2456, 1712, 120, 1712, 120, 136,
 position = Vector2(136, 528)
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="CarMain" parent="." index="26" instance=ExtResource("4_gnql1")]
 position = Vector2(8, 72)
@@ -159,19 +159,19 @@ position = Vector2(8, 72)
 position = Vector2(136, 1320)
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace21" parent="." index="28" instance=ExtResource("2_gvg6u")]
 position = Vector2(2352, 536)
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace22" parent="." index="29" instance=ExtResource("2_gvg6u")]
 position = Vector2(2352, 1320)
 spaces_tall = 2
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 
 [node name="TargetSpace" parent="." index="30" instance=ExtResource("6_yf2f7")]
 position = Vector2(2027, 1320)

@@ -30,13 +30,13 @@ colour_open_and_on = null
 position = Vector2(61, 164)
 spaces_wide = 4
 spaces_tall = 2
-cop_lot = null
+cop_lot = false
 
 [node name="ParkingSpace2" parent="." instance=ExtResource("4_wnbjg")]
 position = Vector2(560, 166)
 spaces_wide = 4
 spaces_tall = 2
-cop_lot = null
+cop_lot = false
 
 [node name="PlayerCar" parent="." instance=ExtResource("5_qotcp")]
 position = Vector2(103, 97)

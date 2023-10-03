@@ -72,7 +72,7 @@ position = Vector2(144, 327)
 rotation = 0.0587087
 spaces_wide = 4
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 rng_seed = "2"
 
 [node name="ParkingSpace2" parent="." index="18" instance=ExtResource("10_ana1w")]
@@ -80,7 +80,7 @@ position = Vector2(399, 237)
 rotation = 3.07928
 spaces_wide = 3
 fill_with_cars = true
-cop_lot = null
+cop_lot = false
 instruction = Array[String](["2 0 -1"])
 
 [node name="Shrub" parent="." index="19" instance=ExtResource("11_cn1s8")]

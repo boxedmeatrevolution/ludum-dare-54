@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ceo5q3ktvei" path="res://entities/cars/Truck.tscn" id="18_hmsma"]
 [ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="19_immqb"]
 
-[node name="Level2" instance=ExtResource("1_jxuko")]
+[node name="Level" instance=ExtResource("1_jxuko")]
 bounds = Rect2(0, 0, 2240, 1200)
 
 [node name="Background" parent="." index="0"]
@@ -205,6 +205,7 @@ position = Vector2(456, 806)
 rotation = -2.78932
 spaces_wide = 5
 fill_with_cars = true
+cop_lot = false
 instruction = Array[String](["0 0 -1", "1 0 -1", "2 0 -1"])
 
 [node name="Curb3" parent="." index="32" instance=ExtResource("7_4iqw8")]

@@ -54,12 +54,14 @@ texture = ExtResource("6_i44tx")
 position = Vector2(930, 342)
 spaces_wide = 3
 fill_with_cars = true
+cop_lot = false
 
 [node name="ParkingSpace3" parent="." index="21" instance=ExtResource("7_v15v2")]
 position = Vector2(1548, 555)
 rotation = -1.57079
 spaces_wide = 7
 fill_with_cars = true
+cop_lot = false
 instruction = Array[String](["3 0 -1"])
 
 [node name="ParkingSpace2" parent="." index="22" instance=ExtResource("7_v15v2")]
@@ -67,6 +69,7 @@ position = Vector2(1183, 191)
 rotation = 3.14159
 spaces_wide = 3
 fill_with_cars = true
+cop_lot = false
 
 [node name="Shrub" parent="." index="23" instance=ExtResource("8_lxhyd")]
 position = Vector2(963, -11)
@@ -110,12 +113,14 @@ texture = ExtResource("6_i44tx")
 position = Vector2(420, 350)
 spaces_wide = 3
 fill_with_cars = true
+cop_lot = false
 
 [node name="ParkingSpace5" parent="." index="36" instance=ExtResource("7_v15v2")]
 position = Vector2(673, 199)
 rotation = 3.14159
 spaces_wide = 3
 fill_with_cars = true
+cop_lot = false
 
 [node name="Shrub7" parent="." index="37" instance=ExtResource("8_lxhyd")]
 position = Vector2(453, -3)

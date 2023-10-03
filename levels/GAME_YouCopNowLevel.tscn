@@ -134,6 +134,7 @@ position = Vector2(2164, 509)
 spaces_wide = 5
 spaces_tall = 3
 fill_with_cars = true
+cop_lot = false
 instruction = Array[String](["3 0 -1"])
 
 [node name="TargetSpace" parent="." index="24" instance=ExtResource("6_dk70a")]

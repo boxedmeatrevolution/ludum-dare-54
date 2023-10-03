@@ -116,6 +116,7 @@ rotation = 1.17846
 position = Vector2(457, 1715)
 rotation = -1.97094
 spaces_wide = 2
+cop_lot = false
 
 [node name="CarModelA" parent="." index="32" instance=ExtResource("11_bh7jf")]
 position = Vector2(463, 1570)
