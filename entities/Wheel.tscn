@@ -4,8 +4,8 @@
 
 [sub_resource type="Curve" id="Curve_shpkh"]
 max_value = 550.0
-_data = [Vector2(0, 461.198), 0.0, 0.0, 0, 0, Vector2(0.14313, 340.885), -1389.85, -1389.85, 0, 0, Vector2(0.901887, 0), -4.83108, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 461.198), 0.0, 0.0, 0, 0, Vector2(0.127376, 309.375), -1389.85, -1389.85, 0, 0, Vector2(0.285171, 246.354), 0.0, 0.0, 0, 0, Vector2(0.901887, 0), -4.83108, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="Curve" id="Curve_1arv8"]
 max_value = 200.0
