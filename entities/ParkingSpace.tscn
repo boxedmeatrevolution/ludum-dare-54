@@ -10,5 +10,6 @@ spaces_wide = 1
 spaces_tall = 1
 space_width = 85
 space_height = 140
+cop_lot = null
 positional_variance = 5.0
 rotational_variance = 0.2
