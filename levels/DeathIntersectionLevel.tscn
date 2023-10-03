@@ -1,0 +1,246 @@
+[gd_scene load_steps=20 format=3 uid="uid://duc7eq8n2mwgw"]
+
+[ext_resource type="PackedScene" uid="uid://dmujtlh6ah6pk" path="res://levels/Level.tscn" id="1_sal6x"]
+[ext_resource type="PackedScene" uid="uid://dcsu5xhuq6vdv" path="res://entities/Curb.tscn" id="2_e8h53"]
+[ext_resource type="Texture2D" uid="uid://dmkyo7k8mmjmh" path="res://sprites/YellowLine.png" id="2_xdtyk"]
+[ext_resource type="Texture2D" uid="uid://c3xvlm3gn43v" path="res://sprites/WhiteLineDashed.png" id="3_3fym4"]
+[ext_resource type="PackedScene" uid="uid://beoqxk5k0w4an" path="res://entities/Shrub.tscn" id="3_5jyc4"]
+[ext_resource type="PackedScene" uid="uid://dsyr1sq480ded" path="res://entities/cars/CarMain.tscn" id="6_78qtw"]
+[ext_resource type="PackedScene" uid="uid://b48r7at33cyp3" path="res://entities/CarSpawner.tscn" id="6_m2865"]
+[ext_resource type="PackedScene" uid="uid://cfthf6f8oqgki" path="res://entities/Surface.tscn" id="6_npoas"]
+[ext_resource type="Texture2D" uid="uid://cfn60t56xc7uw" path="res://sprites/TileDirt.png" id="7_4ux58"]
+[ext_resource type="PackedScene" uid="uid://cl56u6y6i550g" path="res://entities/cars/CarModelA.tscn" id="7_8v4s7"]
+[ext_resource type="PackedScene" uid="uid://dcoh6kinumowt" path="res://entities/PlayerAI.tscn" id="7_dcsxu"]
+[ext_resource type="PackedScene" uid="uid://dh0dkyg2fqqpo" path="res://entities/cars/Bus.tscn" id="8_kq7jr"]
+[ext_resource type="PackedScene" uid="uid://chclyf3t26mgn" path="res://entities/cars/CarModelC.tscn" id="9_j8g5b"]
+[ext_resource type="PackedScene" uid="uid://bxx3brsgc0bbg" path="res://entities/cars/CarModelE.tscn" id="10_geymq"]
+[ext_resource type="PackedScene" uid="uid://cmr72mvg01jw1" path="res://entities/cars/CarModelG.tscn" id="11_johnc"]
+[ext_resource type="PackedScene" uid="uid://b4xdikpwrhp8p" path="res://entities/ParkingSpace.tscn" id="14_d0rfk"]
+[ext_resource type="PackedScene" uid="uid://b3ceo5q3ktvei" path="res://entities/cars/Truck.tscn" id="15_4ebqj"]
+[ext_resource type="PackedScene" uid="uid://bfybrqb6xyeeo" path="res://entities/TargetSpace.tscn" id="16_dnspq"]
+[ext_resource type="Texture2D" uid="uid://d15wumhagjdyf" path="res://sprites/TileArrowWhite.png" id="19_aergg"]
+
+[node name="Level" instance=ExtResource("1_sal6x")]
+bounds = Rect2(0, 0, 2240, 1200)
+
+[node name="Background" parent="." index="0"]
+position = Vector2(-52, 10)
+
+[node name="TileArrowWhite" type="Sprite2D" parent="MarkingParent" index="0"]
+position = Vector2(195, 816)
+rotation = 0.36686
+scale = Vector2(1, 1)
+texture = ExtResource("19_aergg")
+
+[node name="TileArrowWhite2" type="Sprite2D" parent="MarkingParent" index="1"]
+position = Vector2(1704, 632)
+rotation = -2.7295
+scale = Vector2(1, 1)
+texture = ExtResource("19_aergg")
+
+[node name="TileArrowWhite3" type="Sprite2D" parent="MarkingParent" index="2"]
+position = Vector2(1611, 676)
+rotation = -2.7295
+scale = Vector2(1, 1)
+texture = ExtResource("19_aergg")
+
+[node name="Line2D" type="Line2D" parent="MarkingParent" index="3"]
+texture_repeat = 2
+points = PackedVector2Array(-180, 1263, 2180, 347)
+width = 7.0
+texture = ExtResource("2_xdtyk")
+texture_mode = 1
+
+[node name="Line2D2" type="Line2D" parent="MarkingParent" index="4"]
+texture_repeat = 2
+position = Vector2(119, 158)
+points = PackedVector2Array(-180, 1263, 2180, 347)
+width = 7.0
+texture = ExtResource("2_xdtyk")
+texture_mode = 1
+
+[node name="Line2D3" type="Line2D" parent="MarkingParent" index="5"]
+texture_repeat = 2
+position = Vector2(331, 379)
+points = PackedVector2Array(-677, -418, 2269, 754)
+width = 7.0
+texture = ExtResource("2_xdtyk")
+texture_mode = 1
+
+[node name="Line2D4" type="Line2D" parent="MarkingParent" index="6"]
+texture_repeat = 2
+position = Vector2(620, 283)
+points = PackedVector2Array(-677, -418, 2269, 754)
+width = 7.0
+texture = ExtResource("2_xdtyk")
+texture_mode = 1
+
+[node name="Line2D5" type="Line2D" parent="MarkingParent" index="7"]
+texture_repeat = 2
+position = Vector2(-705, 373)
+points = PackedVector2Array(615, 955, 2180, 347)
+width = 7.0
+texture = ExtResource("3_3fym4")
+texture_mode = 1
+
+[node name="Line2D6" type="Line2D" parent="MarkingParent" index="8"]
+texture_repeat = 2
+position = Vector2(1197, -369)
+points = PackedVector2Array(615, 955, 1026, 794)
+width = 7.0
+texture = ExtResource("3_3fym4")
+texture_mode = 1
+
+[node name="Line2D7" type="Line2D" parent="MarkingParent" index="9"]
+texture_repeat = 2
+position = Vector2(-774, -166)
+points = PackedVector2Array(587, 85, 769.891, 157.743, 2269, 754)
+width = 7.0
+texture = ExtResource("3_3fym4")
+texture_mode = 1
+
+[node name="Line2D8" type="Line2D" parent="MarkingParent" index="10"]
+texture_repeat = 2
+position = Vector2(1195, 610)
+points = PackedVector2Array(587, 85, 1532, 463)
+width = 7.0
+texture = ExtResource("3_3fym4")
+texture_mode = 1
+
+[node name="Surface" parent="." index="12" instance=ExtResource("6_npoas")]
+position = Vector2(949, 210)
+rotation = 0.378784
+scale = Vector2(15.1218, 1.02816)
+texture = ExtResource("7_4ux58")
+centered = true
+
+[node name="Surface2" parent="." index="13" instance=ExtResource("6_npoas")]
+position = Vector2(633, 779)
+rotation = 0.343309
+scale = Vector2(3.06048, 1.45301)
+texture = ExtResource("7_4ux58")
+centered = true
+
+[node name="Curb2" parent="." index="14" instance=ExtResource("2_e8h53")]
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb2" index="2"]
+points = PackedVector2Array(-211, 1251, 215, 1081, 208, 952, -92, 782, -282, 795)
+
+[node name="Curb" parent="." index="15" instance=ExtResource("2_e8h53")]
+
+[node name="Line2D" type="Line2D" parent="Curb" index="2"]
+points = PackedVector2Array(-210, 44, 1085, 567, 1092, 742, 922, 812, -273, 369)
+
+[node name="Shrub" parent="." index="16" instance=ExtResource("3_5jyc4")]
+position = Vector2(786, 831)
+pot_type = 1
+
+[node name="Shrub2" parent="." index="17" instance=ExtResource("3_5jyc4")]
+position = Vector2(660, 842)
+pot_type = 1
+
+[node name="Shrub3" parent="." index="18" instance=ExtResource("3_5jyc4")]
+position = Vector2(571, 914)
+pot_type = 1
+
+[node name="Shrub8" parent="." index="19" instance=ExtResource("3_5jyc4")]
+position = Vector2(562, 762)
+pot_type = 1
+
+[node name="Shrub4" parent="." index="20" instance=ExtResource("3_5jyc4")]
+position = Vector2(458, 895)
+pot_type = 1
+
+[node name="Shrub5" parent="." index="21" instance=ExtResource("3_5jyc4")]
+position = Vector2(286, 1027)
+pot_type = 2
+
+[node name="CarMain" parent="." index="22" instance=ExtResource("6_78qtw")]
+position = Vector2(356, 706)
+rotation = 1.95382
+
+[node name="PlayerAI" parent="CarMain" index="11" instance=ExtResource("7_dcsxu")]
+
+[node name="CarSpawner2" parent="." index="23" instance=ExtResource("6_m2865")]
+position = Vector2(-72, 1376)
+rotation = -0.373608
+interval = 1.6
+jitter = 0.6
+
+[node name="CarSpawner" parent="." index="24" instance=ExtResource("6_m2865")]
+position = Vector2(-107, 1287)
+rotation = -0.374471
+interval = 1.7
+jitter = 0.6
+
+[node name="CarSpawner3" parent="." index="25" instance=ExtResource("6_m2865")]
+position = Vector2(-97, 8)
+rotation = 0.383584
+interval = 2.0
+jitter = 0.6
+
+[node name="CarSpawner4" parent="." index="26" instance=ExtResource("6_m2865")]
+position = Vector2(-82, -91)
+rotation = 0.383584
+interval = 2.4
+jitter = 0.6
+car_scenes = Array[PackedScene]([ExtResource("7_8v4s7"), ExtResource("9_j8g5b"), ExtResource("8_kq7jr"), ExtResource("10_geymq"), ExtResource("11_johnc")])
+
+[node name="Shrub6" parent="." index="27" instance=ExtResource("3_5jyc4")]
+position = Vector2(1249, 651)
+pot_type = 2
+
+[node name="Shrub7" parent="." index="28" instance=ExtResource("3_5jyc4")]
+position = Vector2(1152, 683)
+pot_type = 1
+
+[node name="Shrub9" parent="." index="29" instance=ExtResource("3_5jyc4")]
+position = Vector2(1644, 832)
+pot_type = 2
+
+[node name="Shrub10" parent="." index="30" instance=ExtResource("3_5jyc4")]
+position = Vector2(1646, 485)
+pot_type = 2
+
+[node name="ParkingSpace" parent="." index="31" instance=ExtResource("14_d0rfk")]
+position = Vector2(456, 806)
+rotation = -2.78932
+spaces_wide = 5
+fill_with_cars = true
+instruction = Array[String](["0 0 -1", "1 0 -1", "2 0 -1"])
+
+[node name="Curb3" parent="." index="32" instance=ExtResource("2_e8h53")]
+
+[node name="Line2D" type="Line2D" parent="Curb3" index="2"]
+points = PackedVector2Array(132, 1365, 1350, 897, 1928, 889, 2644, 1162, 2609, 1448, 323, 1649)
+
+[node name="Curb4" parent="." index="33" instance=ExtResource("2_e8h53")]
+invert_texture = true
+
+[node name="Line2D" type="Line2D" parent="Curb4" index="2"]
+points = PackedVector2Array(104, -180, 1679, 451, 1877, 352, 1952, -270)
+
+[node name="Truck" parent="." index="34" instance=ExtResource("15_4ebqj")]
+position = Vector2(1514, 427)
+rotation = -2.84213
+
+[node name="Truck2" parent="." index="35" instance=ExtResource("15_4ebqj")]
+position = Vector2(1335, 369)
+rotation = -2.6131
+
+[node name="Truck3" parent="." index="36" instance=ExtResource("15_4ebqj")]
+position = Vector2(1154, 297)
+rotation = -2.78876
+
+[node name="Truck5" parent="." index="37" instance=ExtResource("15_4ebqj")]
+position = Vector2(639, 89)
+rotation = -2.66397
+
+[node name="Truck4" parent="." index="38" instance=ExtResource("15_4ebqj")]
+position = Vector2(835, 164)
+rotation = -2.79105
+
+[node name="TargetSpace" parent="." index="39" instance=ExtResource("16_dnspq")]
+position = Vector2(996, 225)
+rotation = -1.17207

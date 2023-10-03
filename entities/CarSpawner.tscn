@@ -17,3 +17,6 @@ car_scenes = Array[PackedScene]([ExtResource("2_d2mgu"), ExtResource("3_6dvlx"),
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("2_fc4c8")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 960, 0)
