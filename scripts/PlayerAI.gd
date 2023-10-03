@@ -177,8 +177,9 @@ func _input(event : InputEvent) -> void:
 		mouse_active_timer = MOUSE_ACTIVE_TIME
 
 func _on_out_of_bounds() -> void:
-	has_lost = true
-	has_lost_active_timer = 1.5
+	if !has_lost:
+		has_lost = true
+		has_lost_active_timer = 1.5
 
 func _on_parking_detector_entered(_area: Area2D, idx : int) -> void:
 	parking_detector_triggered[idx] = true
